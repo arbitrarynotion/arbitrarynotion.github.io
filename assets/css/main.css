@@ -2108,6 +2108,13 @@ input, select, textarea {
 			padding: 0;
 		}
 
+		.box.left-padded {
+			border: 0;
+			border-radius: 0;
+			/*padding: 0 0 0 2em;*/
+			display: inline-block;
+		}
+
 	.textBox {
 		border: solid 1px rgba(212, 212, 255, 0.1);
 		margin-bottom: 2em;
@@ -2932,6 +2939,25 @@ input, select, textarea {
 				}
 
 		}
+
+/* Embedded YouTube Videos*/
+
+		.video-container {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-bottom: 56.25%; /* 16:9 aspect ratio (divide the height by width and multiply by 100) */
+			/*overflow: hidden;*/
+		}
+
+			.video-container iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
 
 /* Contact Method */
 
