@@ -18,7 +18,8 @@
 			width: -webkit-max-content;
 			width: -ms-max-content;
 			width: max-content;
-			margin-bottom: _size(element-margin);
+			//margin-bottom: _size(element-margin);
+			@include debug-outline(magenta);
 
 			> :first-child {
 				margin-bottom: 0;

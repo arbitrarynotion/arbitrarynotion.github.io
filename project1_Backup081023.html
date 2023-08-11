@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en-us">
+	<head>
+		<title>Ian Ritter's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+<!--	<div class="video-container">-->
+<!--		<iframe id="existing-iframe-example"-->
+<!--				width="640" height="360"-->
+<!--				src="https://www.youtube.com/embed/P-5m1oIw5J4"-->
+<!--				frameborder="0"-->
+<!--				style="border: solid 4px #37474F">-->
+<!--		</iframe>-->
+<!--	</div>-->
+
+		<script type="text/javascript">
+			// 2. This code loads the IFrame Player API code asynchronously.
+			const tag = document.createElement('script');
+			tag.id = 'iframe-demo';
+			tag.src = 'https://www.youtube.com/iframe_api';
+			const firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			let video01, video02;
+			// 3. This function creates an <iframe> (and YouTube player) after the API code downloads.
+			function onYouTubeIframeAPIReady()
+			{
+				video01 = new YT.Player('video01',
+					{
+						videoId: 'P-5m1oIw5J4',
+						events:
+						{
+							'onReady': onPlayerReady,
+							'onStateChange': onPlayerStateChange
+						},
+
+						playerVars:
+						{
+							autoplay: 0,         // Autoplay the video
+							mute: 1,             // Start the video muted
+							loop: 1,             // Enable video looping
+							playlist: 'P-5m1oIw5J4', // Required for looping when using the loop parameter
+							// controls: 0          // Disable the controls
+						},
+					}
+				);
+
+				video02 = new YT.Player('video02',
+						{
+							videoId: 'P-5m1oIw5J4',
+							events:
+									{
+										'onReady': onPlayerReady,
+										'onStateChange': onPlayerStateChange
+									},
+
+							playerVars:
+									{
+										autoplay: 0,         // Autoplay the video
+										mute: 1,             // Start the video muted
+										loop: 1,             // Enable video looping
+										playlist: 'P-5m1oIw5J4', // Required for looping when using the loop parameter
+										// controls: 0          // Disable the controls
+									},
+						}
+				);
+			}
+
+			// 4. The API will call this function when the video player is ready.
+			function onPlayerReady(event) {
+				document.getElementById('video01').style.borderColor = '#FF6D00';
+			}
+
+			// 5. The API calls this function when the player's state changes.
+			//    The function indicates that when playing a video (state=1),
+			//    the player should play for six seconds and then stop.
+			function changeBorderColor(playerStatus)
+			{
+				let color;
+				if (playerStatus === -1) {
+					color = "#37474F"; // unstarted = gray
+				} else if (playerStatus === 0) {
+					color = "#FFFF00"; // ended = yellow
+				} else if (playerStatus === 1) {
+					color = "#33691E"; // playing = green
+				} else if (playerStatus === 2) {
+					color = "#DD2C00"; // paused = red
+				} else if (playerStatus === 3) {
+					color = "#AA00FF"; // buffering = purple
+				} else if (playerStatus === 5) {
+					color = "#FF6DOO"; // video cued = orange
+				}
+				if (color) {
+					document.getElementById('video01').style.borderColor = color;
+				}
+			}
+			function onPlayerStateChange(event)
+			{
+				changeBorderColor(event.data);
+			}
+		</script>
+
+
+	<!-- Wrapper -->
+		<div id="wrapper">
+
+		<!-- Header -->
+			<header id="header" class="alt style2">
+				<a href="indexOld.html" class="logo"><strong>Ian Ritter</strong> <span>Portfolio</span></a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+<!--					<li><a href="indexOld.html">Home</a></li>-->
+					<li><a href="landing.html">Home</a></li>
+<!--					<li><a href="project1.html">Generic</a></li>-->
+<!--					<li><a href="elements.html">Elements</a></li>-->
+				</ul>
+<!--				<ul class="actions stacked">-->
+<!--					<li><a href="#" class="button primary fit">Get Started</a></li>-->
+<!--					<li><a href="#" class="button fit">Log In</a></li>-->
+<!--				</ul>-->
+			</nav>
+
+			<!-- Banner -->
+			<!-- Note: The "styleN" class below should match that of the header element. -->
+			<section id="banner">
+				<div class="inner">
+
+					<span class="image"><img src="images/SpaceSim_Image_01.png" alt="" /></span>
+
+<!--					<header class="major sectionTitle"><h1>&#128516 Space Sim &#128516</h1></header>-->
+					<header class="major">
+						<div class="sectionTitle">
+<!--							<div class="noBackground">-->
+								<h1>Space Sim</h1>
+<!--							</div>-->
+						</div>
+					</header>
+
+					<div class="content">
+						<div class="projectStats">
+							<div class="table-wrapper">
+								<table class="alt2">
+									<tbody>
+										<tr><td><b>Project Status</b></td> <td>Ongoing</td></tr>
+										<tr><td><b>Project Type</b></td> <td>Solo project</td></tr>
+										<tr><td><b>Project Duration</b></td> <td>~5 Months</td></tr>
+										<tr><td><b>Software Used</b></td> <td>Unity Game Engine</td></tr>
+										<tr><td><b>Languages Used</b></td> <td>C#</td></tr>
+										<tr><td><b>Primary Role(s)</b></td> <td>Tech Lead / Lead Programmer / Lead Designer</td></tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Main -->
+				<div id="main" class="alt">
+
+					<div class="inner">
+						<section>
+							<div class="sectionTitle">
+								<h2>Project Summary</h2>
+							</div>
+
+							<div class="description">
+
+								<div class="content">
+									<b>Space Sim is a simulation that creates a small world of procedurally generated resources</b>
+									in which factories, in the form of space stations, manufacture into tradeable
+									wares. Resources and wares are collected and distributed via AI workers in the form of
+									specialized spaceships. As tradable wares are manufactured, other
+									factories use those wares to make more advanced wares and so on until all the
+									sophisticated parts needed to build a ship arrive at the top of the economic chain,
+									a shipyard. Thus, a fully stocked shipyard is the ideal outcome for the simulation.
+									<br/><br/>
+									<b>The purpose of this solo project has been to get some hands-on experience with solving the
+									challenges involved with creating a virtual world</b>. In this context, a virtual world is
+									a game world that grows and evolves with or without player input and persists regardless
+									of player presence. While my initial work on this project was for a course at my university,
+									my fascination with the topic has since brought me back to continue fleshing out the idea.
+									<br/><br/>
+									<h4>A Quick Note on Definitions</h4>
+									<ul>
+										<li>
+											In the context of this project, the word
+											<b>"resources" refers to gas clouds and asteroids</b> that exist within the game world to be mined
+											and processed into tradable wares at factories.
+										</li>
+										<li>
+											<b>Space stations are also referred to as factories</b> as they all consume either resources
+											or tradable wares to manufacture their own tradable wares.
+										</li>
+									</ul>
+
+								</div>
+
+							</div>
+						</section>
+					</div>
+
+					<div class="inner">
+						<section>
+							<div class="sectionTitle">
+								<h2>Features</h2>
+							</div>
+
+							<div class="description">
+
+								<div class="content">
+									<p>Following is a list of the features that were required to put this project together.</p>
+									<ul>
+										<li>
+											<b>A hierarchy of goods</b> ranging from basic minerals and gases, collected in space, to high-tech goods produced at the end of a series of
+											processing space stations.
+										</li>
+										<li>
+											<b>A grid system to simplify the game world object placement</b> and ensure solid performance by facilitating efficient data structures and
+											search algorithms.
+										</li>
+										<li>
+											<b>A procedurally generated resource placement system</b> to distribute gas clouds and mineral rich asteroids automatically in a way that
+											looks organic and can be adjusted to produce interesting game play scenarios.
+										</li>
+										<li>
+											<b>A production facility placement algorithm</b> that can analyze the existing resources and production facilities and determine the best
+											placement of new facilities to maximize the resource utilization across industries.
+										</li>
+										<li>
+											<b>A production facility placement algorithm</b> that can efficiently identify the best placement of new production facilities to maximize
+											resource utilization across industries.
+											Minimizes distance to all resources while maintaining a reasonable distance from other facilities.
+										</li>
+										<li>
+											<b>A Stock and Worker Management system</b> that monitors factory stock levels, places orders
+											for stock as needed, and tasks workers with fulfilling those orders.
+<!--											<b>Mining and trading spaceship AI</b> that can gather and deliver resources as needed while coordinating with all other ships to ensure no two-->
+<!--											ships will attempt to claim the same resource.-->
+										</li>
+										<li><b>Intuitive factory and worker UI</b> that provides all info required to monitor
+											the economy simulation as it plays out.</li>
+<!--										<li>A starting condition that provides a clean slate for the economy to be built on using only the aforementioned automated systems.-->
+									</ul>
+								</div>
+
+							</div>
+						</section>
+					</div>
+
+					<div class="inner">
+						<section>
+							<div class="sectionTitle">
+								<h2>Highlights</h2>
+							</div>
+
+							<div class="sectionTitle">
+								<h3>Resource Generation System</h3>
+							</div>
+
+							<div class="description">
+
+								<div class="content">
+									<p>
+										A key decision I needed to make going into this project was <b>how to handle the placement of the
+										asteroids and gas clouds</b>. As they represented both the most prominent visual feature of the game
+										and the foundation of the game's simulated economy, I needed a placement system that could
+										provide flexibility in both categories.
+										<br><br>
+										To solve this problem, I decided to build a tool that utilized procedural generation to populate
+										the game world dynamically. More specifically, a tool that uses a noise map and a suite of settings
+										to determine resource placement algorithmically.
+
+									</p>
+								</div>
+
+								<div class="image fit">
+									<video autoplay muted loop controls poster="images/ResourceGenerationDemo01_Poster.png">
+										<source src="Videos/ResourceGenerationDemo01reduced.mp4" type=video/mp4>
+									</video>
+								</div>
+
+							</div>
+
+
+
+							<div class="sectionTitle">
+								<h3>Stock Management System</h3>
+							</div>
+
+							<div class="description">
+
+								<div class="content">
+									<p>
+										To automate the game's economy, I developed an AI system that monitors stock levels
+										in each space station and manages the workforce to ensure shortages are dealt with.
+										When a resource is needed, an order is placed. The system then periodically scans for
+										other space stations that produce the needed resources, spacing out the scans to avoid
+										impacting the game's performance.
+										<br><br>
+										Once a space station is found that has the desired
+										resource in stock, an idle worker is assigned to perform the collection. When the
+										worker returns and deposits the resources, the order is marked as complete, and the
+										process begins again. All of this activity is displayed in an in-game UI so that
+										the player can see how stock is being managed.
+
+									</p>
+								</div>
+
+								<div class="image fit">
+									<video autoplay muted loop>
+										<source src="Videos/NewDockingAndOrderSystem03x265.mp4" type=video/mp4>
+									</video>
+								</div>
+
+							</div>
+
+
+
+<!--							<section class="highlights">-->
+
+<!--								<section>-->
+
+<!--									<div class="content">-->
+<!--										<div class="inner">-->
+<!--											<div class="details">-->
+<!--												<p>-->
+<!--													The resource placement is determined in two steps:-->
+<!--													<br><br>-->
+<!--													First, a Perlin noise map is generated, based on the tool's settings, which provides the pattern-->
+<!--													for the resource placement to follow. Using a grid, a series of points on the noise map are sampled,-->
+<!--													providing a value that represents the brightness at that point. Those samples provide the base-->
+<!--													values used to determine what, if any, resources would spawn at any given point.-->
+<!--													<br><br>-->
+<!--													Second, resources are each assigned a range of noise values in which it is possible for them to spawn.-->
+<!--													The resulting candidate spawn points are then filtered through a series of steps that apply a degree-->
+<!--													of randomness to ensure the placement doesn't look too organized.-->
+<!--												</p>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+
+
+
+
+<!--&lt;!&ndash;									<div class="video-container iframe">&ndash;&gt;-->
+<!--&lt;!&ndash;										<div id="video02"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+
+<!--									<div class="image">-->
+<!--										<img src="images/ResourceSpawningDemo01.png" alt="" data-position="center center" />-->
+<!--									</div>-->
+
+<!--								</section>-->
+
+<!--								<section>-->
+
+<!--									<div class="content">-->
+<!--										<div class="inner">-->
+<!--											<div class="details">-->
+<!--												<p>-->
+<!--													With the spawn locations determined,-->
+<!--													a position offset is applied to each resource's position on the grid to make their positioning appear more-->
+<!--													natural.-->
+<!--													<br><br>-->
+<!--													The result is then rendered in-editor to facilitate experimentation with immediate feedback to settings-->
+<!--													adjustments. Thus, resource distributions can be quickly and easily adjusted to find a balance between-->
+<!--													both the look of the distribution and its impact on the game's economy.-->
+<!--													<br><br>-->
+
+<!--													Finally, when the desired distribution is determined, the resource representations are converted-->
+<!--													into in-game objects at runtime (when the game is started).-->
+<!--												</p>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+
+<!--									<div class="image">-->
+<!--										<img src="images/ResourceSpawningDemo01.png" alt="" data-position="center center" />-->
+<!--									</div>-->
+
+<!--								</section>-->
+<!--							</section>-->
+						</section>
+					</div>
+
+
+
+					<div class="inner">
+						<div class="sectionTitle">
+							<h2>Results</h2>
+
+						</div>
+
+						<div class="description">
+
+							<p class="content">
+								The culmination of the systems I've developed result in a virtual economy that develops over time without player input or intervention.
+								Starting with production facilities in place and AI ships ready to work, the world immediately comes to life with mining ships gathering resources.
+							</p>
+
+<!--							<div id="player"></div>-->
+
+<!--							<div class="image fit">-->
+<!--								<iframe id="player"-->
+<!--										src="https://www.youtube.com/embed/P-5m1oIw5J4?autoplay=1"-->
+<!--										title="YouTube video player"-->
+<!--										frameborder="0"-->
+<!--										style="border: solid 4px #ffffff"-->
+<!--										allow="-->
+<!--											accelerometer;-->
+<!--											autoplay;-->
+<!--											clipboard-write;-->
+<!--											encrypted-media;-->
+<!--											gyroscope;-->
+<!--											picture-in-picture;-->
+<!--											web-share"-->
+<!--										allowfullscreen>-->
+<!--								</iframe>-->
+<!--							</div>-->
+
+<!--This is the YouTube link example.-->
+<!--							<div class="video-container full">-->
+<!--								<div id="video01"></div>-->
+<!--							</div>-->
+
+							<div class="image fit">
+								<video autoplay muted loop>
+									<source src="Videos/MiningActivity01x265.mp4" type=video/mp4>
+								</video>
+							</div>
+
+							<p class="content">
+								Before long, basic production facilities are in full production and cargo ships start distributing their products - bringing more advanced
+								industries online. Eventually, high-end products are being manufactured and the game world buzzes with activity as dozens of ships busy themselves
+								keeping their respective industries fed.
+								<br/><br/>
+								This process culminates with a shipyard receiving all the high-end products required to manufacture new ships.
+							</p>
+
+							<div class="image fit">
+								<video autoplay muted loop>
+									<source src="Videos/MiningActivity01x265.mp4" type=video/mp4>
+								</video>
+							</div>
+
+						</div>
+
+
+						<div class="sectionTitle">
+							<h2>Experience Gained</h2>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+								<p>This project has been, and continues to be, a fantastic source of learning for me.
+									This includes working in Unity, both in-editor development and writing custom editor
+									code, and developing game functionality through custom scripts in C#.
+									There have been so many challenges both big and small and each has been its own little
+									adventure with struggles, epiphanies, and eventual triumphs.
+								<br />
+								Following is list of many of the development aspects that I got hands-on experience with:</p>
+								<ul>
+									<li> <b>UI development</b>, including animations, interactive elements, and UI attached to moving objects within the game world.</li>
+									<li> <b>Building chained animations with DoTween</b> to enhance game feel.</li>
+									<li> <b>Prototyping with ProBuilder</b> and assigning materials and colors at runtime.</li>
+									<li> <b>Using Particle Systems</b> to create mining effects, collection handled by drawing particles to a collider with a force field and counting impacts.</li>
+									<li> <b>Navigation using Unity's NavMesh system</b>, baked at runtime after procedurally generated resources are instantiated to incorporate their static positions without the performance hit of NavMesh Obstacles.</li>
+									<li> <b>Camera layering</b> to create the illusion of a background of nebulas and planets.</li>
+									<li> <b>Built-in Renderer Post Processing</b>.</li>
+									<li> <b>Addressing performance issues with Unity's Profiler</b> both in-editor and in-game.</li>
+									<li> <b>Developed specialized logging tools</b> to streamline debugging with toggleable, class-specific and color coded console output.</li>
+									<li> <b>Developing procedural generation algorithms</b> that must perform quickly while minimizing performance impact to show results in real-time.</li>
+									<li> <b>Developing in-game searching algorithms</b> for locating resources without impacting performance.</li>
+								</ul>
+							</div>
+
+						</div>
+
+
+
+						<div class="sectionTitle">
+							<h2>Closing Remarks</h2>
+						</div>
+
+						<div class="description">
+
+							<p class="content">
+								Talk about the experience. This should be a somewhat informal take on my thoughts on
+								the project and what I've learned from it.
+							</p>
+
+						</div>
+
+						<div class="sectionTitle">
+							<h2>Contact Info</h2>
+						</div>
+					</div>
+				</div>
+
+			<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+
+							<section>
+								<ul class="icons">
+									<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<section>
+								<div class="contact-method">
+<!--									<a href="mailto:ian.ritter.cs@gmail.com" class="-->
+<!--											icon-->
+<!--											solid-->
+<!--											alt-->
+<!--											fa-envelope">-->
+<!--									</a>-->
+<!--									<h3>Email</h3>-->
+									<div>ian.ritter.cs@gmail.com</div>
+								</div>
+
+							</section>
+						</section>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+<!--						<ul class="icons">-->
+<!--							<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>-->
+<!--							<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>-->
+<!--							<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
+<!--						</ul>-->
+						<ul class="copyright">
+							<li>&copy; Ian Ritter</li>
+							<li>Built from Template by: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+		</div>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

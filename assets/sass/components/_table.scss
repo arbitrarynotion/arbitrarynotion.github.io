@@ -78,4 +78,51 @@
 				border-top: 0;
 			}
 		}
+
+		&.alt2 {
+			border-collapse: separate;
+			padding: 0;
+			margin: 0;
+
+			tbody {
+				tr {
+					td {
+						// Remove vertical line.
+						//border: solid 1px _palette(border);
+						border-left-width: 0;
+						border-top-width: 0;
+						@include debug-outline(blue);
+						padding: 0 1em 0 0;
+
+						&:first-child {
+							border-left-width: 1px;
+						}
+					}
+
+					&:first-child {
+						td {
+							border-top-width: 1px;
+						}
+					}
+
+					// Remove the tinted background that's behind every other element.
+					&:nth-child(2n + 1) {
+						background: none;
+					}
+				}
+
+				// Bold the values in the first column.
+				tr td:first-child {
+					font-weight: bold;
+				}
+			}
+
+			thead {
+				border-bottom: 0;
+			}
+
+			tfoot {
+				border-top: 0;
+			}
+		}
 	}

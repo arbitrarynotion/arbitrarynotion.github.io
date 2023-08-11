@@ -4,15 +4,25 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
 /* Type */
 
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
-		font-size: 17pt;
+		font-size: 16pt;
 		font-weight: _font(weight);
 		letter-spacing: _font(letter-spacing);
 		line-height: 1.65;
+
+		.details {
+			font-size: 15pt;
+			margin: 0;
+			//@include debug-outline(yellow)
+		}
 
 		@include breakpoint('<=xlarge') {
 			font-size: 14pt;
@@ -56,14 +66,17 @@
 	}
 
 	p {
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 0.5*_size(element-margin) 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Orbitron';
+		letter-spacing: 0.125em;
 		color: _palette(fg-bold);
 		font-weight: _font(weight-bold);
 		line-height: 1.65;
-		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		//letter-spacing: _font(letter-spacing-alt1);
+		//margin: 0 0 (_size(element-margin) * 0.5) 0;
 
 		a {
 			color: inherit;
@@ -73,10 +86,12 @@
 
 	h1 {
 		font-size: 2.5em;
+		letter-spacing: _font(letter-spacing-alt2);
 	}
 
 	h2 {
 		font-size: 1.75em;
+		letter-spacing: _font(letter-spacing-alt2);
 	}
 
 	h3 {
@@ -126,6 +141,7 @@
 		font-style: italic;
 		margin: 0 0 _size(element-margin) 0;
 		padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
+		//padding: calc(_size(element-margin) / 4) 0 calc(_size(element-margin) / 4) _size(element-margin);
 	}
 
 	code {

@@ -1,0 +1,218 @@
+/* Highlight */
+
+.sectionTitle {
+	@include highlightTitle;
+	//@include padding(0, 0);
+	background: transparent;
+	//margin-top: 1.5em;
+	//margin: 0;
+	margin-bottom: 0;
+	@include debug-outline(white);
+	text-align: center;
+	font-family: 'Orbitron';
+	font-variant: small-caps;
+	letter-spacing: 0.125em;
+
+	//.major {
+	//	margin-top: 1.5em;
+	//}
+
+	.noBackground {
+		background: blue;
+	}
+
+	//> * {
+	//	margin-top: 0;
+	//
+	//}
+
+	> h2 {
+		@include padding(0, 0);
+		margin-top: 1em;
+		@include debug-outline(yellow);
+	}
+
+	> h3, h4, h5, h6 {
+		//@include padding(0, 0);
+		margin-top: 0.5em;
+		//background: transparent;
+		background-color: desaturate(lighten(_palette(border), 4), 1);
+		@include debug-outline(blue);
+	}
+}
+
+.description {
+	padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.25*_size(element-margin) 0.5*_size(element-margin);
+	background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
+	@include debug-outline(indianred);
+
+	.content {
+		max-width: 85ch;
+		margin-left: auto;
+		margin-right: auto;
+		@include debug-outline(greenyellow);
+	}
+}
+
+
+.highlights {
+	//display: flex;
+	align-items: center;
+
+
+	.firstImage{
+		@include debug-outline(green);
+		//@include padding(2em, 0, (0, 0, 0, 0));
+		margin: 1em 0 0 0;
+	}
+
+	.middleImages{
+		@include debug-outline(rebeccapurple);
+		//@include padding(2em, 0, (0, 0, 0, 0));
+		margin: 1em 0 1em 0;
+	}
+
+	.lastImage{
+		@include debug-outline(red);
+		//@include padding(0, 0, (0, 0, 2em, 0));
+		margin: 0 0 1em 0;
+	}
+	//&:first-child {
+	//	@include padding(2em, 0, (0, 0, 0, 0));
+	//}
+//}
+//
+//.highlightsLeft {
+	border-top: 0 !important;
+
+	& + * {
+		border-top: 0 !important;
+	}
+
+	> section {
+		@include vendor('display', 'flex');
+		//@include vendor('flex-direction', 'row');
+		background-color: desaturate(lighten(_palette(bg), 0), 1);
+		@include debug-outline(purple);
+		padding: 0.25*_size(element-margin) 0.25*_size(element-margin) 0.5*_size(element-margin) 0.25*_size(element-margin);
+
+		> .image {
+			background-position: center center;
+			background-size: cover;
+			border-radius: 0;
+			display: block;
+			position: relative;
+			//width: 70%;
+			//@include debug-outline(blue);
+
+
+			img {
+				border-radius: 0;
+				display: block;
+				width: 100%;
+			}
+
+			//// Use to add a colored, but transparent filter on top of the image.
+			//// Note: works regardless of whether it's in before or after.
+			//&::before {
+			//	background: transparentize(_palette(bg), 0.1);
+			//	content: '';
+			//	display: block;
+			//	height: 100%;
+			//	left: 0;
+			//	opacity: 1;
+			//	position: absolute;
+			//	top: 0;
+			//	width: 100%;
+			//}
+		}
+
+		> .content {
+			@include vendor('display', 'flex');
+			@include vendor('flex-direction', 'column');
+			//@include vendor('justify-content', 'center');
+			@include vendor('align-items', 'center');
+			@include padding(1em, 1em);
+			@include debug-outline(lightblue);
+			//width: 30%;
+
+			> .inner {
+				margin: 0 auto;
+				max-width: 100%;
+				width: _size(inner);
+			}
+		}
+
+		&:nth-child(2n) {
+			@include vendor('flex-direction', 'row-reverse');
+			background-color: desaturate(lighten(_palette(bg-alt), 4), 2);
+
+			> .content {
+				@include vendor('align-items', 'flex-end');
+			}
+		}
+
+		&:last-child {
+			padding: 0.25*_size(element-margin) 0.25*_size(element-margin) 2*_size(element-margin) 0.25*_size(element-margin);
+
+		}
+
+	}
+
+	> section {
+		> .image {
+			width: 70%;
+		}
+
+		> .content {
+			width: 30%;
+		}
+	}
+
+	@include breakpoint('<=xlarge') {
+		> section {
+			> .image {
+				width: 70%;
+			}
+
+			> .content {
+				width: 30%;
+			}
+		}
+	}
+
+	@include breakpoint('<=large') {
+		> section {
+			> .image {
+				width: 60%;
+			}
+
+			> .content {
+				width: 40%;
+			}
+		}
+	}
+
+	@include breakpoint('<=medium') {
+		> section {
+			display: block;
+
+			> .image {
+				width: 100%;
+			}
+
+			> .content {
+				@include padding(4em, 3em);
+				width: 100%;
+			}
+		}
+	}
+
+	@include breakpoint('<=small') {
+		> section {
+			> .content {
+				@include padding(3em, 1.5em);
+			}
+		}
+	}
+}

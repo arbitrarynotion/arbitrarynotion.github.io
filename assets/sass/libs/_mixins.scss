@@ -24,7 +24,7 @@
 		@if ($category == brands) {
 			font-family: 'Font Awesome 5 Brands';
 		}
-		@elseif ($category == solid) {
+		@else if ($category == solid) {
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
 		}
@@ -58,6 +58,7 @@
 
 }
 
+
 /// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
 /// @param {string} $svg SVG data URL.
 /// @return {string} Encoded SVG data URL.
@@ -76,3 +77,20 @@
 	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
 
 }
+
+
+//@mixin debug-outline-custom($thickness, $color) {
+//	// Use outline instead of border as it doesn't add extra padding.
+//	outline: #{str-replace('#{$thickness}px', ' ', '')} solid $color !important;
+//}
+
+@mixin debug-outline($color) {
+	// Use outline instead of border as it doesn't add extra padding.
+	//outline: 4px solid $color !important;
+	//border: 4px solid $color !important;
+}
+
+//@mixin debug-border($color) {
+//	// Use outline instead of border as it doesn't add extra padding.
+//	//border: 4px solid $color !important;
+//}

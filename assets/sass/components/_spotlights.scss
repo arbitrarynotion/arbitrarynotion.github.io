@@ -17,6 +17,7 @@
 			@include vendor('display', 'flex');
 			@include vendor('flex-direction', 'row');
 			background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
+			@include debug-outline(purple);
 
 			> .image {
 				background-position: center center;
@@ -25,6 +26,7 @@
 				display: block;
 				position: relative;
 				width: 30%;
+				@include debug-outline(blue);
 
 				img {
 					border-radius: 0;

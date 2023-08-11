@@ -7,17 +7,27 @@
 /* Contact Method */
 
 	.contact-method {
-		margin: 0 0 _size(element-margin) 0;
-		padding-left: 3.25em;
+		//margin: 0 0 _size(element-margin) 0;
+		//padding-left: 3.25em;
+		padding-bottom: 1em;
 		position: relative;
+		//width: 40%;
+		@include debug-outline(blue);
 
+		// Place the icon to the left of the content
 		.icon {
 			left: 0;
 			position: absolute;
 			top: 0;
+			@include debug-outline(purple);
 		}
 
 		h3 {
+			//margin: 0 0 (_size(element-margin) * 0.25) 0;
+		}
+
+		a {
 			margin: 0 0 (_size(element-margin) * 0.25) 0;
+			padding-top: 2em;
 		}
 	}

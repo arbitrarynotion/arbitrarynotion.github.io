@@ -7,60 +7,93 @@
 /* Banner */
 
 	#banner {
+		@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
 		@include vendor('background-image', 'url("../../images/banner.jpg")');
-		@include vendor('display', 'flex');
+
+		// This provides the top padding to fit the menu bar.
 		@include padding(4em, 0, (2em, 0, 0, 0));
+
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		border-bottom: 0 !important;
+		//border-bottom: 0 !important;
+
 		cursor: default;
-		height: 60vh;
+
 		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
+
 		position: relative;
+		overflow: hidden;
+		height: 80vh;
+		//max-height: 32em;
+		//min-height: 22em;
+
 		top: -3.25em;
+
+
+		@include debug-outline(red);
 
 		&:after {
 			@include vendor('transition', 'opacity #{_duration(banner)} ease');
 			@include vendor('transition-delay', '0.75s');
 			@include vendor('pointer-events', 'none');
+
 			background-color: _palette(bg);
+
 			content: '';
+
 			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0.85;
+
 			position: absolute;
-			top: 0;
+			height: 100%;
 			width: 100%;
+
+			top: 0;
+			left: 0;
+
+			opacity: 0.45;
+
 			z-index: 1;
+			@include debug-outline(red);
+
 		}
 
 		h1 {
 			font-size: 3.25em;
+			text-align: center;
+			//flex: 1;
 		}
 
 		> .inner {
-			@include vendor('transition', (
-				'opacity 1.5s ease',
-				'transform 0.5s ease-out',
-				'filter 0.5s ease',
-				'-webkit-filter 0.5s ease'
-			));
+			@include debug-outline(purple);
+			@include vendor('transition',
+				(
+					'opacity 1.5s ease',
+					'transform 0.5s ease-out',
+					'filter 0.5s ease',
+					'-webkit-filter 0.5s ease'
+				)
+			);
+			//width: 50%;
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
 
 			.image {
 				display: none;
+				//@include debug-outline(orange);
+			}
+
+			.video {
+				display: none;
 			}
 
 			header {
 				width: auto;
+				@include debug-outline(deepskyblue);
+
 
 				> :first-child {
 					width: auto;
@@ -73,16 +106,49 @@
 
 			.content {
 				@include vendor('display', 'flex');
+				@include vendor('justify-content', 'flex-end');
 				@include vendor('align-items', 'center');
-				margin: 0 0 _size(element-margin) 0;
+				margin: 0 0 3*_size(element-margin) 0;
+				align-content: center;
+
+				@include debug-outline(orange);
+				//text-align: center;
+
+				.projectStats{
+					@include vendor('display', 'flex');
+					@include vendor('justify-content', 'center');
+
+					@include debug-outline(yellow);
+					//max-width: 45%;
+					padding: 0;
+					//margin: 2em 0;
+
+					> .table-wrapper{
+						justify-self: center;
+						//margin: 2em;
+						@include debug-outline(cyan);
+						margin: 0 !important;
+						padding: 0 !important;
+					}
+				}
+
+				ul{
+					@include debug-outline(yellow);
+					justify-content: center;
+				}
 
 				> * {
 					margin-right: 1.5em;
 					margin-bottom: 0;
+
+					flex: 1;
 				}
 
 				> :last-child {
 					margin-right: 0;
+
+					//@include debug-border(4, red);
+					flex: 1;
 				}
 
 				p {
@@ -90,6 +156,8 @@
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
+
+					@include debug-outline(greenyellow);
 				}
 			}
 		}
@@ -98,6 +166,7 @@
 			height: 75vh;
 			min-height: 30em;
 			max-height: 50em;
+			@include debug-outline(orange);
 
 			&.alt {
 				opacity: 0.75;
@@ -124,7 +193,9 @@
 		}
 
 		@include breakpoint('<=large') {
-			background-attachment: scroll;
+			// Commenting this out turned off the annoying and buggy scrolling that
+			// happened when the window was anything but "large".
+			//background-attachment: scroll;
 		}
 
 		@include breakpoint('<=small') {

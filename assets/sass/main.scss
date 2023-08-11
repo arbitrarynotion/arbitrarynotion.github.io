@@ -6,7 +6,6 @@
 @import 'libs/html-grid';
 @import 'fontawesome-all.min.css';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');
-
 /*
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
@@ -28,17 +27,68 @@
 
 	@mixin inner {
 		> .inner {
-			@include padding(4em, 0);
+			//@include padding(2em, 0);
 			margin: 0 auto;
 			max-width: _size(inner);
 			width: calc(100% - 6em);
+			@include debug-outline(green);
 
 			@include breakpoint('<=small') {
-				@include padding(3em, 0);
+				//@include padding(3em, 0);
 				width: calc(100% - 3em);
 			}
 		}
 	}
+
+	@mixin highlightTitle {
+		background-color: _palette(bg-alt2);
+		@include debug-outline(purple)
+	}
+
+// Debug
+//	This will highlight any links that go nowhere in red.
+	a[href="#"] {
+		color: red !important;
+		//background: yellow !important;
+	}
+
+/* Icon */
+
+	.icon {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1;
+			text-transform: none !important;
+			font-family: 'Font Awesome 5 Free', serif;
+			font-weight: 400;
+			//@include debug-outline(red)
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+		.icon:before {
+			line-height: inherit;
+		}
+
+		.icon.solid:before {
+			font-weight: 900;
+		}
+
+		.icon.brands:before {
+			font-family: 'Font Awesome 5 Brands', serif;
+		}
 
 // Base.
 
@@ -63,12 +113,15 @@
 	@import 'components/tiles';
 	@import 'components/contact-method';
 	@import 'components/spotlights';
+	@import 'components/video';
+
 
 // Layout.
 
 	@import 'layout/header';
 	@import 'layout/banner';
 	@import 'layout/main';
+	@import 'layout/highlights';
 	@import 'layout/contact';
 	@import 'layout/footer';
 	@import 'layout/wrapper';

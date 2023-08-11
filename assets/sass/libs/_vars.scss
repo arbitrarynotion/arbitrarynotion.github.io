@@ -24,14 +24,18 @@
 		family-fixed:		('Courier New', monospace),
 		weight:				300,
 		weight-bold:		600,
-		letter-spacing:		0.025em,
-		letter-spacing-alt:	0.25em
+		letter-spacing:		0,
+		letter-spacing-alt1:0.025em,
+		letter-spacing-alt2:0.125em,
+		letter-spacing-alt3:0.25em
 	);
 
 // Palette.
 	$palette: (
 		bg:					#242943,
 		bg-alt:				#2a2f4a,
+		bg-alt2: 			#23263d,
+		bg-alt3: 			#131521,
 		fg:					#ffffff,
 		fg-bold:			#ffffff,
 		fg-light:			rgba(244,244,255,0.2),
