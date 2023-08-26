@@ -6,35 +6,48 @@
 -->
 <html lang="en-us">
 	<head>
-		<title>Ian Ritter's Portfolio</title>
+		<title>Ian Ritter's GameDev Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500&family=Libre+Baskerville&family=PT+Serif&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500&family=Libre+Baskerville&family=PT+Serif&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
 	</head>
 	<body class="is-preload">
+
 
 	<!-- Wrapper -->
 		<div id="wrapper">
 
 		<!-- Header -->
-			<header id="header" class="alt reveal style2">
+			<header id="header" class="alt style8">
 				<a href="index.html" class="logo"><strong>Ian Ritter</strong> <span>Portfolio</span></a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
 			</header>
 
+			<video class="video-bg" autoplay muted loop>
+				<source src="videos/SpaceSimBannerGasMining01.mp4" type="video/mp4">
+			</video>
+
 		<!-- Menu -->
 			<nav id="menu">
 				<ul class="links">
-<!--					<li><a href="indexOld.html">Home</a></li>-->
-<!--					<li><a href="landing.html">Home</a></li>-->
+<!--					<li><a href="index.html">Home</a></li>-->
+					<li><a href="aboutMe.html">About Me</a></li>
+					<li><a href="contact.html">Contact</a></li>
 					<li><b>Projects</b></li>
 					<li><a href="project1.html">Space Sim</a></li>
-<!--					<li><a href="elements.html">Elements</a></li>-->
+					<li><a href="project2.html">ACE UI Framework</a></li>
+					<li><a href="project3.html">Procedural Generation Research</a></li>
 				</ul>
 <!--				<ul class="actions stacked">-->
 <!--					<li><a href="#" class="button primary fit">Get Started</a></li>-->
@@ -44,180 +57,275 @@
 
 			<!-- Banner -->
 			<!-- Note: The "styleN" class below should match that of the header element. -->
-			<div class="hero">
-				<video class="video-bg" autoplay muted loop>
-					<source src="Videos/SpaceSim_Banner01CrossFadedLoop.mp4" type="video/mp4">
-				</video>
 
-				<div class="introBox">
-					<div class="introText">
-						<header>
-							<h1>Hi, I'm Ian.</h1>
-						</header>
-						<h4>I'm a Unity Game and Tools Developer</h4>
-						with a focus on AI and Procedural Generation.
+			<section id="banner">
+				<div class="inner">
 
-					</div>
-
-					<div class="introPortrait">
+					<div class="introBox">
+						<div class="introPortrait">
 						<span class="image fit">
 							<img src="images/SelfPic_01_closeup.jpg" alt="" />
 						</span>
+						</div>
+						<div class="introText">
+							<header>
+								<h1>Hi, I'm Ian.</h1>
+							</header>
+
+							<h4>A video game and tools developer</h4> making games and game dev more accessible.
+
+						</div>
+
 					</div>
+
+
 				</div>
+			</section>
 
+		<!-- Main -->
+			<div id="main" class="alt">
 
-			</div>
-<!--			<section id="banner">-->
-<!--				<div class="inner">-->
+				<div class="inner">
 
-<!--&lt;!&ndash;					<span class="image">&ndash;&gt;-->
-<!--&lt;!&ndash;						<img src="images/SpaceSim_Image_01.png" alt="" />&ndash;&gt;-->
-<!--&lt;!&ndash;					</span>&ndash;&gt;-->
-
-
-
-<!--					<section>-->
-<!--&lt;!&ndash;						<header class="major">&ndash;&gt;-->
-<!--&lt;!&ndash;							<div class="sectionTitle">&ndash;&gt;-->
-<!--&lt;!&ndash;								&lt;!&ndash;							<div class="noBackground">&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;								<h1>Hi, I'm Ian</h1>&ndash;&gt;-->
-<!--&lt;!&ndash;								&lt;!&ndash;							</div>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;							</div>&ndash;&gt;-->
-<!--&lt;!&ndash;						</header>&ndash;&gt;-->
-<!--&lt;!&ndash;						<div class="sectionTitle">&ndash;&gt;-->
-<!--&lt;!&ndash;							<h4>I'm a Unity Game and Tools Developer</h4>&ndash;&gt;-->
-<!--&lt;!&ndash;							with a focus on AI and Procedural Generation.&ndash;&gt;-->
-<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;						<div class="image">&ndash;&gt;-->
-<!--&lt;!&ndash;							<img src="images/SelfPic_01_closeup.jpg" alt="" />&ndash;&gt;-->
-<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-
-<!--						<div class="hero">-->
-<!--							<video class="video-bg" autoplay muted loop>-->
-<!--								<source src="Videos/SpaceSim_Banner01CrossFadedLoop.mp4" type="video/mp4">-->
-<!--							</video>-->
-
-<!--							<div class="introBox">-->
-<!--								<div class="introText">-->
-<!--									<header>-->
-<!--										<h1>Hi, I'm Ian.</h1>-->
-<!--									</header>-->
-<!--									<h4>I'm a Unity Game and Tools Developer</h4>-->
-<!--									with a focus on AI and Procedural Generation.-->
-
-<!--								</div>-->
-
-<!--								<div class="introPortrait">-->
-<!--						<span class="image fit">-->
-<!--							<img src="images/SelfPic_01_closeup.jpg" alt="" />-->
-<!--						</span>-->
-<!--								</div>-->
-<!--							</div>-->
-
-
-<!--						</div>-->
-
-<!--					</section>-->
-<!--&lt;!&ndash;					<header class="major sectionTitle"><h1>&#128516 Space Sim &#128516</h1></header>&ndash;&gt;-->
-
-
-
-<!--				</div>-->
-
-
-
-<!--&lt;!&ndash;				<div class="image fit">&ndash;&gt;-->
-<!--&lt;!&ndash;					<img src="images/SelfPic_01_closeup.jpg" alt="" />&ndash;&gt;-->
-<!--&lt;!&ndash;				</div>&ndash;&gt;-->
-
-<!--&lt;!&ndash;				<div class="portrait">&ndash;&gt;-->
-<!--&lt;!&ndash;					<span class="image fit">&ndash;&gt;-->
-<!--&lt;!&ndash;						<img src="images/SelfPic_01_closeup.jpg" alt="" />&ndash;&gt;-->
-<!--&lt;!&ndash;					</span>&ndash;&gt;-->
-<!--&lt;!&ndash;				</div>&ndash;&gt;-->
-<!--			</section>-->
-
-			<!-- Main -->
-				<div id="main" class="alt">
-
-					<div class="inner">
-						<section>
-							<div class="sectionTitle">
-								<h2>Introduction</h2>
-							</div>
-
-							<div class="description">
-
-								<div class="content">
-									Hello there!
-									<br/><br/>
-									This website is currently under construction and is online only for testing purposes.
-
-								</div>
-
-							</div>
-						</section>
-
-
-
+					<section class="sectionBlock">
 						<div class="sectionTitle">
-							<h2>Contact Info</h2>
+							<h2>What Can I Do For You?</h2>
 						</div>
 
 						<div class="description">
 
-							<p class="content">
-								Let's develop games together!
-							</p>
+							<div class="content">
+								I'm a <b>game developer with a Bachelor's Degree in Computer Science</b> (GPA 3.86, Cum Laude),
+								<b>several years of experience working in Unity</b>, and some basic training in Unreal.
+								<br /><br />
+
+								<b>I have hands-on experience building systems that utilize Procedural Generation and AI and building
+									tools that emphasize Accessibility</b>.
+								<br /><br />
+
+								The majority of my recent coding work has been with <b>Object Orient Programming in C#</b>
+								though I also have experience with Java, C, C++, with several other languages I've
+								touched on as needed.
+								<br /><br />
+
+								Looking for a quick summary of what aspects of game dev I have experience with? Click the button below
+								to jump to my Experience Summary.
+								<!--								Check out my <a href="#experience" class="icon solid solo fa-arrow-down scrolly"><b> Experience Summary</b></a> below.-->
+								<br /><br />
+								<div class="buttonBox centered">
+									<a href="#experience" class="button scrolly">Experience Summary</a>
+								</div>
+
+								<br />
+
+								I strive to write code that is clean, consistent, easy to read, and easy to maintain. However,
+								as actual application of those ideals can depend on the team and the situation, I also strive to be flexible,
+								inclusive, and open to new ideas.
+								<br /><br />
+
+								Click the button below to learn more about me. &#128513;
+								<br /><br />
+								<div class="buttonBox centered">
+									<a href="aboutMe.html" class="button">About Me</a>
+								</div>
+<!--								<div class="buttonBox">-->
+<!--									<a href="aboutMe.html" class="button">About Me</a>-->
+<!--								</div>-->
+<!--								<br /><br />-->
+<!--								<a href="#experience" class="button icon solid solo fa-arrow-down scrolly">Experience</a>-->
+
+							</div>
 
 						</div>
-					</div>
-				</div>
+					</section>
 
-			<!-- Contact -->
-				<section id="contact">
-					<div class="inner">
-						<section class="split">
+
+
+					<section class="sectionBlock">
+						<div class="sectionTitle">
+							<h2>Featured Work</h2>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+<!--								<p>-->
+<!--									A bit of text to set up my projects section.-->
+<!--								</p>-->
+
+								As jumping straight into employment wasn't an option upon my graduation, <b>I took on the challenge
+								of expanding my game dev and coding knowledge independently as my full time job</b>, challenging myself to
+								grow and gain practical experience through solo projects.
+								<br /><br />
+								Now that my circumstances have
+								changed, <b>I'm looking forward to joining a great game or tools dev team</b> and I'm thrilled to present
+								some of my best projects below.
+							</div>
+
+						</div>
+
+						<section id="two" class="spotlights">
 							<section>
-								<ul class="icons">
-									<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<section>
-								<div class="contact-method">
-<!--									<a href="mailto:ian.ritter.cs@gmail.com" class="-->
-<!--											icon-->
-<!--											solid-->
-<!--											alt-->
-<!--											fa-envelope">-->
-<!--									</a>-->
-<!--									<h3>Email</h3>-->
-									<div>ian.ritter.cs@gmail.com</div>
+<!--								<a href="project1.html" class="image">-->
+<!--									<img src="images/pic08_576x515.jpg" alt="" data-position="center center" />-->
+<!--								</a>-->
+
+								<div class="videoSpotlightBox">
+									<video autoplay muted loop>
+										<source src="videos/SpaceSimIconx265.mp4" type="video/mp4">
+									</video>
+								</div>
+
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h3>Space Sim</h3>
+										</header>
+<!--										<p>A brief explanation of my Space Sim Project.</p>-->
+										<p><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit</b>. Ad cupiditate
+											deleniti dicta, doloremque dolorum error, laudantium maxime minus nobis
+											omnis quaerat rem tempore veritatis vitae voluptates! Adipisci maxime quasi
+											reiciendis doloremque dolorum error, laudantium maxime minus nobis
+											omnis quaerat rem tempore veritatis!</p>
+
+									</div>
+									<div class="buttonBox">
+										<a href="project1.html" class="button">More Details!</a>
+									</div>
+
 								</div>
 
 							</section>
-						</section>
-					</div>
-				</section>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-<!--						<ul class="icons">-->
-<!--							<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>-->
-<!--							<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>-->
-<!--							<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
-<!--						</ul>-->
-						<ul class="copyright">
-							<li>&copy; Ian Ritter</li>
-							<li>Built from Template by: <a href="https://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</footer>
+							<section>
+								<a href="project2.html" class="image">
+									<img src="images/pic09_576x515.jpg" alt="" data-position="top center" />
+								</a>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h3>ACE UI Framework</h3>
+										</header>
+<!--										<p>A brief explanation of my ACE UI Framework Project.</p>-->
+										<p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit. Ad cupiditate
+											deleniti dicta</b>, doloremque dolorum error, laudantium maxime minus nobis
+											omnis quaerat rem tempore veritatis vitae voluptates! Adipisci maxime quasi
+											reiciendis!</p>
+									</div>
+									<div class="buttonBox">
+										<a href="project2.html" class="button">Learn More</a>
+									</div>
+								</div>
+							</section>
+
+							<section>
+								<a href="project3.html" class="image">
+									<img src="images/pic10_576x515.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content">
+									<div class="inner">
+										<header class="major">
+											<h3>Procedural Generation Research</h3>
+										</header>
+<!--										<p>A brief explanation of my Procedural Generation Research Project.</p>-->
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <b>Adipisci autem enim
+											officiis omnis quam recusandae sequi ut</b>. Accusamus, architecto culpa debitis
+											dolorum earum ex magni minima numquam, placeat quia, tempore? Delectus impedit odio
+											quas quo. Consequuntur dolorem itaque nobis quam vitae
+											voluptas.</p>
+									</div>
+									<div class="buttonBox">
+										<a href="project3.html" class="button">Closer Look</a>
+									</div>
+								</div>
+							</section>
+						</section>
+
+					</section>
+
+					<section id="experience" class="sectionBlock">
+
+						<div class="sectionTitle">
+							<h2>Experience Summary</h2>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+								<p>Following is list of many of the aspects of Unity game and tools development that I have
+									experience with. Note that this list is not comprehensive.</p>
+								<ul>
+									<li> <b>UI development</b>, including animations, interactive elements, and UI attached to moving objects within the game world.</li>
+									<li> <b>Building chained animations with DoTween</b> to enhance game feel.</li>
+									<li> <b>Prototyping with ProBuilder</b> and assigning materials and colors at runtime.</li>
+									<li> <b>Using Particle Systems</b> to create mining effects, collection handled by drawing particles to a collider with a force field and counting impacts.</li>
+									<li> <b>Navigation using Unity's NavMesh system</b>, baked at runtime after procedurally generated resources are instantiated to incorporate their static positions without the performance hit of NavMesh Obstacles.</li>
+									<li> <b>Camera layering</b> to create the illusion of a background of nebulas and planets.</li>
+									<li> <b>Built-in Renderer Post Processing</b>.</li>
+									<li> <b>Addressing performance issues with Unity's Profiler</b> both in-editor and in-game.</li>
+									<li> <b>Developed specialized logging tools</b> to streamline debugging with toggleable, class-specific and color coded console output.</li>
+									<li> <b>Developing procedural generation algorithms</b> that must perform quickly while minimizing performance impact to show results in real-time.</li>
+									<li> <b>Developing in-game searching algorithms</b> for locating resources without impacting performance.</li>
+								</ul>
+							</div>
+
+						</div>
+					</section>
+
+
+					<section class="sectionBlock">
+
+						<div class="sectionTitle">
+							<h2>Contact</h2>
+						</div>
+
+						<div class="description">
+							<p class="content" style="text-align: center">
+								Think I'd be a great match for your team? Have questions about my projects or work experience?
+								<br />
+								Feel free to reach out! &#128578;
+							</p>
+						</div>
+
+					<!-- Contact -->
+						<section id="contact">
+							<div class="inner">
+								<section class="split">
+
+									<section>
+										<ul class="icons">
+											<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github">
+												<span class="label">GitHub</span></a></li>
+											<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+										</ul>
+									</section>
+
+									<section>
+										<div class="contact-method">
+											<div>ian.ritter.cs@gmail.com</div>
+										</div>
+									</section>
+
+								</section>
+							</div>
+						</section>
+					</section>
+
+
+				</div>
+			</div>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Ian Ritter</li>
+						<li>Built from Template by: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
 
 		</div>
 

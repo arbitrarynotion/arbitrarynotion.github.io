@@ -37,10 +37,11 @@
 		}
 
 		&.fit {
+			//@include debug-outline(orange);
+
 			display: block;
 			//margin: 0 0 _size(element-margin) 0;
 			width: 100%;
-			@include debug-outline(orange);
 
 			img {
 				width: 100%;

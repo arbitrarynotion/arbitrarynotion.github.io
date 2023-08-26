@@ -25,13 +25,21 @@
 
 // Mixins.
 
+	// Inner is the main panel that all elements are drawn within.
+	// It's primary purpose is to maintain a consistent width for the website.
 	@mixin inner {
 		> .inner {
+			@include debug-outline(green);
+
 			//@include padding(2em, 0);
+			//z-index: 5;
 			margin: 0 auto;
 			max-width: _size(inner);
 			width: calc(100% - 6em);
-			@include debug-outline(green);
+
+			.alt {
+				background-color: #131521;
+			}
 
 			@include breakpoint('<=small') {
 				//@include padding(3em, 0);
@@ -41,12 +49,12 @@
 	}
 
 	@mixin highlightTitle {
+		@include debug-outline(purple);
+
 		background-color: _palette(bg-alt2);
-		@include debug-outline(purple)
 	}
 
-// Debug
-//	This will highlight any links that go nowhere in red.
+	// Debug: This will highlight any links that go nowhere in red.
 	a[href="#"] {
 		color: red !important;
 		//background: yellow !important;
@@ -71,7 +79,6 @@
 			text-transform: none !important;
 			font-family: 'Font Awesome 5 Free', serif;
 			font-weight: 400;
-			//@include debug-outline(red)
 		}
 
 		.icon > .label {
@@ -114,6 +121,7 @@
 	@import 'components/contact-method';
 	@import 'components/spotlights';
 	@import 'components/video';
+	@import 'components/intro';
 
 
 // Layout.

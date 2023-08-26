@@ -7,58 +7,76 @@
 /* Banner */
 
 	#banner {
+		@include debug-outline(red);
+
 		@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../../images/banner.jpg")');
+		//@include vendor('background-image', 'url("../../images/banner.jpg")');
 
 		// This provides the top padding to fit the menu bar.
-		@include padding(4em, 0, (2em, 0, 0, 0));
+		//@include padding(4em, 0, (2em, 0, 0, 0));
 
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		//background-attachment: fixed;
+		//background-position: center;
+		//background-repeat: no-repeat;
+		//background-size: cover;
+
 		//border-bottom: 0 !important;
 
 		cursor: default;
 
-		margin-bottom: -3.25em;
+		//margin-bottom: -3.25em;
+		margin-bottom: -1 * _size(menu-offset);
 
 		position: relative;
 		overflow: hidden;
-		height: 80vh;
+		height: _size(banner-height);
 		//max-height: 32em;
 		//min-height: 22em;
 
-		top: -3.25em;
+		//top: -3.25em;
+		//top: -2.25em;
+		top: -1 * _size(menu-offset);
 
 
-		@include debug-outline(red);
-
-		&:after {
-			@include vendor('transition', 'opacity #{_duration(banner)} ease');
-			@include vendor('transition-delay', '0.75s');
-			@include vendor('pointer-events', 'none');
-
-			background-color: _palette(bg);
-
-			content: '';
-
-			display: block;
-
-			position: absolute;
-			height: 100%;
-			width: 100%;
-
-			top: 0;
-			left: 0;
-
-			opacity: 0.45;
-
-			z-index: 1;
-			@include debug-outline(red);
-
-		}
+		//// This is a filter placed over the top of the background video.
+		//&:after {
+		//	//@include debug-outline(red);
+		//
+		//	//@include vendor('transition', 'opacity #{_duration(banner)} ease');
+		//	//@include vendor('transition-delay', '0.75s');
+		//	@include vendor('pointer-events', 'none');
+		//
+		//	//background-image: radial-gradient(
+		//	//				rgba(70, 63, 127, .1),
+		//	//				rgba(0, 0, 0, 0.6)
+		//	//);
+		//
+		//	//background-image: linear-gradient(
+		//	//				rgba(70, 63, 127, .1),
+		//	//				rgba(0, 0, 0, 0.6)
+		//	//);
+		//
+		//	background-color: _palette(bg);
+		//
+		//	// Content must be specified, even as an empty string, or this element will have a height of 0.
+		//	content: '';
+		//
+		//	display: block;
+		//
+		//	// Setting position to fixed ensures that the filter doesn't scroll with the page.
+		//	position: fixed;
+		//	height: 100%;
+		//	width: 100%;
+		//
+		//	top: 0;
+		//	left: 0;
+		//
+		//	opacity: _size(banner-filter-opacity);
+		//
+		//	z-index: -1;
+		//
+		//}
 
 		h1 {
 			font-size: 3.25em;
@@ -68,6 +86,7 @@
 
 		> .inner {
 			@include debug-outline(purple);
+
 			@include vendor('transition',
 				(
 					'opacity 1.5s ease',
@@ -79,15 +98,21 @@
 			//width: 50%;
 			padding: 0 !important;
 			position: relative;
-			z-index: 2;
+			//z-index: 60;
 
-			.image {
-				display: none;
-				//@include debug-outline(orange);
-			}
 
-			.video {
-				display: none;
+			.contentBox {
+				background-color: rgb(19, 21, 33, 0.45);
+
+				//margin: 0 auto 3*_size(element-margin) auto;
+				margin: 0 auto 0 auto;
+
+				width: max-content;
+				max-width: 100%;
+
+				padding: 1em 1em 2em 1em;
+
+				border-radius: _size(menu-border-radius);
 			}
 
 			header {
@@ -105,20 +130,23 @@
 			}
 
 			.content {
+				@include debug-outline(orange);
+
 				@include vendor('display', 'flex');
 				@include vendor('justify-content', 'flex-end');
 				@include vendor('align-items', 'center');
-				margin: 0 0 3*_size(element-margin) 0;
 				align-content: center;
+				position: relative;
+				z-index: 500;
 
-				@include debug-outline(orange);
 				//text-align: center;
 
 				.projectStats{
+					@include debug-outline(yellow);
+
 					@include vendor('display', 'flex');
 					@include vendor('justify-content', 'center');
 
-					@include debug-outline(yellow);
 					//max-width: 45%;
 					padding: 0;
 					//margin: 2em 0;
@@ -129,6 +157,10 @@
 						@include debug-outline(cyan);
 						margin: 0 !important;
 						padding: 0 !important;
+
+						font-variant: small-caps;
+						letter-spacing: 0.03em;
+
 					}
 				}
 
@@ -152,12 +184,12 @@
 				}
 
 				p {
+					@include debug-outline(greenyellow);
+
 					font-size: 0.7em;
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
-
-					@include debug-outline(greenyellow);
 				}
 			}
 		}
@@ -196,6 +228,12 @@
 			// Commenting this out turned off the annoying and buggy scrolling that
 			// happened when the window was anything but "large".
 			//background-attachment: scroll;
+		}
+
+		@include breakpoint('<=medium') {
+			height: auto;
+			@include padding(4em, 0, (2em, 0, 0, 0));
+
 		}
 
 		@include breakpoint('<=small') {

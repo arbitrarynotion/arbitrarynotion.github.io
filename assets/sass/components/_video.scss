@@ -7,6 +7,23 @@ video {
 	overflow: clip;
 }
 
+
+.videoSectionBox {
+	@include debug-outline(skyblue);
+	//padding: 0 5.5em;
+	max-width: 105ch;
+	margin: 0 auto;
+	line-height: 0;
+}
+
+.videoSpotlightBox {
+	@include debug-outline(skyblue);
+	//padding: 0 5.5em;
+	max-width: 105ch;
+	margin: 0 auto;
+	line-height: 0;
+}
+
 // For YouTube, Vimeo, etc.
 // Haven't tested this yet.
 .videoWrapper {
@@ -46,108 +63,62 @@ video {
 }
 
 
-
-.hero {
-
-	@include vendor('display', 'flex');
-	@include vendor('align-items', 'center');
-	//@include vendor('background-image', 'url("../../images/banner.jpg")');
-	//display: flex;
-	//justify-content: center;
-	//align-items: center;
-	//text-align: center;
-	//place-items: center;
-	//background: rgba(0, 0, 0, 0.5);
-	background-image: radial-gradient(
-					rgba(70, 63, 127, 0.1),
-					rgba(0, 0, 0, 1)
-	);
-	color: white;
-	//margin-bottom: 100px;
-	position: relative;
-	overflow: hidden;
-	min-height: 75vh;
-
-	//background: #333856 fixed;
-
-	//margin-bottom: -3.25em;
-
-	@include debug-outline(yellow);
-
-	h1 {
-		@include debug-outline(orange);
-	}
-
-	.video-bg {
-		z-index: -1;
-		position: fixed;
-		object-fit: cover;
-		//margin-top: 3.25em;
-		//top: 50%;
-		//left: 50%;
-		//transform: translate(-50%, -50%);
-		min-width: 100%;
-		min-height: 100%;
-		overflow: hidden;
-
-		@include vendor('transition',
-			(
-				'opacity 1.5s ease',
-				'transform 0.5s ease-out',
-				'filter 0.5s ease',
-				'-webkit-filter 0.5s ease'
-			)
-		);
-
-
-		@include debug-outline(red);
-	}
-}
-
-
-
-
-.introBox {
-	//width: 50%;
-	//margin: 0 auto 0 10%;
-	@include vendor('display', 'flex');
-	@include vendor('align-items', 'center');
-	display: flex;
-	width: calc(100% - 6em);
-	margin: auto;
-	@include debug-outline(skyblue);
-
-	@include breakpoint('<=small') {
-		@include vendor('display', 'block');
-	}
-
-	.introText {
-		width: auto;
-		margin: 0 5% 0 auto;
-		@include debug-outline(purple);
-	}
-
-	.introPortrait {
-		//width: 25%;
-		//min-width: 100%;
-		//min-width: 40%;
-		//max-width: 5%;
-		width: 350px;
-		margin: 0 auto 0 0;
-		border-radius: 48px;
-
-		background-color: desaturate(lighten(_palette(bg), 0), 1);
-
-		@include breakpoint('<=small') {
-			width: 350px;
-
-		}
-
-		@include debug-outline(greenyellow);
-		img {
-			border-radius: 48px;
-		}
-	}
-}
+//.hero {
+//
+//	@include vendor('display', 'flex');
+//	@include vendor('align-items', 'center');
+//	//@include vendor('background-image', 'url("../../images/banner.jpg")');
+//	//display: flex;
+//	//justify-content: center;
+//	//align-items: center;
+//	//text-align: center;
+//	//place-items: center;
+//	//background: rgba(0, 0, 0, 0.5);
+//	content: '';
+//	background-image: radial-gradient(
+//					rgba(70, 63, 127, 0.1),
+//					rgba(0, 0, 0, .5)
+//	);
+//	color: white;
+//	//margin-bottom: 100px;
+//	position: relative;
+//	//overflow: hidden;
+//	min-height: 75vh;
+//
+//	//background: #333856 fixed;
+//
+//	margin-bottom: -1.75em;
+//
+//	@include debug-outline(yellow);
+//
+//	h1 {
+//		@include debug-outline(orange);
+//	}
+//
+//	.video-bg {
+//		z-index: -1;
+//		position: fixed;
+//		object-fit: cover;
+//		//margin-top: 3.25em;
+//		//top: 50%;
+//		//left: 50%;
+//		//transform: translate(-50%, -50%);
+//		min-width: 100%;
+//		min-height: 100%;
+//		//overflow: hidden;
+//
+//		@include vendor('transition',
+//			(
+//				'opacity 1.5s ease',
+//				'transform 0.5s ease-out',
+//				'filter 0.5s ease',
+//				'-webkit-filter 0.5s ease'
+//			)
+//		);
+//
+//
+//		@include debug-outline(red);
+//	}
+//}
 
 

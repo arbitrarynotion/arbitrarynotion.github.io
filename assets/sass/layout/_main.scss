@@ -7,10 +7,17 @@
 /* Main */
 
 	#main {
+		@include debug-outline(green);
+
 		background-color: _palette(bg-alt);
+		position: relative;
 		z-index: 50;
 
-		@include debug-outline(magenta);
+		// Ensure that the first inner element doesn't get the top margin so it aligns with the banner's bottom.
+		> .inner :first-child {
+			margin-top: 0;
+		}
+
 		> * {
 			//border-top: solid 1px _palette(border);
 
@@ -23,6 +30,12 @@
 
 		&.alt {
 			background-color: transparent;
+			//border-bottom: solid 1px _palette(border);
+		}
+
+		&.alt2 {
+			//background-color: #131521;
+			background-color: _palette(bg-alt3);
 			//border-bottom: solid 1px _palette(border);
 		}
 	}

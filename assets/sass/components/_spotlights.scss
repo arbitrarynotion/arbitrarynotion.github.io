@@ -7,6 +7,8 @@
 /* Spotlights */
 
 	.spotlights {
+		@include debug-outline(yellow);
+
 		border-top: 0 !important;
 
 		& + * {
@@ -14,60 +16,186 @@
 		}
 
 		> section {
-			@include vendor('display', 'flex');
-			@include vendor('flex-direction', 'row');
-			background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
 			@include debug-outline(purple);
 
+			@include vendor('display', 'flex');
+			@include vendor('flex-direction', 'row');
+
+			background-color: desaturate(lighten(_palette(bg-alt), 4), 2);
+
+			> .inner {
+				@include debug-outline(white);
+
+			}
+
 			> .image {
+				@include debug-outline(blue);
+
+				margin: auto 0;
+
+				display: block;
+				position: relative;
+
 				background-position: center center;
 				background-size: cover;
 				border-radius: 0;
-				display: block;
-				position: relative;
-				width: 30%;
-				@include debug-outline(blue);
+
+				width: 40%;
 
 				img {
 					border-radius: 0;
 					display: block;
 					width: 100%;
+					height: auto;
 				}
 
+				// Adds a color filter over the top of the image.
 				&:before {
-					background: transparentize(_palette(bg), 0.1);
+					//background: transparentize(_palette(bg), 0.1);
+					//background-image: linear-gradient(rgba(70, 63, 127, .1), rgba(0, 0, 0, 0.6));
+					//background-color: _palette(bg);
+					background-image: radial-gradient(
+									rgba(70, 63, 127, .1),
+									rgba(0, 0, 0, 1)
+					);
+
+					opacity: 0.4;
+
 					content: '';
 					display: block;
-					height: 100%;
-					left: 0;
-					opacity: 0;
 					position: absolute;
+
 					top: 0;
+					left: 0;
+
+					height: 100%;
+					width: 100%;
+				}
+			}
+
+			> .videoSpotlightBox {
+				position: relative;
+
+				width: 40%;
+				height: auto;
+
+				// Adds a color filter over the top of the image.
+				&:before {
+					//background: transparentize(_palette(bg), 0.1);
+					//background-image: linear-gradient(rgba(70, 63, 127, .1), rgba(0, 0, 0, 0.6));
+					//background-color: _palette(bg);
+					background-image: radial-gradient(
+									rgba(70, 63, 127, .1),
+									rgba(0, 0, 0, 1)
+					);
+
+					opacity: 0.4;
+
+					content: '';
+					display: block;
+					position: absolute;
+
+					top: 0;
+					left: 0;
+
+					height: 100%;
 					width: 100%;
 				}
 			}
 
 			> .content {
+				@include debug-outline(green);
+
 				@include vendor('display', 'flex');
 				@include vendor('flex-direction', 'column');
 				@include vendor('justify-content', 'center');
 				@include vendor('align-items', 'center');
-				@include padding(2em, 3em);
-				width: 70%;
+
+
+				//@include padding(1em, 1em);
+				//margin: 1em;
+				padding: 1em;
+
+				width: 60%;
+
 
 				> .inner {
-					margin: 0 auto;
+					@include debug-outline(teal);
+
+					@include vendor('display', 'flex');
+					@include vendor('flex-direction', 'column');
+					@include vendor('align-items', 'center');
+
+					//margin-bottom: 1em;
+					padding: 1em;
+
+					//min-height: 82%;
 					max-width: 100%;
+					height: auto;
 					width: _size(inner);
+
+					.major {
+						@include debug-outline(orange);
+
+						//width: 100%;
+
+						text-align: center;
+					}
+
+					p {
+						@include debug-outline(red);
+					}
+				}
+
+				> * {
+					//text-align: right;
+					text-align: left;
+				}
+
+				.buttonBox {
+					@include debug-outline(yellow);
+
+					@include vendor('display', 'flex');
+
+					width: 100%;
+					//min-height: 12%;
+
+					//justify-content: flex-end;
+					//justify-content: flex-start;
+					justify-content: center;
+
+					padding-right: 1em;
+					padding-bottom: 1em;
+
+					a {
+						@include debug-outline(orange);
+					}
 				}
 			}
 
+
+
 			&:nth-child(2n) {
+				@include debug-outline(skyblue);
+
 				@include vendor('flex-direction', 'row-reverse');
-				background-color: desaturate(lighten(_palette(bg-alt), 4), 2);
+				background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
 
 				> .content {
-					@include vendor('align-items', 'flex-end');
+					@include debug-outline(red);
+
+					> * {
+						//text-align: left;
+						//text-align: right;
+					}
+
+					.buttonBox {
+						//justify-content: flex-start;
+						//justify-content: flex-end;
+
+						padding-left: 1em;
+
+					}
 				}
 			}
 		}
@@ -75,6 +203,10 @@
 		@include breakpoint('<=xlarge') {
 			> section {
 				> .image {
+					width: 40%;
+				}
+
+				> .videoSpotlightBox {
 					width: 40%;
 				}
 
@@ -88,6 +220,12 @@
 			> section {
 				> .image {
 					width: 45%;
+					margin: 0 auto;
+				}
+
+				> .videoSpotlightBox {
+					width: 45%;
+					margin: 0 auto;
 				}
 
 				> .content {
@@ -102,20 +240,32 @@
 
 				> .image {
 					width: 100%;
+					//max-width: 60%;
+					min-width: 50%;
+					margin: 0 auto;
+				}
+
+				> .videoSpotlightBox {
+					width: 100%;
+					//max-width: 60%;
+					min-width: 50%;
+					margin: 0 auto;
 				}
 
 				> .content {
-					@include padding(4em, 3em);
+					//@include padding(4em, 3em);
+					padding-top: 1em;
+					padding-bottom: 1em;
 					width: 100%;
 				}
 			}
 		}
 
-		@include breakpoint('<=small') {
-			> section {
-				> .content {
-					@include padding(3em, 1.5em);
-				}
-			}
-		}
+		//@include breakpoint('<=small') {
+		//	> section {
+		//		> .content {
+		//			@include padding(3em, 1.5em);
+		//		}
+		//	}
+		//}
 	}

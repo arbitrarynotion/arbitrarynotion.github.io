@@ -16,17 +16,22 @@
 		@include vendor('display', 'flex');
 		@include vendor('justify-content', 'center');
 		@include vendor('pointer-events', 'none');
+
 		background: transparentize(_palette(bg), 0.1);
 		box-shadow: none;
-		height: 100%;
-		left: 0;
-		opacity: 0;
-		overflow: hidden;
+
 		padding: 3em 2em;
 		position: fixed;
+		left: 0;
 		top: 0;
-		visibility: hidden;
+
+		height: 100%;
 		width: 100%;
+
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+
 		z-index: _misc(z-index-base) + 2;
 
 		.inner {
@@ -43,7 +48,7 @@
 			overflow: auto;
 			text-align: center;
 			visibility: hidden;
-			width: 18em;
+			//width: 18em;
 
 			> :first-child {
 				margin-top: _size(element-margin);
@@ -55,25 +60,60 @@
 		}
 
 		ul {
-			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			@include debug-outline(blue);
+			//margin: 0 0 (_size(element-margin) * 0.5) 0;
 
 			&.links {
+				@include debug-outline(orange);
+
 				list-style: none;
 				padding: 0;
 
 				> li {
+					@include debug-outline(white);
+
+					@include vendor('justify-content', 'center');
+					@include vendor('display', 'flex');
 					padding: 0;
 
+					font-family: 'Orbitron';
+					font-variant: small-caps;
+					letter-spacing: 0.125em;
+
+					//> &:not(a) {
+					//	border-bottom: solid 1px _palette(border);
+					//}
+
+					> * {
+						flex: 1;
+						margin-bottom: 1em;
+					}
+
 					> a:not(.button) {
+						@include debug-outline(yellowgreen);
+
 						border: 0;
-						border-top: solid 1px _palette(border);
+						//border-top: solid 1px _palette(border);
 						display: block;
 						font-size: 0.8em;
 						font-weight: _font(weight-bold);
-						letter-spacing: _font(letter-spacing-alt);
-						line-height: 4em;
+						//letter-spacing: _font(letter-spacing-alt);
+						//line-height: 3em;
 						text-decoration: none;
-						text-transform: uppercase;
+						//text-transform: small-caps;
+
+
+					}
+
+					> b {
+						@include debug-outline(red);
+
+						font-size: 1.25em;
+
+						margin-top: 1em;
+						background: _palette(bg-alt);
+						//border-radius: 15pt;
+						width: auto;
 					}
 
 					> .button {
@@ -147,18 +187,29 @@
 
 	body.is-menu-visible {
 		#wrapper {
-			@include vendor('filter', 'blur(0.5em)');
+			// Note that the blur must be applied to each element within the wrapper separately.
+			// Applying it directly to the wrapper causes the video to zoom way in when it's placed in the filter's container.
+			.video-bg {
+				@include vendor('filter', 'blur(0.5em)');
+			}
+
+			div {
+				@include vendor('filter', 'blur(0.5em)');
+			}
 		}
 
 		#menu {
 			@include vendor('pointer-events', 'auto');
 			opacity: 1;
-			visibility: visible;
+			//visibility: visible;
 
 			.inner {
 				@include vendor('transform', 'none');
 				opacity: 1;
 				visibility: visible;
+				padding: 0 2.5em;
+				border-radius: _size(menu-border-radius);
+				background: _palette(bg-alt3);
 			}
 		}
 	}

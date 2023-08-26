@@ -7,13 +7,43 @@
 /* Footer */
 
 	#footer {
+		@include debug-outline(white);
+
+
+		//@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+
+
+
+		.inner {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'center');
+			margin: 0 auto;
+
+			background-color: #131521;
+
+		}
+
 		.copyright {
-			border-top: solid 1px _palette(border);
+			@include debug-outline(yellowgreen);
+			//@include vendor('display', 'flex');
+			//@include vendor('align-items', 'center');
+			margin: 0 auto;
+
+			//flex: 1;
+
+			//border-top: solid 1px _palette(border);
 			font-size: 0.8em;
 			list-style: none;
 			padding-left: 0;
 
+
+			//width: auto !important;
+			//max-width: 100% !important;
+
 			li {
+				@include debug-outline(orange);
+
 				// Adds border to left of each element.
 				border-left: solid 1px _palette(border);
 				color: _palette(fg-light);
@@ -24,6 +54,8 @@
 
 				// Skips the border if this is the first element.
 				&:first-child {
+					@include debug-outline(green);
+
 					border-left: 0;
 					margin-left: 0;
 					padding-left: 0;

@@ -1,14 +1,22 @@
 /* Highlight */
 
+.sectionBlock {
+	margin-top: 2em;
+	background-color: #131521;
+}
+
+
 .sectionTitle {
+	@include debug-outline(white);
+
 	@include highlightTitle;
 	//@include padding(0, 0);
 	background: transparent;
 	//margin-top: 1.5em;
 	//margin: 0;
 	margin-bottom: 0;
-	@include debug-outline(white);
 	text-align: center;
+
 	font-family: 'Orbitron';
 	font-variant: small-caps;
 	letter-spacing: 0.125em;
@@ -27,30 +35,61 @@
 	//}
 
 	> h2 {
-		@include padding(0, 0);
-		margin-top: 1em;
 		@include debug-outline(yellow);
+
+		@include padding(0, 0);
 	}
 
 	> h3, h4, h5, h6 {
+		@include debug-outline(blue);
+
 		//@include padding(0, 0);
-		margin-top: 0.5em;
+		//margin-top: 0.5em;
 		//background: transparent;
 		background-color: desaturate(lighten(_palette(border), 4), 1);
-		@include debug-outline(blue);
 	}
 }
 
+.headingHighlight {
+
+}
+
 .description {
-	padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.25*_size(element-margin) 0.5*_size(element-margin);
-	background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
 	@include debug-outline(indianred);
 
+	padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.25*_size(element-margin) 0.5*_size(element-margin);
+	background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
+
+	> * {
+		padding-bottom: 1em;
+		margin: 0 auto;
+	}
+
 	.content {
-		max-width: 85ch;
-		margin-left: auto;
-		margin-right: auto;
 		@include debug-outline(greenyellow);
+
+		max-width: 85ch;
+	}
+
+	.buttonBox {
+		@include debug-outline(yellow);
+
+		@include vendor('display', 'flex');
+
+		width: 100%;
+		min-height: 12%;
+
+		justify-content: flex-end;
+		//justify-content: flex-start;
+
+		a {
+			@include debug-outline(orange);
+		}
+
+		&.centered {
+			justify-content: center;
+
+		}
 	}
 }
 
@@ -62,18 +101,21 @@
 
 	.firstImage{
 		@include debug-outline(green);
+
 		//@include padding(2em, 0, (0, 0, 0, 0));
 		margin: 1em 0 0 0;
 	}
 
 	.middleImages{
 		@include debug-outline(rebeccapurple);
+
 		//@include padding(2em, 0, (0, 0, 0, 0));
 		margin: 1em 0 1em 0;
 	}
 
 	.lastImage{
 		@include debug-outline(red);
+
 		//@include padding(0, 0, (0, 0, 2em, 0));
 		margin: 0 0 1em 0;
 	}

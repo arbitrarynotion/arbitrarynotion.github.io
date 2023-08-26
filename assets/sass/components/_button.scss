@@ -17,38 +17,63 @@
 			'box-shadow #{_duration(transition)} ease-in-out',
 			'color #{_duration(transition)} ease-in-out'
 		));
-		background-color: transparent;
+		display: inline-block;
+
+		background-color: _palette(accent11);
+		//background-image: radial-gradient(
+		//				rgba(70, 63, 127, .1),
+		//				rgba(0, 0, 0, 0.6)
+		//);
+
+		background-image: linear-gradient(
+			rgba(70, 63, 127, .1),
+			rgba(0, 0, 0, 0.6)
+		);
+
+		//box-shadow: _palette(bg-alt3);
+		box-shadow: inset 0 0 0 2px desaturate(darken(_palette(highlight), 15), 5);
+
+		//background-image: radial-gradient(
+		//	rgba(70, 63, 127, .1),
+		//	rgba(0, 0, 0, 0.6)
+		//);
+		color: _palette(fg-bold);
+		//box-shadow: inset 0 0 0 2px _palette(fg-bold);
 
 		border: 0;
-		border-radius: 0;
+		//border-radius: 8pt;
+		border-radius: _size(button-border-radius);
 
-		box-shadow: inset 0 0 0 2px _palette(fg-bold);
-		color: _palette(fg-bold);
+		//font-family: 'Orbitron' !Important;
+		//font-variant: small-caps !Important;
+		//letter-spacing: 0.125em;
+
+		font-family: 'Orbitron';
+		font-variant: _font(font-variant-small-caps);
+		letter-spacing: _font(letter-spacing-alt2);
+		font-weight: _font(weight-bold);
+		font-size: 0.8em;
 
 		cursor: pointer;
 
-		display: inline-block;
 
-		font-size: 0.8em;
-		font-weight: _font(weight-bold);
+		// Set the height and line height, the text vertically centers automatically.
+		height: 2.5em;
+		line-height: 2.5em;
 
-		height: 3.5em;
+		// Add left and right padding.
+		padding: 0 1.25em;
 
-		letter-spacing: _font(letter-spacing-alt);
-		line-height: 3.5em;
-
-		padding: 0 1.75em;
-
-		text-align: center;
+		//text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
+		//text-transform: uppercase;
 
 		white-space: nowrap;
 
-		//@include debug-border(4, cyan);
-
 		&:hover, &:active {
+			// The box shadow acts as an outline.
 			box-shadow: inset 0 0 0 2px _palette(highlight);
+			background-color: _palette(bg-alt2);
 			color: _palette(highlight);
 		}
 

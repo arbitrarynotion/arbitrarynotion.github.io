@@ -11,15 +11,18 @@
 		overflow-x: hidden;
 
 		> .inner {
+			@include debug-outline(white);
+
 			@include vendor('display', 'flex');
 			padding: 0 !important;
-			@include debug-outline(white);
 			//padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.25*_size(element-margin) 0.5*_size(element-margin);
 			//background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
 			//@include debug-outline(indianred);
 
 
 			> :nth-child(2n - 1) {
+				@include debug-outline(orangered);
+
 				@include padding(4em, 0, (0, 3em, 0, 0));
 				//border-right: solid 1px _palette(border);
 				//width: 100%;
@@ -27,10 +30,11 @@
 				margin-right: auto;
 				//background-color: desaturate(lighten(_palette(bg-alt), 4), 2);
 
-				@include debug-outline(orangered)
 			}
 
 			> :nth-child(2n) {
+				@include debug-outline(orange);
+
 				padding-left: 3em;
 				width: 40%;
 			}
@@ -40,9 +44,10 @@
 				display: flex;
 
 				> * {
+					@include debug-outline(skyblue);
+
 					@include padding(0.5em, 0.5em);
 					position: relative;
-					@include debug-outline(skyblue);
 
 					//&:before {
 					//	border-top: solid 1px _palette(border);
@@ -56,16 +61,20 @@
 				}
 
 				> section ul {
+					@include debug-outline(white);
+
 					//margin: 0;
 					margin-bottom: 1em;
 					//width: 35%;
 					display: flex;
-					@include debug-outline(white);
 				}
 
 				> section ul .icon {
-					margin-bottom: 1em;
 					@include debug-outline(yellow);
+
+					//background: _palette(bg);
+					//color: _palette(accent10);
+					//margin-bottom: 1em;
 				}
 
 				> :first-child {
@@ -76,44 +85,44 @@
 			}
 		}
 
-		@include breakpoint('<=medium') {
-			> .inner {
-				display: block;
-
-				> :nth-child(2n - 1) {
-					@include padding(4em, 0, (0, 0, 0, 0));
-					border-right: 0;
-					width: 100%;
-				}
-
-				> :nth-child(2n) {
-					padding-left: 0;
-					width: 100%;
-				}
-
-				> .split {
-					> * {
-						@include padding(3em, 0, (0, 0, 0, 0));
-
-						&:before {
-						}
-					}
-
-					> :first-child {
-						&:before {
-							display: block;
-						}
-					}
-				}
-			}
-		}
-
-		@include breakpoint('<=small') {
-			> .inner {
-				> :nth-child(2n - 1) {
-					@include padding(3em, 0, (0, 0, 0, 0));
-					@include debug-outline(red)
-				}
-			}
-		}
+		//@include breakpoint('<=medium') {
+		//	> .inner {
+		//		display: block;
+		//
+		//		> :nth-child(2n - 1) {
+		//			@include padding(4em, 0, (0, 0, 0, 0));
+		//			border-right: 0;
+		//			width: 100%;
+		//		}
+		//
+		//		> :nth-child(2n) {
+		//			padding-left: 0;
+		//			width: 100%;
+		//		}
+		//
+		//		> .split {
+		//			> * {
+		//				@include padding(3em, 0, (0, 0, 0, 0));
+		//
+		//				&:before {
+		//				}
+		//			}
+		//
+		//			> :first-child {
+		//				&:before {
+		//					display: block;
+		//				}
+		//			}
+		//		}
+		//	}
+		//}
+		//
+		//@include breakpoint('<=small') {
+		//	> .inner {
+		//		> :nth-child(2n - 1) {
+		//			@include padding(3em, 0, (0, 0, 0, 0));
+		//			@include debug-outline(red)
+		//		}
+		//	}
+		//}
 	}

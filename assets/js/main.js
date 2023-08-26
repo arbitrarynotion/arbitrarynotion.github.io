@@ -210,26 +210,26 @@
 		}
 
 	// Banner.
-		$banner.each(function() {
-
-			var $this = $(this),
-				$image = $this.find('.image'), $img = $image.find('img');
-
-			// Parallax.
-				$this._parallax(0.275);
-
-			// Image.
-				if ($image.length > 0) {
-
-					// Set image.
-						$this.css('background-image', 'url(' + $img.attr('src') + ')');
-
-					// Hide original.
-						$image.hide();
-
-				}
-
-		});
+	// 	$banner.each(function() {
+	//
+	// 		var $this = $(this),
+	// 			$image = $this.find('.image'), $img = $image.find('img');
+	//
+	// 		// Parallax.
+	// 			$this._parallax(0.275);
+	//
+	// 		// Image.
+	// 			if ($image.length > 0) {
+	//
+	// 				// Set image.
+	// 					$this.css('background-image', 'url(' + $img.attr('src') + ')');
+	//
+	// 				// Hide original.
+	// 					$image.hide();
+	//
+	// 			}
+	//
+	// 	});
 
 	// Menu.
 		var $menu = $('#menu'),
@@ -287,12 +287,12 @@
 				event.stopPropagation();
 
 				// Hide.
-					$menu._hide();
+				$menu._hide();
 
 				// Redirect.
-					window.setTimeout(function() {
-						window.location.href = href;
-					}, 250);
+				window.setTimeout(function() {
+					window.location.href = href;
+				}, 250);
 
 			});
 
@@ -327,7 +327,7 @@
 			.on('keydown', function(event) {
 
 				// Hide on escape.
-					if (event.keyCode == 27)
+					if (event.keyCode === 27)
 						$menu._hide();
 
 			});

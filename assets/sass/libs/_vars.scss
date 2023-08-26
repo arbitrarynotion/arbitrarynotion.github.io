@@ -7,23 +7,41 @@
 	$duration: (
 		menu:				0.35s,
 		transition:			0.2s,
-		banner:				2.5s
+		banner:				0.5s
 	);
 
 // Size.
 	$size: (
+		menu-offset:		2.25em,
+		menu-offset-alt:	2.0em,
+		menu-border-radius:	18pt,
+		button-border-radius:	8pt,
+		introBox-border-radius: 49pt,
+		introBox-image-radius: 29pt,
 		border-radius:		4px,
 		element-height:		2.75em,
 		element-margin:		2em,
-		inner:				65em
+		inner:				65em,
+		banner-height:		80vh,
+		//banner-filter-opacity: 0.45
+		banner-filter-opacity: 0
 	);
 
 // Font.
 	$font: (
 		family:				('Source Sans Pro', Helvetica, sans-serif),
+
+		//family: ('Ubuntu', sans-serif),
+		//family:				('Inconsolata', monospace),
+		//family:				('Inconsolata', monospace),
+		//family:				('PT Serif', serif),
+		//family:				('PT Serif''Source Sans Pro', Helvetica, sans-serif),
+
 		family-fixed:		('Courier New', monospace),
+		font-variant-small-caps: small-caps,
 		weight:				300,
 		weight-bold:		600,
+		weight-extra-bold:	900,
 		letter-spacing:		0,
 		letter-spacing-alt1:0.025em,
 		letter-spacing-alt2:0.125em,
@@ -36,16 +54,23 @@
 		bg-alt:				#2a2f4a,
 		bg-alt2: 			#23263d,
 		bg-alt3: 			#131521,
+		bg-alt3-transparent: rgb(19, 21, 33, 0.75),
 		fg:					#ffffff,
 		fg-bold:			#ffffff,
 		fg-light:			rgba(244,244,255,0.2),
 		border:				rgba(212,212,255,0.1),
 		border-bg:			rgba(212,212,255,0.035),
-		highlight:			#9bf1ff,
+		highlight:			#fcb703,
+		highlight2:			#9bf1ff,
 		accent1:			#6fc3df,
 		accent2:			#8d82c4,
 		accent3:			#ec8d81,
 		accent4:			#e7b788,
 		accent5:			#8ea9e8,
-		accent6:			#87c5a4
+		accent6:			#87c5a4,
+		accent7: #8a5127,
+		accent8: #b77634,
+		accent9: #c47a1f,
+		accent10: #fcb703,
+		accent11: #2572b5
 	);

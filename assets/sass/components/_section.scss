@@ -14,23 +14,32 @@
 
 	header {
 		&.major {
+			@include debug-outline(magenta);
+
 			width: -moz-max-content;
 			width: -webkit-max-content;
 			width: -ms-max-content;
 			width: max-content;
 			//margin-bottom: _size(element-margin);
-			@include debug-outline(magenta);
 
 			> :first-child {
-				margin-bottom: 0;
-				width: calc(100% + 0.5em);
+				@include debug-outline(yellow);
 
+				margin-bottom: 0;
+				//width: calc(100% + 0.5em);
+
+				// This spreads the underline out beyond the title evenly on both
+				width: calc(100% + 1em);
+				margin-left: -0.5em;
+
+				// This creates the underline for "major" titles.
 				&:after {
 					content: '';
 					background-color: _palette(fg-bold);
+					//background-color: _palette(bg-alt3);
 					display: block;
 					height: 2px;
-					margin: 0.325em 0 0.5em 0;
+					margin: 0 0 0.5em 0;
 					width: 100%;
 				}
 			}

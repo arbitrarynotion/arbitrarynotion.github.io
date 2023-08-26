@@ -7,12 +7,14 @@
 /* Wrapper */
 
 	#wrapper {
+		@include debug-outline(yellow);
+
 		@include vendor('transition', (
 			'filter #{_duration(menu)} ease',
 			'-webkit-filter #{_duration(menu)} ease',
 			'opacity 0.375s ease-out'
 		));
-		padding-top: 3.25em;
+		padding-top: _size(menu-offset);
 
 		&.is-transitioning {
 			opacity: 0;
@@ -22,7 +24,68 @@
 			@include inner;
 		}
 
+		.video-bg {
+			//@include debug-outline(green);
+
+			z-index: -1;
+			position: fixed;
+			object-fit: cover;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			min-width: 100%;
+			min-height: 100%;
+			overflow: hidden;
+
+			content: '';
+
+			@include vendor('transition', 'opacity #{_duration(banner)} ease');
+		}
+
+		// This is a filter placed over the top of the background video.
+		&:after {
+			//@include debug-outline(red);
+
+			//@include vendor('transition', 'opacity #{_duration(banner)} ease');
+			//@include vendor('transition-delay', '0.75s');
+			@include vendor('pointer-events', 'none');
+
+			//background-image: radial-gradient(
+			//				rgba(70, 63, 127, .1),
+			//				rgba(0, 0, 0, 0.6)
+			//);
+
+			//background-image: linear-gradient(
+			//				rgba(70, 63, 127, .1),
+			//				rgba(0, 0, 0, 0.6)
+			//);
+
+			background-color: _palette(bg);
+
+			// Content must be specified, even as an empty string, or this element will have a height of 0.
+			content: '';
+
+			display: block;
+
+			// Setting position to fixed ensures that the filter doesn't scroll with the page.
+			position: fixed;
+			height: 100%;
+			width: 100%;
+
+			top: 0;
+			left: 0;
+
+			opacity: _size(banner-filter-opacity);
+
+			z-index: -1;
+
+		}
+
+
+
+
 		@include breakpoint('<=small') {
-			padding-top: 2.75em;
+			padding-top: _size(menu-offset-alt);
 		}
 	}
+

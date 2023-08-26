@@ -1,0 +1,69 @@
+
+.introBox {
+	@include debug-outline(skyblue);
+
+	//width: 50%;
+	//margin: 0 auto 0 10%;
+	@include vendor('display', 'flex');
+	@include vendor('align-items', 'center');
+	//width: calc(100% - 6em);
+	margin: auto;
+
+	background-color: _palette(bg-alt3-transparent);
+	padding: 2em;
+	//border-radius: 49pt;
+	border-radius: _size(introBox-border-radius);
+
+	// Force the contentBox to fit the content.
+	//width: auto !important;
+	//max-width: 100% !important;
+	max-width: max-content;
+
+	@include breakpoint('<=small') {
+		@include vendor('display', 'block');
+	}
+
+	.introText {
+		@include debug-outline(purple);
+
+		width: auto;
+		margin: 0 auto 0 5%;
+	}
+
+	@include breakpoint('<=small') {
+		.introText {
+			margin: 0 auto;
+		}
+	}
+
+	.introPortrait {
+		@include debug-outline(red);
+
+		//width: 25%;
+		//min-width: 100%;
+		//min-width: 40%;
+		//max-width: 5%;
+		width: 450px;
+		max-width: 100%;
+		margin: 0 auto 0 auto;
+		border-radius: _size(introBox-border-radius);
+
+		background-color: desaturate(lighten(_palette(bg), 0), 1);
+
+		@include breakpoint('<=small') {
+			width: 350px;
+
+		}
+
+		//@include debug-outline(greenyellow);
+		img {
+			//border-radius: 48px;
+			border-radius: _size(introBox-image-radius);
+		}
+	}
+
+	//@include breakpoint('<=medium') {
+	//	margin: 0 auto;
+	//	height: auto;
+	//}
+}
