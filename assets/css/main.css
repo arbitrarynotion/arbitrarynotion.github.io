@@ -2124,6 +2124,21 @@ button.scrollDown:after,
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
+input[type=submit].scrollUp:after,
+input[type=reset].scrollUp:after,
+input[type=button].scrollUp:after,
+button.scrollUp:after,
+.button.scrollUp:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f102";
+  padding-left: 0.5em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
 input[type=submit].goToPage:after,
 input[type=reset].goToPage:after,
 input[type=button].goToPage:after,
@@ -2212,7 +2227,7 @@ input[type=reset].small,
 input[type=button].small,
 button.small,
 .button.small {
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 input[type=submit].large,
 input[type=reset].large,
@@ -2906,7 +2921,7 @@ video {
   height: inherit;
   line-height: inherit;
   padding: 0 1.5em;
-  font-family: "Orbitron" !important;
+  font-family: "Orbitron", serif !important;
   font-variant: small-caps !important;
   letter-spacing: 0.125em;
 }
@@ -3294,6 +3309,14 @@ body.is-preload #banner > .inner {
   position: relative;
   z-index: 50;
 }
+#main > .inner {
+  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
+  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
+  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
+  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+  padding: 0 !important;
+  position: relative;
+}
 #main > .inner :first-child {
   margin-top: 0;
 }
@@ -3324,6 +3347,7 @@ body.is-preload #banner > .inner {
 .sectionBlock {
   margin-top: 2em;
   background-color: #131521;
+  border-radius: 10pt 10pt 0 0;
 }
 
 .sectionTitle {
@@ -3331,7 +3355,7 @@ body.is-preload #banner > .inner {
   background: transparent;
   margin-bottom: 0;
   text-align: center;
-  font-family: "Orbitron";
+  font-family: "Orbitron", Helvetica, sans-serif;
   font-variant: small-caps;
   letter-spacing: 0.125em;
 }
@@ -3667,6 +3691,7 @@ body.is-preload #banner > .inner {
   transform: rotateX(20deg);
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
+  min-width: 30%;
   max-height: 100vh;
   opacity: 0;
   overflow: auto;
@@ -3677,7 +3702,35 @@ body.is-preload #banner > .inner {
   margin-top: 2em;
 }
 #menu .inner > :last-child {
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
+}
+#menu .backToTopBox {
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-variant: small-caps;
+  letter-spacing: 0.125em;
+  background: #2a2f4a;
+  border-radius: 19pt;
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 1.5em !important;
+}
+#menu .backToTopBox > a {
+  margin-top: 1em;
+  padding-left: 1em;
+  width: 80%;
+  border: none;
+}
+#menu .backToTopBox:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f102";
+  padding-left: 0.5em;
+  padding-right: 1em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 #menu ul.links {
   list-style: none;
@@ -3693,18 +3746,18 @@ body.is-preload #banner > .inner {
   display: -ms-flex;
   display: flex;
   padding: 0;
-  font-family: "Orbitron";
+  font-family: "Orbitron", Helvetica, sans-serif;
   font-variant: small-caps;
   letter-spacing: 0.125em;
 }
 #menu ul.links > li > * {
   flex: 1;
   margin-bottom: 1em;
+  font-size: 105%;
 }
 #menu ul.links > li > a:not(.button) {
   border: 0;
   display: block;
-  font-size: 0.8em;
   font-weight: 600;
   text-decoration: none;
 }

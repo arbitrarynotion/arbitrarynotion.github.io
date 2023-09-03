@@ -18,6 +18,7 @@
 		button-border-radius:	8pt,
 		introBox-border-radius: 49pt,
 		introBox-image-radius: 29pt,
+		sectionBox-radius: 10pt,
 		border-radius:		4px,
 		element-height:		2.75em,
 		element-margin:		2em,
@@ -33,6 +34,7 @@
 // Font.
 	$font: (
 		family:				('Source Sans Pro', Helvetica, sans-serif),
+		family-title:		('Orbitron', Helvetica, sans-serif),
 
 		//family: ('Ubuntu', sans-serif),
 		//family:				('Inconsolata', monospace),
@@ -54,6 +56,7 @@
 // Palette.
 	$palette: (
 		bg:					#242943,
+		bg-transparent: rgb(36, 41, 66, 0.85),
 		bg-alt:				#2a2f4a,
 		bg-alt2: 			#23263d,
 		bg-alt3: 			#131521,

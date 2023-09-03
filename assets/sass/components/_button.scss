@@ -85,6 +85,21 @@
 			}
 		}
 
+		&.scrollUp {
+			&:after {
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: "\f102";
+				padding-left: 0.5em;
+
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+			}
+		}
+
 		&.goToPage {
 			&:after {
 				font-family: "Font Awesome 5 Free";
@@ -157,7 +172,7 @@
 		}
 
 		&.small {
-			font-size: 0.6em;
+			font-size: 0.8em;
 		}
 
 		&.large {

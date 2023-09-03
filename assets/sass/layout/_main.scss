@@ -13,6 +13,22 @@
 		position: relative;
 		z-index: 50;
 
+		> .inner {
+			@include debug-outline(purple);
+
+			@include vendor('transition',
+				(
+					'opacity 1.5s ease',
+					'transform 0.5s ease-out',
+					'filter 0.5s ease',
+					'-webkit-filter 0.5s ease'
+				)
+			);
+
+			padding: 0 !important;
+			position: relative;
+		}
+
 		// Ensure that the first inner element doesn't get the top margin so it aligns with the banner's bottom.
 		> .inner :first-child {
 			margin-top: 0;
