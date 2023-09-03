@@ -31,6 +31,12 @@
 			}
 		}
 
+		&.free {
+			&:before {
+				font-family: 'Font Awesome 5 Free';
+			}
+		}
+
 		&.alt {
 			&:before {
 				background-color: _palette(fg-bold);

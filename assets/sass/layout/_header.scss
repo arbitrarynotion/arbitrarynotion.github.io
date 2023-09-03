@@ -21,14 +21,14 @@
 		font-weight: _font(weight-bold);
 		//letter-spacing: _font(letter-spacing-alt);
 		//line-height: 3.25em;
-		line-height: 2.25em;
 
 		//font-family: 'Orbitron';
 		//font-variant: small-caps;
 		//letter-spacing: 0.125em;
 
 		//height: 3.25em;
-		height: 2.25em;
+		line-height: _size(menu-offset);
+		height: _size(menu-offset);
 		left: 0;
 		margin: 0;
 
@@ -38,7 +38,8 @@
 		width: 100%;
 		z-index: _misc(z-index-base);
 
-		background: _palette(bg);
+		background: transparent;
+
 		//background-blend-mode: color-burn;
 		//opacity: 0.75;
 
@@ -167,8 +168,18 @@
 			}
 		}
 
+
+
 		&.reveal {
-			@include vendor('animation', 'reveal-header 0.35s ease');
+			@include vendor('animation', 'reveal-header 0.55s ease');
+			background: _palette(bg);
+
+			line-height: _size(menu-offset-alt);
+			height: _size(menu-offset-alt);
+
+			.logo {
+				padding-left: 0.25em;
+			}
 		}
 
 		&.alt {
@@ -176,7 +187,14 @@
 			@include vendor('transition-delay', '0.25s');
 			@include vendor('animation', 'none');
 
-			//background-color: transparent;
+			line-height: _size(menu-offset);
+			height: _size(menu-offset);
+
+			.logo {
+				padding-left: 1.5em;
+			}
+
+			background-color: transparent;
 			box-shadow: none;
 			position: absolute;
 

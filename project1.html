@@ -72,7 +72,7 @@
 											<tr><td>Project Status</td> <td><b>Ongoing</b></td></tr>
 											<tr><td>Software Used</td> <td><b>Unity Game Engine</b></td></tr>
 											<tr><td>Languages Used</td> <td><b>C#</b></td></tr>
-											<tr><td>Primary Role(s)</td> <td><b>Tech Lead / Lead Programmer / Lead Designer</b></td></tr>
+											<tr><td>Primary Role(s)</td> <td><b>Lead Programmer / Lead Designer</b></td></tr>
 										</tbody>
 									</table>
 								</div>
@@ -94,32 +94,59 @@
 
 						<div class="description">
 							<div class="content">
-								<h4><strong>Definitions</strong></h4>
-								<ul>
-									<li>
-										In the context of this project, <b>the word "resources" refers to gas clouds and
-										asteroids</b> that exist within the game world to be mined and processed into
-										tradable wares at factories.
-									</li>
-									<li>
-										<b>Space stations are also referred to as factories</b> as they all consume either resources
-										or tradable wares to manufacture their own tradable wares.
-									</li>
-								</ul>
-								<b>Space Sim is a simulation that creates a small world of procedurally generated resources</b>
-								in which factories, in the form of space stations, manufacture into tradeable
-								wares. Resources and wares are collected and distributed via AI workers in the form of
-								specialized spaceships. As tradable wares are manufactured, other
-								factories use those wares to make more advanced wares and so on until all the
-								sophisticated parts needed to build a ship arrive at the top of the economic chain,
-								a shipyard. Thus, a fully stocked shipyard is the ideal outcome for the simulation.
-								<br/><br/>
-								<b>The purpose of this solo project has been to get some hands-on experience with solving the
-								challenges involved with creating a virtual world</b>. In this context, a virtual world is
-								a game world that grows and evolves with or without player input and persists regardless
-								of player presence. While my initial work on this project was for a course at my university,
-								my fascination with the topic has since brought me back to continue fleshing out the idea.
-								<br/><br/>
+
+
+								<p>
+									Space Sim is <b>a Unity game that simulates a dynamic economy in a space-themed, AI bot-driven,
+									procedurally generated world</b>.
+								</p>
+
+
+<!--								<h4><strong>Definitions</strong></h4>-->
+<!--								<p>-->
+<!--									For the sake of clarity, there are a few terms that should be defined to provide context for-->
+<!--									the rest of this page.-->
+<!--								</p>-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										The word "Wares" refers to the items that are consumed and/or produced within the economy.-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										The word <b>"Resources" refers to gas clouds and-->
+<!--										asteroids that exist within the game world</b> to be mined and processed into-->
+<!--										tradable wares at factories.-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										Resources are processed into tradable wares at facilities that are interchangeably-->
+<!--										referred to as either "Space Stations" or "Factories".-->
+<!--										<b>Space stations are also referred to as factories</b> as they all consume either resources-->
+<!--										or tradable wares to manufacture their own tradable wares.-->
+<!--									</li>-->
+<!--								</ul>-->
+								<h4>Project Purpose</h4>
+								<p>
+									<b>The purpose of this solo project has been to get some hands-on experience with solving the
+										challenges involved with creating a virtual world</b>. In this context, a virtual world is
+									a game world that grows and evolves with or without player input and persists regardless
+									of player presence. While my initial work on this project was for a course at my university,
+									my fascination with the topic has since brought me back to continue fleshing out the idea.
+								</p>
+
+								<h4>Economy Description</h4>
+								<p>
+									As the economy comes into play many of the descriptions on this page, it'll help to have a little
+									context for how it works.
+								</p>
+								<p>
+									The economy consists of raw resources, in the form of gases and minerals gathered from gas
+									clouds and asteroids respectively, and products manufactured at factories contained within
+									space stations. Said products then become the resources for more advanced factories whose products
+									also become the resources for other factories and so on. The scope of this simulation includes
+									for tiers of manufacturing, starting with the processing of raw resources and ending in the
+									production of new ships at a shipyard.
+								</p>
+
+
 							</div>
 						</div>
 					</section>
@@ -133,7 +160,10 @@
 						<div class="description">
 
 							<div class="content">
-								<p>Following is a list of the key components that I've constructed for this project.</p>
+								<p>
+									This is a complex project consisting of many parts and systems, but here is a high-level list
+									of the main building blocks.
+								</p>
 								<ul>
 									<li>
 										<b>A hierarchy of goods</b> ranging from basic minerals and gases, collected in space, to high-tech goods produced at the end of a series of
@@ -280,19 +310,45 @@
 					<section class="sectionBlock">
 
 						<div class="sectionTitle">
-							<h2>Experience Gained</h2>
+							<h2>Final Thoughts</h2>
 						</div>
 
 						<div class="description">
 
 							<div class="content">
-								<p>This project has been, and continues to be, a fantastic source of learning for me.
+
+								<p>
+									This project has been, and continues to be, <b>a fantastic source of learning</b> for me.
 									This includes working in Unity, both in-editor development and writing custom editor
 									code, and developing game functionality through custom scripts in C#.
 									There have been so many challenges both big and small and each has been its own little
-									adventure with struggles, epiphanies, and eventual triumphs.
-								<br />
-								Following is list of many of the development aspects that I got hands-on experience with:</p>
+									adventure with struggles, epiphanies, and triumphs.
+								</p>
+
+								<p>
+									Between my love for the topics covered here (game dev, programming, space simulations,
+									procedural generation, AI, etc. ) and the sense of accomplishment and growth I've
+									felt throughout development, I would gladly dedicate more time to this project.
+								</p>
+
+							</div>
+
+						</div>
+					</section>
+
+					<section class="sectionBlock">
+
+						<div class="sectionTitle">
+							<h2>Experience Gained ++</h2>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+								<p>
+									Here's a brief overview of the many game development aspects that I got hands-on
+									experience with in this project.
+								</p>
 								<ul>
 									<li> <b>UI development</b>, including animations, interactive elements, and UI attached to moving objects within the game world.</li>
 									<li> <b>Building chained animations with DoTween</b> to enhance game feel.</li>
@@ -311,20 +367,7 @@
 						</div>
 					</section>
 
-					<section class="sectionBlock">
 
-						<div class="sectionTitle">
-							<h2>Closing Remarks</h2>
-						</div>
-
-						<div class="description">
-
-							<p class="content">
-								I'll talk a bit about my thoughts on this project when I get to this section.
-							</p>
-
-						</div>
-					</section>
 
 
 					<section class="sectionBlock">

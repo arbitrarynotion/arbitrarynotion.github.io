@@ -7,7 +7,7 @@
 /* Banner */
 
 	#banner {
-		@include debug-outline(red);
+		@include debug-outline(teal);
 
 		@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
@@ -26,57 +26,17 @@
 		cursor: default;
 
 		//margin-bottom: -3.25em;
-		margin-bottom: -1 * _size(menu-offset);
+		//margin-bottom: -1 * _size(menu-offset);
 
 		position: relative;
 		overflow: hidden;
-		height: _size(banner-height);
+		//height: _size(banner-height);
 		//max-height: 32em;
 		//min-height: 22em;
 
 		//top: -3.25em;
 		//top: -2.25em;
-		top: -1 * _size(menu-offset);
-
-
-		//// This is a filter placed over the top of the background video.
-		//&:after {
-		//	//@include debug-outline(red);
-		//
-		//	//@include vendor('transition', 'opacity #{_duration(banner)} ease');
-		//	//@include vendor('transition-delay', '0.75s');
-		//	@include vendor('pointer-events', 'none');
-		//
-		//	//background-image: radial-gradient(
-		//	//				rgba(70, 63, 127, .1),
-		//	//				rgba(0, 0, 0, 0.6)
-		//	//);
-		//
-		//	//background-image: linear-gradient(
-		//	//				rgba(70, 63, 127, .1),
-		//	//				rgba(0, 0, 0, 0.6)
-		//	//);
-		//
-		//	background-color: _palette(bg);
-		//
-		//	// Content must be specified, even as an empty string, or this element will have a height of 0.
-		//	content: '';
-		//
-		//	display: block;
-		//
-		//	// Setting position to fixed ensures that the filter doesn't scroll with the page.
-		//	position: fixed;
-		//	height: 100%;
-		//	width: 100%;
-		//
-		//	top: 0;
-		//	left: 0;
-		//
-		//	opacity: _size(banner-filter-opacity);
-		//
-		//	z-index: -1;
-		//
-		//}
+		//top: -1 * _size(menu-offset);
 
 		h1 {
 			font-size: 3.25em;
@@ -95,17 +55,17 @@
 					'-webkit-filter 0.5s ease'
 				)
 			);
-			//width: 50%;
 			padding: 0 !important;
 			position: relative;
-			//z-index: 60;
 
 
 			.contentBox {
+				@include debug-outline(red);
+
 				background-color: rgb(19, 21, 33, 0.45);
 
 				//margin: 0 auto 3*_size(element-margin) auto;
-				margin: 0 auto 0 auto;
+				margin: _size(banner-project-top-margin) auto _size(banner-project-bottom-margin);
 
 				width: max-content;
 				max-width: 100%;
@@ -139,7 +99,6 @@
 				position: relative;
 				z-index: 500;
 
-				//text-align: center;
 
 				.projectStats{
 					@include debug-outline(yellow);
@@ -147,14 +106,12 @@
 					@include vendor('display', 'flex');
 					@include vendor('justify-content', 'center');
 
-					//max-width: 45%;
 					padding: 0;
-					//margin: 2em 0;
 
 					> .table-wrapper{
-						justify-self: center;
-						//margin: 2em;
 						@include debug-outline(cyan);
+
+						justify-self: center;
 						margin: 0 !important;
 						padding: 0 !important;
 
@@ -166,6 +123,7 @@
 
 				ul{
 					@include debug-outline(yellow);
+
 					justify-content: center;
 				}
 
@@ -179,7 +137,6 @@
 				> :last-child {
 					margin-right: 0;
 
-					//@include debug-border(4, red);
 					flex: 1;
 				}
 
@@ -194,16 +151,16 @@
 			}
 		}
 
-		&.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
-			@include debug-outline(orange);
-
-			&.alt {
-				opacity: 0.75;
-			}
-		}
+		//&.major {
+		//	height: 75vh;
+		//	min-height: 30em;
+		//	max-height: 50em;
+		//	@include debug-outline(orange);
+		//
+		//	&.alt {
+		//		opacity: 0.75;
+		//	}
+		//}
 
 		&.style1 { &:after { background-color: _palette(accent1); } }
 		&.style2 { &:after { background-color: _palette(accent2); } }
@@ -224,37 +181,51 @@
 			}
 		}
 
-		@include breakpoint('<=large') {
-			// Commenting this out turned off the annoying and buggy scrolling that
-			// happened when the window was anything but "large".
-			//background-attachment: scroll;
-		}
+		//@include breakpoint('<=large') {
+		//	// Commenting this out turned off the annoying and buggy scrolling that
+		//	// happened when the window was anything but "large".
+		//	//background-attachment: scroll;
+		//}
 
 		@include breakpoint('<=medium') {
-			height: auto;
-			@include padding(4em, 0, (2em, 0, 0, 0));
+			//height: auto;
+			//@include padding(4em, 0, (2em, 0, 0, 0));
 
+			> .inner {
+				.contentBox {
+					//display: block;
+
+					margin-top: _size(banner-project-top-margin) / 2;
+					margin-bottom: _size(banner-project-bottom-margin) / 2;
+				}
+			}
 		}
 
 		@include breakpoint('<=small') {
-			@include padding(3em, 0, (2em, 0, 0, 0));
-			height: auto;
-			margin-bottom: -2.75em;
+			//@include padding(3em, 0, (0, 0, 0, 0));
+			//height: auto;
+			//margin-bottom: -2.75em;
 			max-height: none;
 			min-height: 0;
-			top: -2.75em;
+			//top: -2.75em;
 
 			h1 {
 				font-size: 2em;
 			}
 
 			> .inner {
+				.contentBox {
+					//display: block;
+
+					margin-top: _size(banner-project-top-margin) / 4;
+					margin-bottom: _size(banner-project-bottom-margin) / 4;
+				}
 				.content {
 					display: block;
 
 					> * {
 						margin-right: 0;
-						margin-bottom: _size(element-margin);
+						//margin-bottom: _size(element-margin);
 					}
 				}
 			}
@@ -267,9 +238,15 @@
 		}
 
 		@include breakpoint('<=xsmall') {
-			@include padding(4em, 0, (2em, 0, 0, 0));
+			//@include padding(2em, 0, (2em, 0, 0, 0));
 
 			> .inner {
+				.contentBox {
+					//display: block;
+
+					margin-top: _size(banner-project-top-margin) / 4;
+					margin-bottom: _size(banner-project-bottom-margin) / 4;
+				}
 				.content {
 					p {
 						br {

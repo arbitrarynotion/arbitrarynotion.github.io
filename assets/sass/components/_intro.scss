@@ -7,7 +7,9 @@
 	@include vendor('display', 'flex');
 	@include vendor('align-items', 'center');
 	//width: calc(100% - 6em);
-	margin: auto;
+	//margin: auto;
+
+	margin: _size(banner-intro-top-margin) auto _size(banner-intro-bottom-margin);
 
 	background-color: _palette(bg-alt3-transparent);
 	padding: 2em;
@@ -23,11 +25,28 @@
 		@include vendor('display', 'block');
 	}
 
+	.introTextBox {
+		@include debug-outline(purple);
+
+		@include vendor('display', 'block');
+		@include vendor('align-items', 'center');
+	}
+
 	.introText {
 		@include debug-outline(purple);
 
 		width: auto;
 		margin: 0 auto 0 5%;
+	}
+
+	.introButton {
+		@include debug-outline(orange);
+
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'flex-end');
+
+		width: max-content;
+		margin: 2em auto 0;
 	}
 
 	@include breakpoint('<=small') {
@@ -62,8 +81,20 @@
 		}
 	}
 
-	//@include breakpoint('<=medium') {
-	//	margin: 0 auto;
-	//	height: auto;
-	//}
+	@include breakpoint('<=medium') {
+		margin-top: _size(banner-project-top-margin) / 2;
+		margin-bottom: _size(banner-project-bottom-margin) / 2;
+	}
+
+	@include breakpoint('<=small') {
+		margin-top: _size(banner-project-top-margin) / 4;
+		margin-bottom: _size(banner-project-bottom-margin) / 4;
+	}
+
+	@include breakpoint('<=xsmall') {
+		margin-top: _size(banner-project-top-margin) / 8;
+		margin-bottom: _size(banner-project-bottom-margin) / 8;
+
+	}
+
 }

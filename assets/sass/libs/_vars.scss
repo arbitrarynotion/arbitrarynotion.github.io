@@ -12,7 +12,7 @@
 
 // Size.
 	$size: (
-		menu-offset:		2.25em,
+		menu-offset:		3.25em,
 		menu-offset-alt:	2.0em,
 		menu-border-radius:	18pt,
 		button-border-radius:	8pt,
@@ -22,7 +22,10 @@
 		element-height:		2.75em,
 		element-margin:		2em,
 		inner:				65em,
-		banner-height:		80vh,
+		banner-intro-top-margin:	20vh,
+		banner-intro-bottom-margin:	35vh,
+		banner-project-top-margin:		16vh,
+		banner-project-bottom-margin:	30vh,
 		//banner-filter-opacity: 0.45
 		banner-filter-opacity: 0
 	);

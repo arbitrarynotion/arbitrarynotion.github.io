@@ -1750,6 +1750,9 @@ input[type=radio] + label:before {
 .icon.brands:before {
   font-family: "Font Awesome 5 Brands";
 }
+.icon.free:before {
+  font-family: "Font Awesome 5 Free";
+}
 .icon.alt:before {
   background-color: #ffffff;
   border-radius: 100%;
@@ -2099,17 +2102,42 @@ button,
   color: #ffffff;
   border: 0;
   border-radius: 8pt;
-  font-family: "Orbitron";
-  font-variant: small-caps;
-  letter-spacing: 0.125em;
-  font-weight: 600;
-  font-size: 0.8em;
   cursor: pointer;
   height: 2.5em;
   line-height: 2.5em;
   padding: 0 1.25em;
   text-decoration: none;
   white-space: nowrap;
+}
+input[type=submit].scrollDown:after,
+input[type=reset].scrollDown:after,
+input[type=button].scrollDown:after,
+button.scrollDown:after,
+.button.scrollDown:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f103";
+  padding-left: 0.5em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+input[type=submit].goToPage:after,
+input[type=reset].goToPage:after,
+input[type=button].goToPage:after,
+button.goToPage:after,
+.button.goToPage:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f101";
+  padding-left: 0.5em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }
 input[type=submit]:hover, input[type=submit]:active,
 input[type=reset]:hover,
@@ -2707,7 +2735,7 @@ video {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  margin: auto;
+  margin: 20vh auto 35vh;
   background-color: rgba(19, 21, 33, 0.75);
   padding: 2em;
   border-radius: 49pt;
@@ -2718,9 +2746,28 @@ video {
     display: block;
   }
 }
+.introBox .introTextBox {
+  display: block;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
 .introBox .introText {
   width: auto;
   margin: 0 auto 0 5%;
+}
+.introBox .introButton {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: -moz-flex-end;
+  -webkit-align-items: -webkit-flex-end;
+  -ms-align-items: -ms-flex-end;
+  align-items: flex-end;
+  width: max-content;
+  margin: 2em auto 0;
 }
 @media screen and (max-width: 736px) {
   .introBox .introText {
@@ -2741,6 +2788,57 @@ video {
 }
 .introBox .introPortrait img {
   border-radius: 29pt;
+}
+@media screen and (max-width: 980px) {
+  .introBox {
+    margin-top: 8vh;
+    margin-bottom: 15vh;
+  }
+}
+@media screen and (max-width: 736px) {
+  .introBox {
+    margin-top: 4vh;
+    margin-bottom: 7.5vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .introBox {
+    margin-top: 2vh;
+    margin-bottom: 3.75vh;
+  }
+}
+
+.mosaicContainer {
+  width: 100%;
+  padding: 1em;
+}
+.mosaicContainer .mosaicBox {
+  display: grid;
+  height: max-content;
+  margin: auto 0;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.mosaicContainer .mosaicBox .mosaicItem {
+  grid-column: 3/span 6;
+  grid-row: 2/span 3;
+  z-index: 6;
+}
+.mosaicContainer .mosaicBox .mosaicItem:first-of-type {
+  grid-column: 1/span 4;
+  grid-row: 1/span 4;
+  z-index: 5;
+}
+.mosaicContainer .mosaicBox .mosaicItem:last-of-type {
+  grid-column: 8/span 3;
+  grid-row: 1/span 8;
+  z-index: 5;
+}
+.mosaicContainer .mosaicBox .mosaicItem img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 19px;
 }
 
 /* Header */
@@ -2791,15 +2889,15 @@ video {
   display: flex;
   cursor: default;
   font-weight: 600;
-  line-height: 2.25em;
-  height: 2.25em;
+  line-height: 3.25em;
+  height: 3.25em;
   left: 0;
   margin: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10000;
-  background: #242943;
+  background: transparent;
 }
 #header .logo {
   border: 0;
@@ -2896,10 +2994,16 @@ video {
   right: 2em;
 }
 #header.reveal {
-  -moz-animation: reveal-header 0.35s ease;
-  -webkit-animation: reveal-header 0.35s ease;
-  -ms-animation: reveal-header 0.35s ease;
-  animation: reveal-header 0.35s ease;
+  -moz-animation: reveal-header 0.55s ease;
+  -webkit-animation: reveal-header 0.55s ease;
+  -ms-animation: reveal-header 0.55s ease;
+  animation: reveal-header 0.55s ease;
+  background: #242943;
+  line-height: 2em;
+  height: 2em;
+}
+#header.reveal .logo {
+  padding-left: 0.25em;
 }
 #header.alt {
   -moz-transition: opacity 0.5s ease;
@@ -2914,8 +3018,14 @@ video {
   -webkit-animation: none;
   -ms-animation: none;
   animation: none;
+  line-height: 3.25em;
+  height: 3.25em;
+  background-color: transparent;
   box-shadow: none;
   position: absolute;
+}
+#header.alt .logo {
+  padding-left: 1.5em;
 }
 #header.alt.style1 .logo strong {
   color: #6fc3df;
@@ -3019,11 +3129,8 @@ body.is-preload #header.alt {
   -ms-align-items: center;
   align-items: center;
   cursor: default;
-  margin-bottom: -2.25em;
   position: relative;
   overflow: hidden;
-  height: 80vh;
-  top: -2.25em;
 }
 #banner h1 {
   font-size: 3.25em;
@@ -3039,7 +3146,7 @@ body.is-preload #header.alt {
 }
 #banner > .inner .contentBox {
   background-color: rgba(19, 21, 33, 0.45);
-  margin: 0 auto 0 auto;
+  margin: 16vh auto 30vh;
   width: max-content;
   max-width: 100%;
   padding: 1em 1em 2em 1em;
@@ -3106,14 +3213,6 @@ body.is-preload #header.alt {
   font-weight: 600;
   text-transform: uppercase;
 }
-#banner.major {
-  height: 75vh;
-  min-height: 30em;
-  max-height: 50em;
-}
-#banner.major.alt {
-  opacity: 0.75;
-}
 #banner.style1:after {
   background-color: #6fc3df;
 }
@@ -3147,29 +3246,28 @@ body.is-preload #banner > .inner {
   opacity: 0;
 }
 @media screen and (max-width: 980px) {
-  #banner {
-    height: auto;
-    padding: 6em 0 2em 0;
+  #banner > .inner .contentBox {
+    margin-top: 8vh;
+    margin-bottom: 15vh;
   }
 }
 @media screen and (max-width: 736px) {
   #banner {
-    padding: 5em 0 1em 0;
-    height: auto;
-    margin-bottom: -2.75em;
     max-height: none;
     min-height: 0;
-    top: -2.75em;
   }
   #banner h1 {
     font-size: 2em;
+  }
+  #banner > .inner .contentBox {
+    margin-top: 4vh;
+    margin-bottom: 7.5vh;
   }
   #banner > .inner .content {
     display: block;
   }
   #banner > .inner .content > * {
     margin-right: 0;
-    margin-bottom: 2em;
   }
   #banner.major {
     height: auto;
@@ -3178,8 +3276,9 @@ body.is-preload #banner > .inner {
   }
 }
 @media screen and (max-width: 480px) {
-  #banner {
-    padding: 6em 0 2em 0;
+  #banner > .inner .contentBox {
+    margin-top: 4vh;
+    margin-bottom: 7.5vh;
   }
   #banner > .inner .content p br {
     display: none;
@@ -3472,7 +3571,7 @@ body.is-preload #banner > .inner {
   -webkit-transition: -webkit-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
   -ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
   transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-  padding-top: 2.25em;
+  padding-top: 3.25em;
 }
 #wrapper.is-transitioning {
   opacity: 0;
