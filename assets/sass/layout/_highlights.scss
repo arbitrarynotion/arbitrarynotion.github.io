@@ -1,7 +1,7 @@
 /* Highlight */
 
 .sectionBlock {
-	margin-top: 2em;
+	margin-top: 2.5em;
 	background-color: #131521;
 
 	border-radius: _size(sectionBox-radius) _size(sectionBox-radius) 0 0;
@@ -73,7 +73,7 @@
 .description {
 	@include debug-outline(indianred);
 
-	padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.25*_size(element-margin) 0.5*_size(element-margin);
+	padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.75*_size(element-margin) 0.5*_size(element-margin);
 	background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
 
 	> * {

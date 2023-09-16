@@ -1753,6 +1753,9 @@ input[type=radio] + label:before {
 .icon.free:before {
   font-family: "Font Awesome 5 Free";
 }
+.icon.alt {
+  background-color: transparent !important;
+}
 .icon.alt:before {
   background-color: #ffffff;
   border-radius: 100%;
@@ -2768,11 +2771,17 @@ video {
   -ms-align-items: center;
   align-items: center;
 }
-.introBox .introText {
+.introBox .introTextBox .introText {
+  font-weight: 600;
   width: auto;
+  max-width: 65ch;
   margin: 0 auto 0 5%;
 }
-.introBox .introButton {
+.introBox .introTextBox .introText h5 {
+  text-align: center;
+  color: white !important;
+}
+.introBox .introTextBox .introButton {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -2785,9 +2794,14 @@ video {
   margin: 2em auto 0;
 }
 @media screen and (max-width: 736px) {
-  .introBox .introText {
+  .introBox .introTextBox .introText {
     margin: 0 auto;
   }
+}
+.introBox.introAboutMe {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1em;
 }
 .introBox .introPortrait {
   width: 450px;
@@ -2795,6 +2809,9 @@ video {
   margin: 0 auto 0 auto;
   border-radius: 49pt;
   background-color: #252942;
+}
+.introBox .introPortrait.aboutMe {
+  width: 100%;
 }
 @media screen and (max-width: 736px) {
   .introBox .introPortrait {
@@ -3152,10 +3169,6 @@ body.is-preload #header.alt {
   text-align: center;
 }
 #banner > .inner {
-  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
   padding: 0 !important;
   position: relative;
 }
@@ -3167,14 +3180,12 @@ body.is-preload #header.alt {
   padding: 1em 1em 2em 1em;
   border-radius: 18pt;
 }
+#banner > .inner .contentBox.wide {
+  padding: 1em 3em 2em 3em;
+  margin-bottom: 45vh;
+}
 #banner > .inner header {
   width: auto;
-}
-#banner > .inner header > :first-child {
-  width: auto;
-}
-#banner > .inner header > :first-child:after {
-  max-width: 100%;
 }
 #banner > .inner .content {
   display: -moz-flex;
@@ -3189,7 +3200,6 @@ body.is-preload #header.alt {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  align-content: center;
   position: relative;
   z-index: 500;
 }
@@ -3202,6 +3212,11 @@ body.is-preload #header.alt {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  flex-direction: column;
   padding: 0;
 }
 #banner > .inner .content .projectStats > .table-wrapper {
@@ -3211,7 +3226,17 @@ body.is-preload #header.alt {
   font-variant: small-caps;
   letter-spacing: 0.03em;
 }
+#banner > .inner .content .projectStats > .buttonBox {
+  padding-top: 1em;
+}
 #banner > .inner .content ul {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
   justify-content: center;
 }
 #banner > .inner .content > * {
@@ -3227,6 +3252,13 @@ body.is-preload #header.alt {
   font-size: 0.7em;
   font-weight: 600;
   text-transform: uppercase;
+}
+#banner > .inner .content p.normal {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  margin-bottom: 1em;
 }
 #banner.style1:after {
   background-color: #6fc3df;
@@ -3339,13 +3371,16 @@ body.is-preload #banner > .inner {
 #main.alt {
   background-color: transparent;
 }
+#main.alt.fullHeight {
+  height: 100%;
+}
 #main.alt2 {
   background-color: #131521;
 }
 
 /* Highlight */
 .sectionBlock {
-  margin-top: 2em;
+  margin-top: 2.5em;
   background-color: #131521;
   border-radius: 10pt 10pt 0 0;
 }
@@ -3370,7 +3405,7 @@ body.is-preload #banner > .inner {
 }
 
 .description {
-  padding: 1em 1em 0.5em 1em;
+  padding: 1em 1em 1.5em 1em;
   background-color: #2e3450;
 }
 .description > * {

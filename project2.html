@@ -83,6 +83,11 @@
 										</tbody>
 									</table>
 								</div>
+
+								<div class="buttonBox centered">
+									<a href="https://github.com/arbitrarynotion/com.ianritter.aceuiframework" target="_blank" rel="noopener noreferrer"
+									   class="button small centered icon brands fa-github">Github Project</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -102,10 +107,105 @@
 
 						<div class="description">
 							<div class="content">
+								<p>
+									Accessible Custom Editor (ACE) UI is a <b>Unity development framework that streamlines custom
+									editor creation</b> and uses its structured approach to provide <b>in-editor realtime data visualization features</b>.
+								</p>
 								<h4>Project Purpose</h4>
-								<p></p>
-								<h4>Description for Context</h4>
-								<p></p>
+<!--								<p>-->
+<!--									When writing a custom game script in Unity, I typically have two goals in mind. The first, is-->
+<!--									the obvious goal of writing code that provides the desired functionality efficiently and-->
+<!--									"well" (clean code, etc.). The second goal is to ensure that the functionality the script provides-->
+<!--									is fully customizable from within the Unity editor. When the functionality is complex, this can-->
+<!--									involve many controls which, due to few formatting options being available by default, can quickly-->
+<!--									become difficult to visually parse.-->
+<!--								</p>-->
+<!--								<p>-->
+<!--									The solution in such situations is to write a custom editor script as it allows direct control-->
+<!--									over how the script's data is displayed in the Inspector. However, this process involves-->
+<!--									writing a large amount of boilerplate code -->
+<!--								</p>-->
+<!--								-->
+<!--								<p>-->
+<!--									When writing custom game code for Unity, beyond the obvious goal of developing the desired-->
+<!--									functionality with code that is efficient and well written, it's often equally important to-->
+<!--									ensure that functionality is fully customizable via settings displayed in the Inspector window-->
+<!--									when an object using the game script is selected within Unity. While the way those settings are-->
+<!--									displayed by default is sufficient for very simple scripts, it quickly becomes cumbersome when-->
+<!--									the script's functionality involves many settings. Writing a custom editor for each script, which-->
+<!--									provides direct control over how script data is displayed, can solve this issue but these extra-->
+<!--									scripts involve significant boilerplate code and many common features such as min/max sliders have-->
+<!--									to be custom-built with each script.-->
+<!--								</p>-->
+
+								<p>
+									When I write a custom game scripts for Unity, I typically have two goals in mind. The most obvious
+									goal is to create the desired functionality efficiently while <b>enabling customization by providing
+									access to key settings</b>. The second, often overlooked goal, is to ensure that those <b>settings are
+									displayed in an intuitive and accessible way</b>. While this can be somewhat managed with the use
+									of headers, to provide a bit of visual separation, and tooltips, to provide explanations, <b>settings
+									can quickly become difficult to visually parse</b>.
+								</p>
+
+								<p>
+									To address this pain point, I first explored writing custom editor scripts which allow a high
+									degree of control over how a custom game script is displayed. However, one of these custom editor
+									scripts must be created for every custom game script, each involves a significant amount of
+									boilerplate code, and some very useful features used throughout the Unity editor must be hand-built.
+								</p>
+
+								<p>
+									After writing many of these time-consuming and redundant custom editor scripts, I decided to develop <b>a framework that would
+									automate the boilerplate code</b> and <b>provide simple access to the more advanced UI features</b>.
+									Once this framework was in place, I then expanded it to provide real-time data visualization features.
+								</p>
+
+<!--								<h4>Description for Context</h4>-->
+<!--								<p></p>-->
+
+								<p>
+									As this framework is a developer tool but this page may be viewed by non-devs, I'll provide
+									a quick explanation of the workflow this framework is targeted at improving.
+								</p>
+
+								<h4>Context for Non-devs</h4>
+								<p>
+									Developing a game in Unity often involves writing custom game scripts to build a game's intended
+									functionality. The scripts are then added to object's within the Unity editor and displayed in
+									as special editing window referred to as the "Inspector", a part of the Unity interface which displays
+									a selected object's attached scripts as "Components". A custom game script has the option of
+									exposing parts of its data to be displayed as settings in the inspector, those settings allowing
+									a Unity developer to adjust the behavior of the game script without having to modify the script's code.
+								</p>
+
+								<h4>Accessible UI is Important!</h4>
+
+								<p>
+									The number of settings displayed in the Inspector is determined by the game script, which is in turn
+									a reflection of the functionality the script provides.
+
+									While the functionality a game script provides should be focused and of reasonable scope, even a simple
+									script may involve many settings to ensure its behavior is flexible. Thus, its not uncommon to
+								</p>
+
+
+								<h4>The Problem this Framework Solves</h4>
+
+								<p>
+									The pain point this framework addresses is the way custom game script settings are displayed
+									in the Inspector. By default, without writing extensive extra editor code for each game script to
+									manually guide how settings are drawn, the settings get clumped together in a way that can
+									be difficult to visually parse. In particular, there is no easy way to group settings into
+									sections that can be folded (hidden under a heading) or toggled (enabled/disabled as a group).
+									Further, the size and spacing between settings can not be easily changed to accommodate
+									differences in visual comprehension.
+								</p>
+
+								<p>
+									To address these pain points, ACE UI provides <b>a framework that
+									automates boilerplate code</b>, facilitates <b>real-time Inspector layout modifications</b>, and
+									simplified
+								</p>
 							</div>
 						</div>
 					</section>
@@ -139,7 +239,7 @@
 						</div>
 
 						<div class="sectionTitle">
-							<h3>Highlight 1</h3>
+							<h3>Custom Editor Made Easy</h3>
 						</div>
 
 						<div class="description">
@@ -159,7 +259,7 @@
 						</div>
 
 						<div class="sectionTitle">
-							<h3>Highlight 2</h3>
+							<h3>Realtime UI Customization</h3>
 						</div>
 
 						<div class="description">
@@ -215,7 +315,10 @@
 
 							<div class="content">
 								<p>
-									I'll talk a bit about my thoughts on this project when I get to this section.
+									As my first major project after graduation, my goal was to spend about 3 months developing a solid portfolio piece that
+									would push me to expand my Unity knowledge and provide a solid example of what I can do. However, beyond those priorities,
+									I had a lot of freedom on where to take this project. I also had a lot of challenges to face as a solo developer
+									with a solid Computer Science education but little real-world experience.
 								</p>
 							</div>
 
@@ -231,11 +334,32 @@
 						<div class="description">
 
 							<div class="content">
-								<p>Brief explanation of my experience on this project.
-									<br />
-									Following is list of many of the development aspects that I got hands-on experience with:</p>
+								<p>
+									Here's a brief overview of the many game development aspects that I got hands-on experience with in this project.
+								</p>
+
+								<h4>Version Control</h4>
 								<ul>
-									<li> <b>Important part</b>, of an experience list item.</li>
+									<li>Automating version control for a GitHub repo using Semantic Release.</li>
+									<li>Developing a Unity asset to automate standardization across multiple projects by distributing through Unity's Package Manager.</li>
+								</ul>
+
+								<h4>Tools Development</h4>
+								<ul>
+									<li>Designing a labor-saving framework by standardizing a common, labor-intensive workflow.</li>
+								</ul>
+
+								<h4>Object Oriented Design</h4>
+								<ul>
+									<li>Extensive utilization of object-oriented design principles, encountering the strengths and limitations through practical application.</li>
+								</ul>
+
+								<h4>Unity Editor Customization</h4>
+								<ul>
+									<li>Extensive research into Unity's Editor scripting functionality utilizing Unity's man pages, reading through source code,
+										and exploring existing applications.</li>
+									<li></li>
+									<li></li>
 								</ul>
 							</div>
 

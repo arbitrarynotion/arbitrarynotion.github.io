@@ -30,29 +30,54 @@
 
 		@include vendor('display', 'block');
 		@include vendor('align-items', 'center');
-	}
 
-	.introText {
-		@include debug-outline(purple);
-
-		width: auto;
-		margin: 0 auto 0 5%;
-	}
-
-	.introButton {
-		@include debug-outline(orange);
-
-		@include vendor('display', 'flex');
-		@include vendor('align-items', 'flex-end');
-
-		width: max-content;
-		margin: 2em auto 0;
-	}
-
-	@include breakpoint('<=small') {
 		.introText {
-			margin: 0 auto;
+			@include debug-outline(yellow);
+
+
+
+			font-weight: _font(weight-bold);
+
+			width: auto;
+			max-width: 65ch;
+			margin: 0 auto 0 5%;
+
+			h5 {
+				@include vendor('text-align', 'center');
+
+				color: white !important;
+			}
 		}
+
+		.introButton {
+			@include debug-outline(orange);
+
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'flex-end');
+
+			width: max-content;
+			margin: 2em auto 0;
+		}
+
+		@include breakpoint('<=small') {
+			.introText {
+				margin: 0 auto;
+			}
+		}
+	}
+
+
+	&.introAboutMe {
+		@include debug-outline(blue);
+
+		margin-top: 2em;
+		margin-bottom: 2em;
+
+		padding: 1em;
+
+		//width: calc(100% - 20em);
+
+		//width: 100%;
 	}
 
 	.introPortrait {
@@ -69,15 +94,19 @@
 
 		background-color: desaturate(lighten(_palette(bg), 0), 1);
 
+		&.aboutMe {
+			width: 100%;
+		}
+
 		@include breakpoint('<=small') {
 			width: 350px;
-
 		}
 
 		//@include debug-outline(greenyellow);
 		img {
 			//border-radius: 48px;
 			border-radius: _size(introBox-image-radius);
+
 		}
 	}
 

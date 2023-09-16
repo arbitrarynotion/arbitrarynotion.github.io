@@ -37,7 +37,8 @@
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="aboutMe.html">About Me</a></li>
-					<li><a href="#contact" class="scrolly">Contact</a></li>
+					<li><a href="contact.html">Contact</a></li>
+<!--					<li><a href="#contact" class="scrolly">Contact</a></li>-->
 <!--					<li><b>Projects</b></li>-->
 <!--					<li><a href="project2.html">ACE UI Framework</a></li>-->
 <!--					<li><a href="project3.html">Procedural Generation Research</a></li>-->
@@ -48,9 +49,13 @@
 <!--					<a href="#banner" class="scrolly"><b>Back to Top</b></a>-->
 <!--				</div>-->
 
-				<div class="buttonBox centered">
-					<a href="#banner" class="button small scrollUp scrolly">Back to Top</a>
-				</div>
+<!--				<div class="buttonBox centered">-->
+<!--					<a href="#banner" class="button small scrollUp scrolly">Back to Top</a>-->
+<!--				</div>-->
+
+<!--				<div class="buttonBox centered">-->
+<!--					<a href="#banner" class="button small scrolly">Back to Top</a>-->
+<!--				</div>-->
 <!--				<ul class="actions stacked">-->
 <!--					<li><a href="#" class="button primary fit">Get Started</a></li>-->
 <!--					<li><a href="#" class="button fit">Log In</a></li>-->
@@ -85,6 +90,11 @@
 										</tbody>
 									</table>
 								</div>
+
+								<div class="buttonBox centered">
+									<a href="https://github.com/arbitrarynotion?tab=repositories" target="_blank" rel="noopener noreferrer"
+									   class="button small centered icon brands fa-github">Code Sample</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -116,12 +126,12 @@
 										challenges involved with creating a virtual world</b>. In this context, a virtual world is
 									a game world that grows and evolves with or without player input and persists regardless
 									of player presence. While my initial work on this project was for a course at my university,
-									my fascination with the topic has since brought me back to continue fleshing out the idea.
+									my fascination with the topic has since brought me back to continue exploring the idea.
 								</p>
 
 								<h4>Economy Description</h4>
 								<p>
-									As the economy comes into play many of the descriptions on this page, it'll help to have a little
+									As the economy comes into play in many of the descriptions on this page, it'll help to have a little
 									context for how it works.
 								</p>
 								<p>
@@ -129,7 +139,7 @@
 									clouds and asteroids respectively, and products manufactured at factories contained within
 									space stations. Said products then become the resources for more advanced factories whose products
 									also become the resources for other factories and so on. The scope of this simulation includes
-									for tiers of manufacturing, starting with the processing of raw resources and ending in the
+									four tiers of manufacturing, starting with the processing of raw resources and ending in the
 									production of new ships at a shipyard.
 								</p>
 
@@ -137,7 +147,6 @@
 							</div>
 						</div>
 					</section>
-
 
 					<section class="sectionBlock">
 						<div class="sectionTitle">
@@ -184,6 +193,27 @@
 						</div>
 					</section>
 
+<!--					<section class="sectionBlock">-->
+<!--						<div class="sectionTitle">-->
+<!--							<h2>Code Sample</h2>-->
+<!--						</div>-->
+
+<!--						<div class="description">-->
+<!--							<div class="content">-->
+
+<!--								<p>-->
+<!--									If you're here to take a look at my coding style, use the button below to go to this-->
+<!--									project's code sample page.-->
+<!--								</p>-->
+
+<!--								<div class="buttonBox centered">-->
+<!--									<a href="aboutMe.html" class="button">Github Project Sample</a>-->
+<!--									&lt;!&ndash;									<a href="aboutMe.html" class="button goToPage">About Me</a>&ndash;&gt;-->
+<!--								</div>-->
+
+<!--							</div>-->
+<!--						</div>-->
+<!--					</section>-->
 
 					<section class="sectionBlock">
 						<div class="sectionTitle">
@@ -209,12 +239,26 @@
 
 								</p>
 							</div>
-
 							<div class="videoSectionBox">
 								<video autoplay muted loop poster="images/ResourceGenerationDemo01_Poster.png">
-									<source src="videos/ResourceGenerationDemo01reduced.mp4" type=video/mp4>
+									<source src="videos/ResourceGenDemo_Part1_NoiseMap_x265.mp4" type=video/mp4>
 								</video>
 							</div>
+							<div class="videoSectionBox">
+								<video autoplay muted loop poster="images/ResourceGenerationDemo01_Poster.png">
+									<source src="videos/ResourceGenDemo_Part2_ResourceMap_02_x265.mp4" type=video/mp4>
+								</video>
+							</div>
+							<div class="videoSectionBox">
+								<video autoplay muted loop poster="images/ResourceGenerationDemo01_Poster.png">
+									<source src="videos/ResourceGenDemo_Part3_Generation_02_x265.mp4" type=video/mp4>
+								</video>
+							</div>
+<!--							<div class="videoSectionBox">-->
+<!--								<video autoplay muted loop poster="images/ResourceGenerationDemo01_Poster.png">-->
+<!--									<source src="videos/ResourceGenerationDemo01reduced.mp4" type=video/mp4>-->
+<!--								</video>-->
+<!--							</div>-->
 						</div>
 
 						<div class="sectionTitle">
@@ -225,8 +269,8 @@
 
 							<div class="content">
 								<p>
-									To automate the game's economy, I developed an AI system that monitors stock levels
-									in each space station and manages the workforce to ensure shortages are dealt with.
+									To automate the game's economy, I developed an <b>AI system that monitors stock levels
+									in each space station and manages the workforce</b> to ensure shortages are dealt with.
 									When a resource is needed, an order is placed. The system then periodically scans for
 									other space stations that produce the needed resources, spacing out the scans to avoid
 									impacting the game's performance.
@@ -234,8 +278,8 @@
 									Once a space station is found that has the desired
 									resource in stock, an idle worker is assigned to perform the collection. When the
 									worker returns and deposits the resources, the order is marked as complete, and the
-									process begins again. All of this activity is displayed in an in-game UI so that
-									the player can see how stock is being managed.
+									process begins again. <b>All of this activity is displayed in an in-game UI so that
+									the player can see how stock is being managed</b>.
 
 								</p>
 							</div>
@@ -259,7 +303,7 @@
 						<div class="description">
 
 							<p class="content">
-								The culmination of the systems I've developed result in a virtual economy that develops over time without player input or intervention.
+								The culmination of the systems I've developed result in <b>a virtual economy that develops over time without player input or intervention</b>.
 								Starting with production facilities in place and AI ships ready to work, the world immediately comes to life with mining ships gathering resources.
 							</p>
 
@@ -365,9 +409,12 @@
 
 						<div class="description">
 							<p class="content" style="text-align: center">
-								Think I'd be a great match for your team? Have questions about my projects or work experience?
+								Have questions about my projects or work experience?
 								<br />
-								Feel free to reach out! &#128578;
+								Think I'd be a great match for your team?
+								<br />
+								Feel free to reach out!
+								<!--								Feel free to reach out! &#128578;-->
 							</p>
 						</div>
 

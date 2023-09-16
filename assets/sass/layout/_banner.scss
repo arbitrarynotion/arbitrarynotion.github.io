@@ -47,14 +47,14 @@
 		> .inner {
 			@include debug-outline(purple);
 
-			@include vendor('transition',
-				(
-					'opacity 1.5s ease',
-					'transform 0.5s ease-out',
-					'filter 0.5s ease',
-					'-webkit-filter 0.5s ease'
-				)
-			);
+			//@include vendor('transition',
+			//	(
+			//		'opacity 1.5s ease',
+			//		'transform 0.5s ease-out',
+			//		'filter 0.5s ease',
+			//		'-webkit-filter 0.5s ease'
+			//	)
+			//);
 			padding: 0 !important;
 			position: relative;
 
@@ -73,6 +73,11 @@
 				padding: 1em 1em 2em 1em;
 
 				border-radius: _size(menu-border-radius);
+
+				&.wide {
+					padding: 1em 3em 2em 3em;
+					margin-bottom: 45vh;
+				}
 			}
 
 			header {
@@ -80,13 +85,13 @@
 				@include debug-outline(deepskyblue);
 
 
-				> :first-child {
-					width: auto;
-
-					&:after {
-						max-width: 100%;
-					}
-				}
+				//> :first-child {
+				//	width: auto;
+				//
+				//	&:after {
+				//		max-width: 100%;
+				//	}
+				//}
 			}
 
 			.content {
@@ -95,16 +100,21 @@
 				@include vendor('display', 'flex');
 				@include vendor('justify-content', 'flex-end');
 				@include vendor('align-items', 'center');
-				align-content: center;
+
+
+				//align-content: center;
 				position: relative;
 				z-index: 500;
-
 
 				.projectStats{
 					@include debug-outline(yellow);
 
 					@include vendor('display', 'flex');
 					@include vendor('justify-content', 'center');
+					@include vendor('align-items', 'center');
+
+					flex-direction: column;
+
 
 					padding: 0;
 
@@ -119,12 +129,17 @@
 						letter-spacing: 0.03em;
 
 					}
+
+					> .buttonBox {
+						padding-top: 1em;
+					}
 				}
 
 				ul{
 					@include debug-outline(yellow);
 
-					justify-content: center;
+					@include vendor('display', 'flex');
+					@include vendor('justify-content', 'center');
 				}
 
 				> * {
@@ -147,6 +162,16 @@
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
+
+					&.normal {
+						font-size: inherit;
+						font-weight: inherit;
+						letter-spacing: inherit;
+						text-transform: none;
+
+						margin-bottom: 1em;
+						//margin: 0 3em 1em 3em;
+					}
 				}
 			}
 		}

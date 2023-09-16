@@ -38,6 +38,8 @@
 		}
 
 		&.alt {
+			background-color: transparent !important;
+
 			&:before {
 				background-color: _palette(fg-bold);
 				border-radius: 100%;
