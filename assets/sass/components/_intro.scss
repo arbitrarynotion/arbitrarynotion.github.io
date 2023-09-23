@@ -2,28 +2,48 @@
 .introBox {
 	@include debug-outline(skyblue);
 
-	//width: 50%;
-	//margin: 0 auto 0 10%;
-	@include vendor('display', 'flex');
-	@include vendor('align-items', 'center');
-	//width: calc(100% - 6em);
-	//margin: auto;
+	//@include vendor('display', 'flex');
+	//@include vendor('align-items', 'center');
 
-	margin: _size(banner-intro-top-margin) auto _size(banner-intro-bottom-margin);
-
-	background-color: _palette(bg-alt3-transparent);
+	margin:
+			_size(banner-intro-top-margin)
+			auto
+			_size(banner-intro-bottom-margin);
 	padding: 2em;
-	//border-radius: 49pt;
-	border-radius: _size(introBox-border-radius);
+	//max-width: max-content;
 
-	// Force the contentBox to fit the content.
-	//width: auto !important;
-	//max-width: 100% !important;
-	max-width: max-content;
+	//padding: 1em 1em 2em 1em;
+	width: max-content;
+	max-width: 100%;
+
+	//background-color: _palette(bg-alt3-transparent);
+	//border-radius: _size(introBox-border-radius);
+
 
 	@include breakpoint('<=small') {
 		@include vendor('display', 'block');
 	}
+
+	&.wide {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+	}
+
+	&.tall {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		@include vendor('flex-direction', 'column');
+
+		margin-top: _size(banner-project-top-margin);
+		margin-bottom: _size(banner-project-bottom-margin);
+	}
+
+	&.framed {
+		background-color: _palette(bg-alt3-transparent);
+		border-radius: _size(introBox-border-radius);
+	}
+
+
 
 	.introTextBox {
 		@include debug-outline(purple);
@@ -33,8 +53,6 @@
 
 		.introText {
 			@include debug-outline(yellow);
-
-
 
 			font-weight: _font(weight-bold);
 
@@ -49,23 +67,12 @@
 			}
 		}
 
-		.introButton {
-			@include debug-outline(orange);
-
-			@include vendor('display', 'flex');
-			@include vendor('align-items', 'flex-end');
-
-			width: max-content;
-			margin: 2em auto 0;
-		}
-
 		@include breakpoint('<=small') {
 			.introText {
 				margin: 0 auto;
 			}
 		}
 	}
-
 
 	&.introAboutMe {
 		@include debug-outline(blue);
@@ -126,4 +133,21 @@
 
 	}
 
+}
+
+.scrollToContentButton {
+	@include debug-outline(orange);
+
+	@include vendor('display', 'flex');
+	//@include vendor('align-items', 'flex-end');
+	@include vendor('justify-content', 'center');
+
+	//width: max-content;
+	width: 100%;
+	//margin: 0.5em auto _size(banner-intro-bottom-margin);
+	margin: 2em auto 0;
+
+	* {
+		font-size: 8em !important;
+	}
 }

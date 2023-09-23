@@ -2101,7 +2101,6 @@ button,
   display: inline-block;
   background-color: #2572b5;
   background-image: linear-gradient(rgba(70, 63, 127, 0.1), rgba(0, 0, 0, 0.6));
-  box-shadow: inset 0 0 0 2px #ac7e07;
   color: #ffffff;
   border: 0;
   border-radius: 8pt;
@@ -2206,15 +2205,15 @@ input[type=reset].icon.solo:before,
 input[type=button].icon.solo:before,
 button.icon.solo:before,
 .button.icon.solo:before {
-  position: absolute;
   display: block;
-  top: 0;
-  left: 0;
+  position: absolute;
   width: inherit;
   height: inherit;
-  line-height: inherit;
-  font-size: 1.25rem;
+  top: 0;
+  left: 0;
   margin-right: 0;
+  line-height: inherit;
+  font-size: 1.5rem;
   text-align: center;
   text-indent: 0;
 }
@@ -2745,6 +2744,17 @@ video {
 }
 
 .introBox {
+  margin: 20vh auto 35vh;
+  padding: 2em;
+  width: max-content;
+  max-width: 100%;
+}
+@media screen and (max-width: 736px) {
+  .introBox {
+    display: block;
+  }
+}
+.introBox.wide {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -2753,16 +2763,26 @@ video {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  margin: 20vh auto 35vh;
-  background-color: rgba(19, 21, 33, 0.75);
-  padding: 2em;
-  border-radius: 49pt;
-  max-width: max-content;
 }
-@media screen and (max-width: 736px) {
-  .introBox {
-    display: block;
-  }
+.introBox.tall {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 8vh;
+  margin-bottom: 20vh;
+}
+.introBox.framed {
+  background-color: rgba(19, 21, 33, 0.75);
+  border-radius: 49pt;
 }
 .introBox .introTextBox {
   display: block;
@@ -2780,18 +2800,6 @@ video {
 .introBox .introTextBox .introText h5 {
   text-align: center;
   color: white !important;
-}
-.introBox .introTextBox .introButton {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -moz-align-items: -moz-flex-end;
-  -webkit-align-items: -webkit-flex-end;
-  -ms-align-items: -ms-flex-end;
-  align-items: flex-end;
-  width: max-content;
-  margin: 2em auto 0;
 }
 @media screen and (max-width: 736px) {
   .introBox .introTextBox .introText {
@@ -2823,21 +2831,37 @@ video {
 }
 @media screen and (max-width: 980px) {
   .introBox {
-    margin-top: 8vh;
-    margin-bottom: 15vh;
+    margin-top: 4vh;
+    margin-bottom: 10vh;
   }
 }
 @media screen and (max-width: 736px) {
   .introBox {
-    margin-top: 4vh;
-    margin-bottom: 7.5vh;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
   }
 }
 @media screen and (max-width: 480px) {
   .introBox {
-    margin-top: 2vh;
-    margin-bottom: 3.75vh;
+    margin-top: 1vh;
+    margin-bottom: 2.5vh;
   }
+}
+
+.scrollToContentButton {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2em auto 0;
+}
+.scrollToContentButton * {
+  font-size: 8em !important;
 }
 
 .mosaicContainer {
@@ -3172,20 +3196,8 @@ body.is-preload #header.alt {
   padding: 0 !important;
   position: relative;
 }
-#banner > .inner .contentBox {
-  background-color: rgba(19, 21, 33, 0.45);
-  margin: 16vh auto 30vh;
-  width: max-content;
-  max-width: 100%;
-  padding: 1em 1em 2em 1em;
-  border-radius: 18pt;
-}
-#banner > .inner .contentBox.wide {
-  padding: 1em 3em 2em 3em;
-  margin-bottom: 45vh;
-}
 #banner > .inner header {
-  width: auto;
+  width: 100%;
 }
 #banner > .inner .content {
   display: -moz-flex;
@@ -3294,8 +3306,8 @@ body.is-preload #banner > .inner {
 }
 @media screen and (max-width: 980px) {
   #banner > .inner .contentBox {
-    margin-top: 8vh;
-    margin-bottom: 15vh;
+    margin-top: 4vh;
+    margin-bottom: 10vh;
   }
 }
 @media screen and (max-width: 736px) {
@@ -3307,8 +3319,8 @@ body.is-preload #banner > .inner {
     font-size: 2em;
   }
   #banner > .inner .contentBox {
-    margin-top: 4vh;
-    margin-bottom: 7.5vh;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
   }
   #banner > .inner .content {
     display: block;
@@ -3324,8 +3336,8 @@ body.is-preload #banner > .inner {
 }
 @media screen and (max-width: 480px) {
   #banner > .inner .contentBox {
-    margin-top: 4vh;
-    margin-bottom: 7.5vh;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
   }
   #banner > .inner .content p br {
     display: none;
@@ -3626,10 +3638,6 @@ body.is-preload #banner > .inner {
 
 /* Wrapper */
 #wrapper {
-  -moz-transition: -moz-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-  -webkit-transition: -webkit-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-  -ms-transition: -ms-filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
-  transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
   padding-top: 3.25em;
 }
 #wrapper.is-transitioning {

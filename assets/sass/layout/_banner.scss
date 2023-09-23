@@ -7,41 +7,19 @@
 /* Banner */
 
 	#banner {
-		@include debug-outline(teal);
+		@include debug-outline(red);
 
 		@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
-		//@include vendor('background-image', 'url("../../images/banner.jpg")');
-
-		// This provides the top padding to fit the menu bar.
-		//@include padding(4em, 0, (2em, 0, 0, 0));
-
-		//background-attachment: fixed;
-		//background-position: center;
-		//background-repeat: no-repeat;
-		//background-size: cover;
-
-		//border-bottom: 0 !important;
 
 		cursor: default;
 
-		//margin-bottom: -3.25em;
-		//margin-bottom: -1 * _size(menu-offset);
-
 		position: relative;
 		overflow: hidden;
-		//height: _size(banner-height);
-		//max-height: 32em;
-		//min-height: 22em;
-
-		//top: -3.25em;
-		//top: -2.25em;
-		//top: -1 * _size(menu-offset);
 
 		h1 {
 			font-size: 3.25em;
 			text-align: center;
-			//flex: 1;
 		}
 
 		> .inner {
@@ -59,39 +37,30 @@
 			position: relative;
 
 
-			.contentBox {
-				@include debug-outline(red);
-
-				background-color: rgb(19, 21, 33, 0.45);
-
-				//margin: 0 auto 3*_size(element-margin) auto;
-				margin: _size(banner-project-top-margin) auto _size(banner-project-bottom-margin);
-
-				width: max-content;
-				max-width: 100%;
-
-				padding: 1em 1em 2em 1em;
-
-				border-radius: _size(menu-border-radius);
-
-				&.wide {
-					padding: 1em 3em 2em 3em;
-					margin-bottom: 45vh;
-				}
-			}
+			//.contentBox {
+			//	@include debug-outline(red);
+			//
+			//	margin:
+			//			_size(banner-project-top-margin)
+			//			auto
+			//			_size(banner-project-bottom-margin);
+			//	padding: 1em 1em 2em 1em;
+			//	width: max-content;
+			//	max-width: 100%;
+			//
+			//	background-color: rgb(19, 21, 33, 0.45);
+			//	border-radius: _size(menu-border-radius);
+			//
+			//	&.wide {
+			//		padding: 1em 3em 2em 3em;
+			//		margin-bottom: 45vh;
+			//	}
+			//}
 
 			header {
-				width: auto;
+				//width: auto;
+				width: 100%;
 				@include debug-outline(deepskyblue);
-
-
-				//> :first-child {
-				//	width: auto;
-				//
-				//	&:after {
-				//		max-width: 100%;
-				//	}
-				//}
 			}
 
 			.content {

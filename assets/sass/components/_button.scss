@@ -31,7 +31,7 @@
 		);
 
 		//box-shadow: _palette(bg-alt3);
-		box-shadow: inset 0 0 0 2px desaturate(darken(_palette(highlight), 15), 5);
+		//box-shadow: inset 0 0 0 2px desaturate(darken(_palette(highlight), 15), 5);
 
 		//background-image: radial-gradient(
 		//	rgba(70, 63, 127, .1),
@@ -152,15 +152,19 @@
 				@include debug-outline(purple);
 
 				&:before {
-					position: absolute;
 					display: block;
-					top: 0;
-					left: 0;
+
+					position: absolute;
+
 					width: inherit;
 					height: inherit;
-					line-height: inherit;
-					font-size: 1.25rem;
+					top: 0;
+					left: 0;
 					margin-right: 0;
+
+					line-height: inherit;
+					//font-size: 1.25rem;
+					font-size: 1.5rem;
 					text-align: center;
 					text-indent: 0;
 				}
