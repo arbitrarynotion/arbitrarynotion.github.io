@@ -238,6 +238,7 @@
 		@include breakpoint('<=medium') {
 			> section {
 				display: block;
+				//flex-direction: column-reverse;
 
 				> .image {
 					width: 100%;
