@@ -20,13 +20,22 @@
 	//border-radius: _size(introBox-border-radius);
 
 
-	@include breakpoint('<=small') {
+	@include breakpoint('<=medium') {
 		@include vendor('display', 'block');
 	}
 
 	&.wide {
 		@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
+
+		@include breakpoint('<=small') {
+			@include vendor('display', 'flex');
+			@include vendor('align-items', 'center');
+			@include vendor('flex-direction', 'column');
+
+			margin-top: _size(banner-project-top-margin);
+			margin-bottom: _size(banner-project-bottom-margin);
+		}
 	}
 
 	&.tall {

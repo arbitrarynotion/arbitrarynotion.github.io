@@ -2622,6 +2622,7 @@ button:disabled,
   width: 65em;
 }
 .spotlights > section > .content > .inner .major {
+  max-width: 100%;
   text-align: center;
 }
 .spotlights > section > .content > * {
@@ -2749,7 +2750,7 @@ video {
   width: max-content;
   max-width: 100%;
 }
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 980px) {
   .introBox {
     display: block;
   }
@@ -2763,6 +2764,24 @@ video {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+}
+@media screen and (max-width: 736px) {
+  .introBox.wide {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 8vh;
+    margin-bottom: 20vh;
+  }
 }
 .introBox.tall {
   display: -moz-flex;
@@ -3401,6 +3420,8 @@ body.is-preload #banner > .inner {
   background-color: #23263d;
   background: transparent;
   margin-bottom: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   text-align: center;
   font-family: "Orbitron", Helvetica, sans-serif;
   font-variant: small-caps;
