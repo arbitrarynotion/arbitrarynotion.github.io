@@ -2633,8 +2633,11 @@ button:disabled,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  width: 100%;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
   justify-content: center;
+  width: 100%;
   padding-right: 1em;
   padding-bottom: 1em;
 }
@@ -3420,8 +3423,6 @@ body.is-preload #banner > .inner {
   background-color: #23263d;
   background: transparent;
   margin-bottom: 0;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
   text-align: center;
   font-family: "Orbitron", Helvetica, sans-serif;
   font-variant: small-caps;
@@ -3431,10 +3432,13 @@ body.is-preload #banner > .inner {
   background: blue;
 }
 .sectionTitle > h2 {
-  padding: 0 0 0.1em 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 .sectionTitle > h3, .sectionTitle h4, .sectionTitle h5, .sectionTitle h6 {
   background-color: rgba(233, 233, 255, 0.1);
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .description {
