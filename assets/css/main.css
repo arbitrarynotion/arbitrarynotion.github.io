@@ -3213,6 +3213,8 @@ body.is-preload #header.alt {
 #banner h1 {
   font-size: 3.25em;
   text-align: center;
+  line-height: 1;
+  padding-bottom: 0.25em;
 }
 #banner > .inner {
   padding: 0 !important;

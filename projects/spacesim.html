@@ -229,11 +229,13 @@
 									other space stations that produce the needed resources, spacing out the scans to avoid
 									impacting the game's performance.
 									<br><br>
-									Once a space station is found that has the desired
-									resource in stock, an idle worker is assigned to perform the collection. When the
+									Once a space station that has the desired resource in stock is found, an idle worker
+									is assigned to perform the collection. When the
 									worker returns and deposits the resources, the order is marked as complete, and the
 									process begins again. <b>All of this activity is displayed in an in-game UI so that
-									the player can see how stock is being managed</b>.
+									the player can see how stock is being managed</b>. Additionally, I developed a code-based
+									animation system for the docking arms which, together with animated landing lights and
+									in-world UI, clearly communicate how a station's local traffic is being handled.
 
 								</p>
 							</div>
@@ -287,6 +289,52 @@
 								<video autoplay muted loop playsinline>
 									<source src="../videos/Results02x264.mp4" type=video/mp4>
 								</video>
+							</div>
+
+						</div>
+					</section>
+
+					<section class="sectionBlock">
+
+						<div class="sectionTitle">
+							<h2>Lessons Learned</h2>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+
+								<p>
+									As I'm concluding work on a project, I often find myself thinking about what I would
+									do different given the chance to start over with what I'd just learned. One of my favorite
+									things about this project was how it gave me a chance to explore that idea in practice; to
+									see just how much I could improve on my previous work.
+								</p>
+
+								<p>
+									While there are many aspects I could talk about here, I'll focus on just two for the sake
+									of brevity.
+								</p>
+
+								<h4>Taking Responsibility for Previous Code</h4>
+								<p>
+									Though I always strive to write code in a way that is self-documenting and easily
+									understood, I don't often get the chance to really put that work to the test. When
+									revisiting this project, I had to work with code that I'd written over a year early, so
+									I often needed to rebuild my understanding of exactly what the code was doing. Though
+									I found some of my previous efforts helpful, I also found some lacking which prompted me
+									to develop several improvements in code organization and documentation moving forward.
+								</p>
+
+								<h4>Favor Composition over Inheritance</h4>
+								<p>
+									A common theme in my early work was an over reliance on inheritance to reduce code
+									repetition and combine shared behaviors. Though I was aware of this guideline, that
+									composition is often a more flexible and maintainable solution than inheritance, it
+									didn't really start to click for me until I'd personally encountered the shortcomings
+									of inheritance. 
+								</p>
+
 							</div>
 
 						</div>
