@@ -3220,6 +3220,18 @@ body.is-preload #header.alt {
   padding: 0 !important;
   position: relative;
 }
+#banner > .inner .contentBox {
+  margin: 8vh auto 20vh;
+  padding: 1em 1em 2em 1em;
+  width: max-content;
+  max-width: 100%;
+  background-color: rgba(19, 21, 33, 0.45);
+  border-radius: 18pt;
+}
+#banner > .inner .contentBox.wide {
+  padding: 1em 3em 2em 3em;
+  margin-bottom: 45vh;
+}
 #banner > .inner header {
   width: 100%;
 }
@@ -3465,6 +3477,9 @@ body.is-preload #banner > .inner {
 }
 .description .buttonBox.centered {
   justify-content: center;
+}
+.description b.note {
+  font-size: 0.75em;
 }
 
 .highlights {
@@ -3830,6 +3845,9 @@ body.is-preload #banner > .inner {
   display: block;
   font-weight: 600;
   text-decoration: none;
+}
+#menu ul.links > li .selected {
+  color: rgba(244, 244, 255, 0.2);
 }
 #menu ul.links > li > b {
   font-size: 1.25em;

@@ -115,6 +115,19 @@
 
 		}
 	}
+
+	//.image{
+	//	b{
+	//		font-size: _font(subtitle-sizing);
+	//		//background-color: yellow;
+	//	}
+	//}
+
+	b{
+		&.note{
+			font-size: _font(note-sizing);
+		}
+	}
 }
 
 

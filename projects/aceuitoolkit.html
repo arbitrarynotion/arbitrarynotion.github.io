@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en-us">
+<head>
+	<title>Ian Ritter's Portfolio: ACE UI Toolkit</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Header -->
+	<header id="header" class="alt style8">
+		<a href="../index.html" class="logo"><strong>Ian Ritter</strong> <span>Portfolio</span></a>
+		<nav>
+			<a href="#menu">Menu</a>
+		</nav>
+	</header>
+
+	<video class="video-bg" autoplay muted loop>
+		<source src="../videos/SpaceSimBannerGasMining01.mp4" type="video/mp4">
+	</video>
+
+	<!-- Menu -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../aboutMe.html">About Me</a></li>
+			<li><a href="../contact.html">Contact</a></li>
+
+			<li><b>Projects</b></li>
+			<li><a href="spacesim.html">Space Sim</a></li>
+			<li><a class="selected" href="aceuitoolkit.html">ACE UI Toolkit</a></li>
+			<li><a href="procgenresearch.html">Procedural Generation Research</a></li>
+		</ul>
+	</nav>
+
+	<section id="banner">
+		<div class="inner">
+
+
+
+			<div class="introBox tall framed">
+
+				<header class="major">
+					<div class="sectionTitle">
+						<h1>ACE UI<br>Toolkit</h1>
+					</div>
+				</header>
+
+				<div class="content">
+					<div class="projectStats">
+						<div class="table-wrapper">
+							<table class="alt2">
+								<tbody>
+								<tr><td>Project Type</td> <td><b>Solo project</b></td></tr>
+								<tr><td>Project Duration</td> <td><b>5 Months</b></td></tr>
+								<tr><td>Project Status</td> <td><b>Ongoing</b></td></tr>
+								<tr><td>Software Used</td> <td><b>Unity Game Engine</b></td></tr>
+								<tr><td>Languages Used</td> <td><b>C#</b></td></tr>
+								<tr><td>Primary Role(s)</td> <td><b>Lead Programmer / Lead Designer</b></td></tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="buttonBox centered">
+							<a href="https://github.com/arbitrarynotion/com.ianritter.aceuiframework" target="_blank" rel="noopener noreferrer"
+							   class="button small centered icon brands fa-github">Github Project</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</section>
+
+	<!-- Main -->
+	<div id="main" class="alt">
+
+		<div class="inner">
+			<section class="sectionBlock">
+				<div class="sectionTitle">
+					<h2>Project Summary</h2>
+				</div>
+
+				<div class="description">
+					<div class="content">
+						<p>
+							Accessible Custom Editor (ACE) UI is a <b>Unity development toolkit that streamlines custom
+							editor creation</b> and provides <b>real-time custom UI manipulation
+							and visualization features</b> for both game script properties and custom UI layout.
+						</p>
+
+						<h4>Project Purpose</h4>
+						<p>
+							I embarked on this solo project to <b>address my frustration with the default way UI is
+							drawn for custom game scripts in Unity</b>. When exposing script properties (settings) to the Inspector
+							(the in-engine game script UI),
+							the <b>grouping and labeling options are very limited and produce UI
+							that can be difficult to visually parse</b>. More effective UI such as
+							indented, fold-able groups and disabling UI elements via a checkbox do exist within
+							Unity's custom editor library, but <b>there is no simple and efficient way to access these advanced options</b>.
+						</p>
+						<p>
+							The need for one of these options on even a single property requires writing a boilerplate-heavy custom
+							editor script where every property must be manually identified, loaded, and drawn.
+							As a result, <b>a Unity programmer is left with only two options: accept game script UI
+							that is functional but difficult to work with or write a time-consuming and tedious
+							custom editor script to improve the user experience</b>.
+						</p>
+
+						<p>
+							ACE UI solves these problems by taking the following steps to improve the game script UI experience
+							for both the programmer and the user.
+						</p>
+						<ul>
+							<li>
+								<b>Improving the Programmer's Experience</b>
+								<p>
+									Through a custom editor framework ACE UI automates the finding and loading of
+									game script properties and provides a
+									suite of grouping and labeling functions that <b>require no custom editor script or code to
+									access</b>. It further simplifies the process by requiring only grouping to be
+									specified, relegating all look and feel settings to an in-editor settings window.
+								</p>
+
+							</li>
+
+							<li>
+								<b>Improving the User's Experience</b>
+								<p>
+									All default custom UI layout settings are relegated to reusable Themes which
+									are edited using a Theme Settings window in Unity. Edits to these settings
+									are rendered in real-time, promoting experimentation through immediate feedback,
+									and empowering the user to define the UI look and feel that works for them.
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="sectionBlock">
+				<div class="sectionTitle">
+					<h2>Key Components</h2>
+				</div>
+
+				<div class="description">
+
+					<div class="content">
+						<p>
+							Following is a high-level list of the key components that I completed for this project:
+						</p>
+						<ul>
+							<li>
+								<b>Custom editor framework</b> that handles all custom editor code and includes
+								library functions that provide advanced custom UI functionality
+							</li>
+							<li>
+								<b>Bridge that connects Unity runtime scripts to Unity Editor functionality</b>
+								without breaking builds by including editor code in runtime scripts
+							</li>
+							<li>
+								<b>System that stores all UI element types as objects</b> with their properties
+								linkable to properties within a Theme
+							</li>
+							<li>
+								<b>Theme system that links all relevant properties within all assigned custom
+									game scripts to a theme</b>, syncing updates in real-time in both edit and play mode
+							</li>
+							<li>
+								<b>Theme Manager</b> that finds all custom game scripts utilizing ACE UI and assigns
+								themes via an editor window within Unity
+							</li>
+							<li>
+								<b>Theme Settings window</b> that utilizes its own ACE UI theme to present all the
+								settings in the active theme
+							</li>
+							<li>
+								<b>Conversion to distributable package via GitHub and Unity Package Manager</b> with
+								automatic version control using Semantic Release
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+
+			<section class="sectionBlock">
+				<div class="sectionTitle">
+					<h2>Highlights</h2>
+				</div>
+
+				<div class="sectionTitle">
+					<h3>Custom Editor Framework</h3>
+				</div>
+
+				<div class="description">
+
+					<div class="content">
+						<p>
+							The <b>two key goals of this project</b> were to <b>make custom editor creation more efficient</b>
+							and to provide grouping and labeling options to <b>make custom UI creation more versatile</b>.
+						</p>
+						<p>
+							To address the inefficiency issue, <b>I developed a framework to automate handling of Serialized
+							Properties</b>. This framework <b>utilizes inheritance and reflection to facilitate custom
+							editor creation within the game script itself</b>. That is, the game script inherits from a root
+							script and specifies how its properties will be grouped by providing implementation
+							for an inherited, abstract method.
+						</p>
+						<p>
+							With the custom editor creation simplified, I then developed a hierarchy of Element
+							Info objects designed to contain all relevant data to draw various UI elements and
+							an associated library of custom editor functions to provide grouping and labeling options.
+						</p>
+						<p>
+							With these systems in place, <b>a game script could specify exactly how its
+							properties should be drawn in Unity's UI, including grouping and labeling options,
+							with very little code, no additional scripts, and no editor code required</b>.
+						</p>
+						<p>
+							See the class diagram below for a high-level overview of how this system works.<br>
+						</p>
+
+						<span class="image fit">
+							<b class="note">*Click the image to see a higher resolution version.</b>
+							<a href="../images/ACEUIFrameworkClassDiagram02.png" target="_blank">
+								<img src="../images/ACEUIFrameworkClassDiagram02.png" alt="" />
+							</a>
+						</span>
+					</div>
+				</div>
+
+				<div class="sectionTitle">
+					<h3>Realtime UI Customization Tool</h3>
+				</div>
+
+				<div class="description">
+
+					<div class="content">
+						<p>
+							While developing the framework for this project, <b>I continually tested my approach</b> to
+							determine what was the best way to simplify the process of creating a custom editor
+							without sacrificing the flexibility attained by manually writing a custom editor script.
+							It was through this testing that <b>I realized that putting the default layout settings for
+							custom UI elements into the user's hands</b> would not only <b>improve the programmer's experience
+							by requiring less code to be written</b>, it would <b>support accessibility
+							by empowering the user to choose the UI look and feel that works best for them</b>.
+						</p>
+
+						<p>
+							To implement this approach, I created the following components:
+						</p>
+
+						<ul>
+							<li>
+								<b>Theme system</b> to store settings presets in a portable and reusable format
+								that can be applied to multiple game script UIs simultaneously
+							</li>
+							<li>
+								<b>Theme Settings window</b> to facilitate real-time theme settings editing while
+								Unity is in either Edit or Play mode
+							</li>
+							<li>
+								<b>Theme Manager window</b> that:
+								<ul>
+									<li>
+										Lists all game scripts utilizing the ACE UI framework
+									</li>
+									<li>
+										Shows what theme has been assigned to each game script
+									</li>
+									<li>
+										Facilitates theme reassignment, updating all attached game script UIs
+										in real-time
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+<!--						<p>-->
+<!--							<b class="note">(Video demonstrating the Theme Settings window editing the look and feel of a component in real-time)</b>-->
+<!--						</p>-->
+
+<!--						<p>-->
+<!--							<b class="note">(Video demonstrating the Theme Manager window swapping component themes in real-time)</b>-->
+<!--						</p>-->
+					</div>
+				</div>
+
+			</section>
+
+			<!--Results-->
+			<section class="sectionBlock">
+
+				<div class="sectionTitle">
+					<h2>Results</h2>
+				</div>
+
+				<div class="description">
+
+					<div class="content">
+						<p>
+							I feel that the best way to showcase the effectiveness of this toolkit is to <b>show it
+							having a positive impact in a practical application</b>.
+						</p>
+						<p>
+							After completing this ACE UI's core features, I resumed development on my
+							<a href="spacesim.html"><b>Space Sim</b></a> since it's complex, multi-component
+							procedural generation system would <b>provide an excellent real-world use case and
+							stress test for ACE UI</b>. With the framework, I was able to <b>produce complex game
+							script UIs that exceeded what was possible with Unity's default custom editor scripting
+							while taking a fraction of the time to produce</b>. I was then able to <b>create a unified
+							look and feel across all components</b> by creating and adjusting a custom Theme.
+						</p>
+
+<!--						<p>-->
+<!--							<b class="note">(Video demonstrating scrolling through the Space Sim component stack)</b>-->
+<!--							<br>-->
+<!--							<b class="note">(Compare default Inspector to ACE UI Inspector if time permits)</b>-->
+<!--						</p>-->
+
+						<p>
+							Applying ACE UI to Space Sim's game scripts <b>helped me identify and address many edge
+							cases that I'd missed during testing</b>, allowing me to <b>further refine and polish the
+							framework</b>. This also highlighted the need for various additional features including
+							rendering game script data as real-time UI graphs, which I was able to quickly
+							implement since I'd designed the framework to be extensible.
+						</p>
+
+						<p>
+							The following video shows how I utilized ACE UI to not only organize the Resource
+							Manager's many settings into meaningful groups, but I also render the resulting
+							resource generation into a graph displaying resource distribution counts in real-time.
+						</p>
+
+					</div>
+
+					<div class="videoSectionBox">
+						<video autoplay muted loop playsinline>
+							<source src="../videos/ResourceGenDemo_Part2_ResourceMap_02_x264.mp4" type=video/mp4>
+						</video>
+					</div>
+
+				</div>
+			</section>
+
+
+			<section class="sectionBlock">
+
+				<div class="sectionTitle">
+					<h2>Contact</h2>
+				</div>
+
+				<div class="description">
+					<p class="content" style="text-align: center">
+						Have questions about my projects or work experience?
+						<br />
+						Think I'd be a great match for your team?
+						<br />
+						Feel free to reach out!
+					</p>
+				</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+
+							<section>
+								<ul class="icons">
+									<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github">
+										<span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+
+							<section>
+								<div class="contact-method">
+									<div>ian.ritter.cs@gmail.com</div>
+								</div>
+							</section>
+
+						</section>
+					</div>
+				</section>
+			</section>
+
+
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>&copy; Ian Ritter</li>
+				<li>Built from Template by: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

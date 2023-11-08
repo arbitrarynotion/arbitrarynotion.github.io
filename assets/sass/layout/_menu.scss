@@ -155,6 +155,11 @@
 
 					}
 
+					.selected{
+						color: _palette(fg-light);
+						//background-color:#b51ba2;
+					}
+
 					> b {
 						@include debug-outline(red);
 
