@@ -48,6 +48,21 @@
 			}
 		}
 
+		&.reduced {
+			display: block;
+			width: 85%;
+			//margin: 0 auto;
+
+			img {
+				width: 85%;
+				margin: 0;
+			}
+
+			a {
+				margin: 0;
+			}
+		}
+
 		&.main {
 			display: block;
 			margin: (_size(element-margin) * 1.25) 0;
