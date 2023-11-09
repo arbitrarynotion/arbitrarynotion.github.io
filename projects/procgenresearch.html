@@ -89,13 +89,312 @@
 
 						<div class="description">
 							<div class="content">
+								<p>This group research project was developed to <b>explore how medical diagnosis training
+									simulation could be improved using procedural generation</b>. As a lead programmer on
+									this project, I designed and implemented the procedural generation algorithm that
+									generated patient scenarios, wrote the associated documentation, helped develop the
+									statistical analysis system, and co-authored the (unpublished) research paper.</p>
+
+								<h4>Project Purpose</h4>
+								<!--								<h5>Research</h5>-->
 								<p>
-									<b>Project details coming soon!</b><br>
+									Through our research, we determined that <b>existing medical diagnosis training
+									simulations had some shortcomings</b>. We found that the best training simulation
+									available, which involved using specially trained actors, was <b>cost-prohibitive and
+									inflexible</b> and existing <b>computerized solutions failed to capture the complexity of a
+									real-life patient scenario</b>.
+								</p>
+
+								<!--								<h5>Hypothesis</h5>-->
+								<p>
+									With this knowledge, we hypothesized that <b>a key weakness of existing computer simulations was
+									that their one-dimensional patient scenarios mostly only tested memorization</b>. A real
+									patient is more complicated as they have a history consisting of events that can
+									effect their chances for developing, and resisting, various ailments. For example, factors such as
+									past illnesses, living conditions, economic standing, education, family relations,
+									etc. can make a patient more or less likely to experience physical or mental illness.
+									Taking these factors into considering when simulating patient scenarios could provide
+									<b>more meaningful medical training that could facilitate more than just memorization
+										testing</b>, introducing greater nuance and ambiguity by simulating causality.
+								</p>
+
+								<h4>Application Development</h4>
+
+								<p>To test this hypothesis, we developed a <b>medical diagnosis training application in Unity</b>
+									where a trainee could <b>interview a procedurally generated patient, choose a diagnosis,
+										and review the accuracy of their decision</b>.
 								</p>
 							</div>
 						</div>
 					</section>
 
+
+					<section class="sectionBlock">
+						<div class="sectionTitle">
+							<h2>Features</h2>
+						</div>
+
+						<div class="description">
+							<div class="content">
+								<p>Following is a high-level list of the key components that I completed for this project:</p>
+								<ul>
+									<li>
+										<b>Detailed, modular Patient model</b>
+									</li>
+									<li>
+										<b>Expandable collection of Life Events</b> with associated preconditions, effects,
+										and probability modifiers
+									</li>
+									<li>
+										<b>Dynamic probability system</b> which takes multiple factors into consideration to
+										determine the chance of an event taking place
+									</li>
+									<li>
+										<b>Life Event system</b> which determines if an event takes place based on the following factors:
+										<ul>
+											<li>
+												<b>Past events</b> in the patient's history
+											</li>
+											<li>
+												<b>Hereditary events</b> in the patient's parent's history
+											</li>
+											<li>
+												<b>Contagious events</b> in the patient's relation's histories
+											</li>
+										</ul>
+									</li>
+									<li>
+										<b>Procedural Generation algorithm</b> that utilizes the Life Event system to construct
+										a patient's history from birth to the doctor's appointment date
+									</li>
+									<li>
+										<b>Planner</b> which builds the patient scenario by generating the patient, their
+										parents, and their children
+									</li>
+									<li>
+										<b>Procedural Generation Manager</b> component which provides a suite of planner
+										settings in Unity to customize the patient scenario
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="sectionBlock">
+						<div class="sectionTitle">
+							<h2>Highlights</h2>
+						</div>
+
+						<div class="sectionTitle">
+							<h3>Simulating a Dynamic Patient</h3>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+								<!--								<p>-->
+								<!--									Detail the system used to generate a patient to show how implementing causality-->
+								<!--									results in scenarios that require considering patient history to effectively diagnose.-->
+								<!--								</p>-->
+
+								<!--								- patient model-->
+								<!--								- life event deck-->
+								<!--								- dynamic probability system-->
+								<!--								- patient event processor-->
+								<!--								- patient generator-->
+								<!--								- planner-->
+								<!--								- procedural generation manager-->
+
+								<p>
+									To simulate a patient, I first worked with my team to develop a sufficiently detailed
+									patient model.
+
+									As the central goal to this project was to <b>generate a patient that
+									meaningfully influenced the quality of diagnosis training</b>, I designed a system which
+									<b>produced the patient's history as a collection of life events applied chronologically</b>.
+									By determining the probability of event occurrences based on existing conditions,
+									this Life Event system <b>simulated cause and effect</b>, giving each event context.
+									As a result, the medical event that brought the patient to the doctor's office <b>could
+									have many factors influencing its inception, the expression and severity of its
+									symptoms, and its overall duration</b>.
+
+									<!--									As the central goal to this project was to generate a patient with a history that-->
+									<!--									meaningfully effected diagnosis, I designed the Life Event system.-->
+									<!--									This system produced the intended impact on diagnosis by building a patient's-->
+									<!--									history chronologically as a series of life events applied conditionally. That is,-->
+									<!--									each event applied would affect the probability of future events simulating cause-->
+									<!--									and effect. As a result, the medical event that brought the patient to the doctor's-->
+									<!--									office may have many factors influencing its inception, the expression and severity-->
+									<!--									of its symptoms, and its overall duration.-->
+
+									<!--									The Life Event system pulls from a collection of events split into categories-->
+									<!--									including medical, relations, education, career, and habits. To ensure that the-->
+									<!--									system could be easily extended and modified, I designed it to pull its events from-->
+									<!--									a pool of Scriptable Objects.-->
+
+
+									<!--									I further augmented causality by including hereditary and contagious events. By-->
+									<!--									generating the patient's parents, spouse, and children first, the patient's probability-->
+									<!--									to experience various life events could be affected by the past events of their-->
+									<!--									parents and/or the contemporary events-->
+
+								</p>
+
+								<p>
+									To further deepen the aspect of causality, I also designed the system to take
+									hereditary events into consideration. By generating the patient's
+									parents first, then taking their histories into consideration when processing
+									the patient's history, life events with a hereditary aspect can become more likely.
+								</p>
+
+								<!--								<p>-->
+								<!--									The following image shows the Planner class diagram where the Life Event system is-->
+								<!--									applied when the PatientGenerator utilizes the PatientEventProcessor to generate-->
+								<!--									the Patient.-->
+								<!--								</p>-->
+								<span class="image reduced">
+									The following image shows a detailed output for a patient including the
+									output for both of their parents.<br>
+									<b class="note">*Click the image to see a higher resolution version.</b>
+									<a href="../images/PGR_Patient_Output_Receipt_Format_01.png" target="_blank">
+										<img src="../images/PGR_Patient_Output_Receipt_Format_01.png" alt="" />
+									</a>
+								</span>
+
+								<p>
+									<br>
+								</p>
+
+								<span class="image fit">
+									The following class diagram shows how the PatientGenerator utilizes the
+									PatientEventProcessor, applying the Life Event system, to generate the Patient.<br>
+									<b class="note">*Click the image to see a higher resolution version.</b>
+									<a href="../images/PGR_Planner_Class_Diagram_01.png" target="_blank">
+										<img src="../images/PGR_Planner_Class_Diagram_01.png" alt="" />
+									</a>
+								</span>
+
+							</div>
+						</div>
+
+						<div class="sectionTitle">
+							<h3>Statistical Analysis</h3>
+						</div>
+
+						<div class="description">
+
+							<div class="content">
+								<!--								<p>-->
+								<!--									Detail system and results of statistical analysis and how it helped balance event-->
+								<!--									probabilities to create reasonable/realistic distributions.-->
+								<!--								</p>-->
+
+								<p>
+									An key challenge <b>when developing a system based heavily on probability</b> is <b>ensuring
+									that the results it produces make sense</b>. To this end, I developed a <b>testing program
+									to produce a large batch of patients</b> to be fed into a system that my team
+									developed to <b>export the results to an Excel spreadsheet for analysis</b>. We then set up the
+									spreadsheet to do automatic calculations and display the relevant data including
+									the average and standard deviation for ranged values, the counts and occurrence
+									rates for events, and a combined number to give the batch of patients an overall
+									diversity a rating. This analysis <b>helped us identify behavior that didn't make sense</b>,
+									like rare diseases occurring too frequently, and <b>adjust event probabilities to
+									get more realistic results</b>.
+								</p>
+
+								<span class="image fit">
+									<b class="note">*Click the image to see a higher resolution version.</b>
+									<a href="../images/PGR_Statistical_Analysis_01.png" target="_blank">
+										<img src="../images/PGR_Statistical_Analysis_01.png" alt="" />
+									</a>
+								</span>
+
+
+							</div>
+						</div>
+
+						<!--						<div class="sectionTitle">-->
+						<!--							<h3>Optimization</h3>-->
+						<!--						</div>-->
+
+						<!--						<div class="description">-->
+
+						<!--							<div class="content">-->
+						<!--								<p>-->
+						<!--									Describe how initial planner design was effective but inefficient and how I implemented-->
+						<!--									object pooling to significantly increase the speed of patient generation.-->
+						<!--								</p>-->
+
+						<!--								<p>-->
+						<!--									<b class="note">(Images of profiler before and after results)</b>-->
+						<!--								</p>-->
+						<!--							</div>-->
+						<!--						</div>-->
+
+					</section>
+
+					<!--Results-->
+					<section class="sectionBlock">
+						<div class="sectionTitle">
+							<h2>Results</h2>
+						</div>
+
+						<!--						<div class="sectionTitle">-->
+						<!--							<h3>The Application</h3>-->
+						<!--						</div>-->
+
+						<div class="description">
+
+							<div class="content">
+								<!--								<p>-->
+								<!--									Focus on the results of the work that I did, then include the overall results and show a-->
+								<!--									short demo.-->
+								<!--								</p>-->
+								<!--								<h4>The Application</h4>-->
+								<p>
+									As a Computer Science research project, <b>our goal with this project was to develop a
+									hypothesis and then build an application to test it</b>. While
+									the heart of this application was the planner that I developed, several other components
+									were needed to create the context to effectively test it. These components,
+									which my teammates developed, included locating and placing 3D assets to build the doctor's office
+									scene, implementing a dialog system, developing a patient names database for
+									the planner to pull from, and a clipboard UI to display the information collected from the patient.
+								</p>
+
+								<p>
+									When interviewing a patient, <b>the player must discover the particulars of the scenario
+									by asking questions</b>, with the data collected being automatically recorded on an on-screen
+									clipboard. When the player feels ready to submit a diagnosis, they select the ailment
+									from a list of possibilities, followed by a message displaying the result or their choice.
+								</p>
+
+								<!--Result video-->
+								<div class="videoBox">
+									<video autoplay muted loop>
+										<source src="../videos/ProgenIcon01_x264.mp4" type=video/mp4>
+									</video>
+								</div>
+
+
+							</div>
+
+						</div>
+
+						<!--						<div class="sectionTitle">-->
+						<!--							<h3>Was Our Hypothesis Correct?</h3>-->
+						<!--						</div>-->
+
+						<!--						<div class="description">-->
+
+						<!--							<div class="content">-->
+						<!--								<p>-->
+						<!--									Some Text.-->
+						<!--								</p>-->
+						<!--							</div>-->
+						<!--						</div>-->
+
+					</section>
 
 
 
