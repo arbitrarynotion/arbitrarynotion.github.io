@@ -89,7 +89,7 @@
 
 						<div class="description">
 							<div class="content">
-								<p>This group research project was developed to <b>explore how medical diagnosis training
+								<p>This group research project, composed of myself and two other students, was developed to <b>explore how medical diagnosis training
 									simulation could be improved using procedural generation</b>. As a lead programmer on
 									this project, I designed and implemented the procedural generation algorithm that
 									generated patient scenarios, wrote the associated documentation, helped develop the
@@ -151,16 +151,16 @@
 									</li>
 									<li>
 										<b>Life Event system</b> which determines if an event takes place based on the following factors:
-										<ul>
+										<ul class="noBottomMargin">
 											<li>
 												<b>Past events</b> in the patient's history
 											</li>
 											<li>
 												<b>Hereditary events</b> in the patient's parent's history
 											</li>
-											<li>
-												<b>Contagious events</b> in the patient's relation's histories
-											</li>
+<!--											<li>-->
+<!--												<b>Contagious events</b> in the patient's relation's histories-->
+<!--											</li>-->
 										</ul>
 									</li>
 									<li>
@@ -206,6 +206,12 @@
 								<!--								- planner-->
 								<!--								- procedural generation manager-->
 
+								<div class="image right">
+									<a href="../images/PGR_Life_Event_Processing_01.png" target="_blank">
+										<img src="../images/PGR_Life_Event_Processing_01.png" alt="" />
+									</a>
+								</div>
+
 								<p>
 									To simulate a patient, I first worked with my team to develop a sufficiently detailed
 									patient model.
@@ -219,27 +225,36 @@
 									have many factors influencing its inception, the expression and severity of its
 									symptoms, and its overall duration</b>.
 
-									<!--									As the central goal to this project was to generate a patient with a history that-->
-									<!--									meaningfully effected diagnosis, I designed the Life Event system.-->
-									<!--									This system produced the intended impact on diagnosis by building a patient's-->
-									<!--									history chronologically as a series of life events applied conditionally. That is,-->
-									<!--									each event applied would affect the probability of future events simulating cause-->
-									<!--									and effect. As a result, the medical event that brought the patient to the doctor's-->
-									<!--									office may have many factors influencing its inception, the expression and severity-->
-									<!--									of its symptoms, and its overall duration.-->
+<!--									As the central goal to this project was to generate a patient with a history that-->
+<!--									meaningfully effected diagnosis, I designed the Life Event system.-->
+<!--									This system produced the intended impact on diagnosis by building a patient's-->
+<!--									history chronologically as a series of life events applied conditionally. That is,-->
+<!--									each event applied would affect the probability of future events simulating cause-->
+<!--									and effect. As a result, the medical event that brought the patient to the doctor's-->
+<!--									office may have many factors influencing its inception, the expression and severity-->
+<!--									of its symptoms, and its overall duration.-->
 
-									<!--									The Life Event system pulls from a collection of events split into categories-->
-									<!--									including medical, relations, education, career, and habits. To ensure that the-->
-									<!--									system could be easily extended and modified, I designed it to pull its events from-->
-									<!--									a pool of Scriptable Objects.-->
+<!--									The Life Event system pulls from a collection of events split into categories-->
+<!--									including medical, relations, education, career, and habits. To ensure that the-->
+<!--									system could be easily extended and modified, I designed it to pull its events from-->
+<!--									a pool of Scriptable Objects.-->
 
 
-									<!--									I further augmented causality by including hereditary and contagious events. By-->
-									<!--									generating the patient's parents, spouse, and children first, the patient's probability-->
-									<!--									to experience various life events could be affected by the past events of their-->
-									<!--									parents and/or the contemporary events-->
+<!--									I further augmented causality by including hereditary and contagious events. By-->
+<!--									generating the patient's parents, spouse, and children first, the patient's probability-->
+<!--									to experience various life events could be affected by the past events of their-->
+<!--									parents and/or the contemporary events-->
 
 								</p>
+
+								<div class="image left">
+<!--									<div class="reduced">-->
+										<a href="../images/PGR_Family_Generation_Workflow_01.png" target="_blank">
+											<img src="../images/PGR_Family_Generation_Workflow_01.png" alt="" />
+										</a>
+<!--									</div>-->
+
+								</div>
 
 								<p>
 									To further deepen the aspect of causality, I also designed the system to take
@@ -253,22 +268,28 @@
 								<!--									applied when the PatientGenerator utilizes the PatientEventProcessor to generate-->
 								<!--									the Patient.-->
 								<!--								</p>-->
-								<span class="image reduced">
-									The following image shows a detailed output for a patient including the
-									output for both of their parents.<br>
-									<b class="note">*Click the image to see a higher resolution version.</b>
-									<a href="../images/PGR_Patient_Output_Receipt_Format_01.png" target="_blank">
-										<img src="../images/PGR_Patient_Output_Receipt_Format_01.png" alt="" />
-									</a>
-								</span>
+								<div class="image">
+									The following patient output reports show the detailed results produced by this
+									system.<br>
+
+									<div class="reduced">
+										<b class="note">*Click the image to see a higher resolution version.</b>
+										<a href="../images/PGR_Patient_Output_Receipt_Format_01.png" target="_blank">
+											<img src="../images/PGR_Patient_Output_Receipt_Format_01.png" alt="" />
+										</a>
+									</div>
+
+								</div>
 
 								<p>
 									<br>
 								</p>
 
 								<span class="image fit">
-									The following class diagram shows how the PatientGenerator utilizes the
-									PatientEventProcessor, applying the Life Event system, to generate the Patient.<br>
+									The following class diagram shows the structure of the codebase I built to produce
+									the aforementioned results.<br>
+<!--									how the PatientGenerator utilizes the-->
+<!--									PatientEventProcessor, applying the Life Event system, to generate the Patient.<br>-->
 									<b class="note">*Click the image to see a higher resolution version.</b>
 									<a href="../images/PGR_Planner_Class_Diagram_01.png" target="_blank">
 										<img src="../images/PGR_Planner_Class_Diagram_01.png" alt="" />
@@ -340,9 +361,9 @@
 							<h2>Results</h2>
 						</div>
 
-						<!--						<div class="sectionTitle">-->
-						<!--							<h3>The Application</h3>-->
-						<!--						</div>-->
+<!--						<div class="sectionTitle">-->
+<!--							<h3>The Application</h3>-->
+<!--						</div>-->
 
 						<div class="description">
 
@@ -365,8 +386,9 @@
 								<p>
 									When interviewing a patient, <b>the player must discover the particulars of the scenario
 									by asking questions</b>, with the data collected being automatically recorded on an on-screen
-									clipboard. When the player feels ready to submit a diagnosis, they select the ailment
-									from a list of possibilities, followed by a message displaying the result or their choice.
+									clipboard. When the player has exhausted their options or feels that they have enough
+									information to submit a diagnosis, they select the suspected ailment from a list of
+									possibilities and a message is displayed evaluating their choice.
 								</p>
 
 								<!--Result video-->
@@ -381,22 +403,53 @@
 
 						</div>
 
-						<!--						<div class="sectionTitle">-->
-						<!--							<h3>Was Our Hypothesis Correct?</h3>-->
-						<!--						</div>-->
-
-						<!--						<div class="description">-->
-
-						<!--							<div class="content">-->
-						<!--								<p>-->
-						<!--									Some Text.-->
-						<!--								</p>-->
-						<!--							</div>-->
-						<!--						</div>-->
-
 					</section>
 
+					<section class="sectionBlock">
 
+						<div class="sectionTitle">
+							<h2>Final Thoughts</h2>
+						</div>
+
+<!--						<div class="sectionTitle">-->
+<!--							<h3>So Much More Potential</h3>-->
+<!--						</div>-->
+
+<!--						<div class="description">-->
+
+<!--							<div class="content">-->
+<!--								<p>-->
+<!--									As this was an intriguing and ambitious project, keeping the scope realistic was-->
+<!--									definitely a challenge. As a team, we deliberated our options and decided on a few-->
+<!--									sensible limitations like restricting the malady collection to only respiratory-->
+<!--									diseases. -->
+<!--								</p>-->
+<!--							</div>-->
+
+<!--						</div>-->
+
+<!--						<div class="sectionTitle">-->
+<!--							<h3>Satisfying Contribution</h3>-->
+<!--						</div>-->
+
+						<div class="description">
+
+							<div class="content">
+								<p>
+									University research projects are often developed over time as they get passed from
+									one team to the next, each further developing and innovating on the previous work. As
+									this project started a novel approach to diagnosis, <b>we laid the groundwork by building
+									a proof of concept that demonstrates the project's potential</b>. While I would have
+									loved to continue development and get to see how medical students reviewed our work,
+									<b>it's satisfying to know that I made a meaningful contribution to a project
+									that will live on</b>.
+								</p>
+							</div>
+
+						</div>
+
+
+					</section>
 
 
 					<section class="sectionBlock">
@@ -422,10 +475,10 @@
 
 									<section>
 										<ul class="icons">
-											<li><a href="https://github.com/arbitrarynotion?tab=repositories" class="icon brands alt fa-github">
+											<li><a href="https://github.com/arbitrarynotion?tab=repositories" target="_blank" class="icon brands alt fa-github">
 												<span class="label">GitHub</span></a></li>
-											<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											<li><a href="mailto:ian.ritter.cs@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+											<li><a href="https://www.linkedin.com/in/ian-ritter-a772a3116/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											<li><a href="mailto:ian.ritter.cs@gmail.com" target="_blank" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
 										</ul>
 									</section>
 

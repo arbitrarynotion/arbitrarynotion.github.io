@@ -1812,16 +1812,16 @@ a.icon.alt:active:before {
 .image.fit img {
   width: 100%;
 }
-.image.reduced {
+.image .reduced {
   display: block;
-  width: 85%;
+  width: 55%;
+  margin: 0 auto;
 }
-.image.reduced img {
-  width: 85%;
-  margin: 0;
+.image .reduced img {
+  width: 100%;
 }
-.image.reduced a {
-  margin: 0;
+.image .reduced a {
+  padding: 0;
 }
 .image.main {
   display: block;
@@ -1851,6 +1851,9 @@ ul {
   list-style: disc;
   margin: 0 0 2em 0;
   padding-left: 1em;
+}
+ul.noBottomMargin {
+  margin: 0;
 }
 ul li {
   padding-left: 0.5em;
