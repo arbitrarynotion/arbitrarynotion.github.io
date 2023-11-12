@@ -9,12 +9,21 @@
 	#wrapper {
 		@include debug-outline(yellow);
 
-		//@include vendor('transition', (
-		//	'filter #{_duration(menu)} ease',
-		//	'-webkit-filter #{_duration(menu)} ease',
-		//	'opacity 0.375s ease-out'
-		//));
 		padding-top: _size(menu-offset);
+
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.first {
+			height: 50px;
+			border: 2px solid green;
+		}
+
+		.second {
+			flex-grow: 1;
+			border: 2px solid magenta;
+		}
 
 		&.is-transitioning {
 			opacity: 0;

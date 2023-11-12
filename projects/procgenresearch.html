@@ -22,17 +22,42 @@
 
 		<!-- Header -->
 			<header id="header" class="alt style8">
-				<a href="../index.html" class="logo"><strong>Ian Ritter</strong> <span>Portfolio</span></a>
+				<ul class="links">
+					<li><strong>Ian Ritter</strong></li>
+				</ul>
+
 				<nav>
-					<a href="#menu">Menu</a>
+					<div class="menuBar">
+						<ul class="links">
+							<li><a href="../index.html">Home</a></li>
+
+							<li>
+								<div class="dropdown">
+									<div class="dropButton">Projects</div>
+									<div class="dropdown-content">
+										<a href="spacesim.html">Space Sim</a>
+										<a href="aceuitoolkit.html">Ace Ui Toolkit</a>
+										<a class="selected" href="procgenresearch.html">Procedural Generation Research</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="../aboutMe.html">About Me</a></li>
+							<li><a href="../contact.html">Contact</a></li>
+						</ul>
+					</div>
+
+					<div class="hamburgerMenu">
+						<a href="#menu">Menu</a>
+					</div>
 				</nav>
 			</header>
 
+		<!-- Background Video -->
 			<video class="video-bg" autoplay muted loop>
 				<source src="../videos/SpaceSimBannerGasMining01.mp4" type="video/mp4">
 			</video>
 
-		<!-- Menu -->
+		<!-- Hamburger Menu -->
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="../index.html">Home</a></li>
@@ -43,6 +68,10 @@
 					<li><a href="spacesim.html">Space Sim</a></li>
 					<li><a href="aceuitoolkit.html">ACE UI Toolkit</a></li>
 					<li><a class="selected" href="procgenresearch.html">Procedural Generation Research</a></li>
+
+					<li>
+						<div class="backToTopBox">Back to Top</div>
+					</li>
 				</ul>
 			</nav>
 
@@ -52,8 +81,8 @@
 					<div class="introBox tall framed">
 
 						<header class="major">
-							<div class="sectionTitle">
-								<h1>Procedural<br> Generation<br> Research</h1>
+							<div class="sectionTitle threeLineTitle">
+								<h1>Procedural Generation<br> Research</h1>
 							</div>
 						</header>
 
@@ -67,7 +96,7 @@
 											<tr><td>Project Status</td> <td><b>On Hold Pending Next Team</b></td></tr>
 											<tr><td>Software Used</td> <td><b>Unity Game Engine</b></td></tr>
 											<tr><td>Languages Used</td> <td><b>C#</b></td></tr>
-											<tr><td>Primary Role(s)</td> <td><b>Programmer / Designer</b></td></tr>
+											<tr><td>Primary Role(s)</td> <td><b>Lead Programmer / Lead Designer</b></td></tr>
 										</tbody>
 									</table>
 								</div>
@@ -502,8 +531,8 @@
 			<footer id="footer">
 				<div class="inner">
 					<ul class="copyright">
-						<li>&copy; Ian Ritter</li>
-						<li>Built from Template by: <a href="https://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Ian Ritter 2023</li>
+						<li>Adapted from Template by: HTML5 UP</li>
 					</ul>
 				</div>
 			</footer>

@@ -15,7 +15,9 @@
 		cursor: default;
 
 		position: relative;
-		overflow: hidden;
+		//overflow: hidden;
+
+		height: max-content;
 
 		h1 {
 			font-size: 3.25em;
@@ -27,14 +29,22 @@
 		> .inner {
 			@include debug-outline(purple);
 
+			height: max-content;
+
 			//@include vendor('transition',
 			//	(
 			//		'opacity 1.5s ease',
-			//		'transform 0.5s ease-out',
-			//		'filter 0.5s ease',
-			//		'-webkit-filter 0.5s ease'
+			//		//'transform 0.5s ease-out',
+			//		//'filter 0.5s ease',
+			//		//'-webkit-filter 0.5s ease'
 			//	)
 			//);
+
+			//transition: opacity _duration(fade-In-Time) ease;
+
+			animation: fadeInAnimation ease-out both _duration(fade-In-Time);
+
+
 			padding: 0 !important;
 			position: relative;
 
@@ -55,14 +65,16 @@
 
 				&.wide {
 					padding: 1em 3em 2em 3em;
-					margin-bottom: 45vh;
+					//margin-bottom: 45vh;
 				}
 			}
 
 			header {
+				@include debug-outline(deepskyblue);
 				//width: auto;
 				width: 100%;
-				@include debug-outline(deepskyblue);
+
+
 			}
 
 			.content {

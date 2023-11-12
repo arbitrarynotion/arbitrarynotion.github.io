@@ -5,14 +5,20 @@
 
 // Duration.
 	$duration: (
-		menu:				0.35s,
+		menu:				0.25s,
 		transition:			0.2s,
-		banner:				0.5s
+		banner:				0.5s,
+		fade-In-Time:		0.5s,
+		main-fade-in-delay:	0.25s
 	);
 
 // Size.
 	$size: (
-		menu-offset:		3.25em,
+		header-font-size:	0.80em,
+		two-line-title:		0.8em,
+		three-line-title:	0.75em,
+		//menu-offset:		3.25em,
+		menu-offset:		2.75em,
 		menu-offset-alt:	2.0em,
 		menu-border-radius:	18pt,
 		button-border-radius:	8pt,

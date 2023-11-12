@@ -15,10 +15,17 @@
 		@include debug-outline(magenta);
 
 		@include vendor('display', 'flex');
+
+		font-family: _font(family-title);
+		font-variant: _font(font-variant-small-caps);
+		letter-spacing: _font(letter-spacing-alt2);
+
+		font-size: _size(header-font-size);
+		font-weight: _font(weight);
+
 		//background-color: _palette(bg-alt);
 		//box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
 		cursor: default;
-		font-weight: _font(weight-bold);
 		//letter-spacing: _font(letter-spacing-alt);
 		//line-height: 3.25em;
 
@@ -27,6 +34,7 @@
 		//letter-spacing: 0.125em;
 
 		//height: 3.25em;
+
 		line-height: _size(menu-offset);
 		height: _size(menu-offset);
 		left: 0;
@@ -38,7 +46,8 @@
 		width: 100%;
 		z-index: _misc(z-index-base);
 
-		background: transparent;
+		//background: transparent;
+		background: _palette(bg);
 
 		//background-blend-mode: color-burn;
 		//opacity: 0.75;
@@ -46,6 +55,15 @@
 		//&:hover {
 		//	border: 4px red;
 		//}
+
+		.links {
+			list-style: none;
+			//padding: 0;
+			.withSeparator {
+				padding-right: 1em;
+				//border-right: 1px solid grey;
+			}
+		}
 
 		.logo {
 			border: 0;
@@ -95,28 +113,199 @@
 			}
 		}
 
+
 		nav {
 			@include debug-outline(green);
 
 			@include vendor('display', 'flex');
 			@include vendor('justify-content', 'flex-end');
 			@include vendor('flex-grow', '1');
+			@include vendor('flex-direction', 'column');
+
+			flex-direction: row;
 			height: inherit;
 			line-height: inherit;
 
+			.hamburgerMenu {
+				@include vendor('display', 'none');
+			}
 
-			a {
-				border: 0;
+			.links {
+				@include vendor('display', 'flex');
+				align-items: flex-end;
+
+				list-style: none;
+				padding: 0;
+				height: 100%;
+			}
+
+			.dropButton {
+				@include debug-outline(white);
+				//background-color: #04AA6D;
+				//color: green;
+				//padding: 16px;
+				//font-size: 16px;
+				//border: none;
+
+				// Adds the dropdown arrow to the right of the text.
+				&::after {
+					font-family: "Font Awesome 5 Free";
+					font-weight: 900;
+					content: "\f0d7";
+					padding-left: 0.25em;
+					//padding-right: 1em;
+
+					display: inline-block;
+					font-style: normal;
+					font-variant: normal;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+				}
+			}
+
+			.dropDown {
+				@include debug-outline(greenyellow);
+
+				position: relative;
+				display: inline-block;
+			}
+
+			.dropdown-content {
+				// The dropdown options are hidden by default.
+				display: none;
+
+				position: absolute;
+				left: -10px;
+				border-radius: _size(button-border-radius);
+				//background-color: #f1f1f1;
+				background-color: _palette(bg-alt);
+
+				//min-width: 300px;
+				min-width: max-content;
+
+				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+				z-index: 1;
+			}
+
+			.dropdown-content a {
+				color: _palette(fg);
 				display: block;
-				font-size: 0.8em;
+				// Add padding to left and right of dropdown items.
+				padding: 0 0.75em;
+
+				//&.selected {
+				//	color: _palette(fg-light);
+				//}
+			}
+
+			//.dropdown-content a:hover {background-color: #ddd;}
+			.dropdown-content a:hover {
+				background-color: _palette(fg-light);
+				color: _palette(highlight) !important;
+
+				&:first-child {
+					border-radius: _size(button-border-radius) _size(button-border-radius) 0 0;
+				}
+
+				&:last-child {
+					border-radius: 0 0 _size(button-border-radius) _size(button-border-radius);
+				}
+			}
+
+			.dropdown:hover .dropdown-content {
+				// When hovering over the dropdown button, its options are made visible.
+				display: block;
+
+				&.dropButton {
+					//color: _palette(accent10) !important;
+					background-color: _palette(fg-light);
+					color: green;
+				}
+			}
+
+			.dropdown:hover .dropButton {
+				color: _palette(accent10) !important;
+				//background-color: #3e8e41;
+
+				//background-color: _palette(green);
+			}
+
+			&::after {
+				border-right: 4px solid grey;
+			}
+
+			ul {
+				//>:first-child {
+				//	//padding: 5px 0;
+				//	border-left: 1px solid grey;
+				//}
+
+				>:last-child {
+					padding-right: 2em;
+				}
+			}
+
+			li {
+				@include debug-outline(orange);
+
+				text-align: center;
+
+				//padding: 0;
+				//margin: 0;
+
+				//border: 0;
+				//border-right: 1px solid grey;
+
+				display: block;
+				//font-size: 0.8em;
 				height: inherit;
 				line-height: inherit;
 				padding: 0 0.75em;
 				position: relative;
 				vertical-align: middle;
 
-				&:last-child {
-					padding-right: 1.5em;
+				//min-width: 100px;
+
+
+
+
+
+				//&:after {
+				//	border-right: 1px solid grey;
+				//}
+
+			}
+
+		//nav {
+		//	@include debug-outline(green);
+		//
+		//	@include vendor('display', 'flex');
+		//	@include vendor('justify-content', 'flex-end');
+		//	@include vendor('flex-grow', '1');
+		//	height: inherit;
+		//	line-height: inherit;
+		//
+		//
+			a {
+				@include debug-outline(white);
+				border: 0;
+				//display: block;
+				//font-size: 0.8em;
+				//height: inherit;
+				//line-height: inherit;
+				//padding: 0 0.75em;
+				//position: relative;
+				//vertical-align: middle;
+				text-align: left;
+				//padding-left: 0.75em;
+
+				//&:last-child {
+				//	padding-right: 1.5em;
+				//}
+
+				&.selected {
+					color: _palette(fg-light);
 				}
 
 				&[href="#menu"] {
@@ -200,7 +389,7 @@
 				padding-left: 1.5em;
 			}
 
-			background-color: transparent;
+			//background-color: transparent;
 			box-shadow: none;
 			position: absolute;
 
@@ -223,7 +412,15 @@
 		@include breakpoint('<=xlarge') {
 			nav {
 				a {
+					//&#hamburgerMenu {
+					//	@include vendor('display', 'none');
+					//}
+					//&#menuBar {
+					//	@include vendor('display', 'flex');
+					//}
+
 					&[href="#menu"] {
+						//display: none;
 						padding-right: 3.75em !important;
 
 						&:last-child {
@@ -236,6 +433,14 @@
 
 		@include breakpoint('<=large') {
 			nav {
+				.menuBar {
+					@include vendor('display', 'flex');
+				}
+
+				.hamburgerMenu {
+					@include vendor('display', 'none');
+				}
+
 				a {
 					&[href="#menu"] {
 						padding-right: 4em !important;
@@ -248,6 +453,7 @@
 			}
 		}
 
+		// All media above this size use menu bar, while all below use hamburger menu.
 		@include breakpoint('<=small') {
 			//height: 2.75em;
 			//line-height: 2.75em;
@@ -259,6 +465,15 @@
 			}
 
 			nav {
+
+				.menuBar {
+					@include vendor('display', 'none');
+				}
+
+				.hamburgerMenu {
+					@include vendor('display', 'block');
+				}
+
 				a {
 					padding: 0 0.5em;
 

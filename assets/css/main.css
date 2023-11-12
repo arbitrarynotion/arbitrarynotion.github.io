@@ -146,6 +146,11 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
   transition: none !important;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -1855,9 +1860,6 @@ ul {
 ul.noBottomMargin {
   margin: 0;
 }
-ul li {
-  padding-left: 0.5em;
-}
 ul.alt {
   list-style: none;
   padding-left: 0;
@@ -2979,17 +2981,27 @@ video {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-variant: small-caps;
+  letter-spacing: 0.125em;
+  font-size: 0.8em;
+  font-weight: 300;
   cursor: default;
-  font-weight: 600;
-  line-height: 3.25em;
-  height: 3.25em;
+  line-height: 2.75em;
+  height: 2.75em;
   left: 0;
   margin: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10000;
-  background: transparent;
+  background: #242943;
+}
+#header .links {
+  list-style: none;
+}
+#header .links .withSeparator {
+  padding-right: 1em;
 }
 #header .logo {
   border: 0;
@@ -3033,21 +3045,98 @@ video {
   -webkit-flex-grow: 1;
   -ms-flex-grow: 1;
   flex-grow: 1;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-direction: row;
   height: inherit;
   line-height: inherit;
 }
-#header nav a {
-  border: 0;
+#header nav .hamburgerMenu {
+  display: none;
+}
+#header nav .links {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: flex-end;
+  list-style: none;
+  padding: 0;
+  height: 100%;
+}
+#header nav .dropButton::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0d7";
+  padding-left: 0.25em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+#header nav .dropDown {
+  position: relative;
+  display: inline-block;
+}
+#header nav .dropdown-content {
+  display: none;
+  position: absolute;
+  left: -10px;
+  border-radius: 8pt;
+  background-color: #2a2f4a;
+  min-width: max-content;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+#header nav .dropdown-content a {
+  color: #ffffff;
   display: block;
-  font-size: 0.8em;
+  padding: 0 0.75em;
+}
+#header nav .dropdown-content a:hover {
+  background-color: rgba(244, 244, 255, 0.2);
+  color: #fcb703 !important;
+}
+#header nav .dropdown-content a:hover:first-child {
+  border-radius: 8pt 8pt 0 0;
+}
+#header nav .dropdown-content a:hover:last-child {
+  border-radius: 0 0 8pt 8pt;
+}
+#header nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+#header nav .dropdown:hover .dropdown-content.dropButton {
+  background-color: rgba(244, 244, 255, 0.2);
+  color: green;
+}
+#header nav .dropdown:hover .dropButton {
+  color: #fcb703 !important;
+}
+#header nav::after {
+  border-right: 4px solid grey;
+}
+#header nav ul > :last-child {
+  padding-right: 2em;
+}
+#header nav li {
+  text-align: center;
+  display: block;
   height: inherit;
   line-height: inherit;
   padding: 0 0.75em;
   position: relative;
   vertical-align: middle;
 }
-#header nav a:last-child {
-  padding-right: 1.5em;
+#header nav a {
+  border: 0;
+  text-align: left;
+}
+#header nav a.selected {
+  color: rgba(244, 244, 255, 0.2);
 }
 #header nav a[href="#menu"] {
   padding-right: 3.325em !important;
@@ -3110,9 +3199,8 @@ video {
   -webkit-animation: none;
   -ms-animation: none;
   animation: none;
-  line-height: 3.25em;
-  height: 3.25em;
-  background-color: transparent;
+  line-height: 2.75em;
+  height: 2.75em;
   box-shadow: none;
   position: absolute;
 }
@@ -3155,6 +3243,15 @@ body.is-preload #header.alt {
   }
 }
 @media screen and (max-width: 1280px) {
+  #header nav .menuBar {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+  #header nav .hamburgerMenu {
+    display: none;
+  }
   #header nav a[href="#menu"] {
     padding-right: 4em !important;
   }
@@ -3169,6 +3266,12 @@ body.is-preload #header.alt {
   }
   #header .logo {
     padding: 0 1em;
+  }
+  #header nav .menuBar {
+    display: none;
+  }
+  #header nav .hamburgerMenu {
+    display: block;
   }
   #header nav a {
     padding: 0 0.5em;
@@ -3222,7 +3325,7 @@ body.is-preload #header.alt {
   align-items: center;
   cursor: default;
   position: relative;
-  overflow: hidden;
+  height: max-content;
 }
 #banner h1 {
   font-size: 3.25em;
@@ -3231,6 +3334,8 @@ body.is-preload #header.alt {
   padding-bottom: 0.25em;
 }
 #banner > .inner {
+  height: max-content;
+  animation: fadeInAnimation ease-out both 0.5s;
   padding: 0 !important;
   position: relative;
 }
@@ -3244,7 +3349,6 @@ body.is-preload #header.alt {
 }
 #banner > .inner .contentBox.wide {
   padding: 1em 3em 2em 3em;
-  margin-bottom: 45vh;
 }
 #banner > .inner header {
   width: 100%;
@@ -3398,16 +3502,25 @@ body.is-preload #banner > .inner {
 }
 
 /* Main */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 #main {
   background-color: #2a2f4a;
   position: relative;
   z-index: 50;
 }
 #main > .inner {
-  -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
-  -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+  opacity: 0;
+  animation: fadeInAnimation ease-out both 0.5s;
+  animation-delay: 0.25s;
   padding: 0 !important;
   position: relative;
 }
@@ -3434,7 +3547,7 @@ body.is-preload #banner > .inner {
   background-color: transparent;
 }
 #main.alt.fullHeight {
-  height: 100%;
+  height: max-content;
 }
 #main.alt2 {
   background-color: #131521;
@@ -3445,8 +3558,23 @@ body.is-preload #banner > .inner {
   margin-top: 2.5em;
   background-color: #131521;
   border-radius: 10pt 10pt 0 0;
+  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+}
+.sectionBlock:last-child {
+  border-radius: 10pt;
 }
 
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 1;
+  }
+}
 .sectionTitle {
   background-color: #23263d;
   background: transparent;
@@ -3459,6 +3587,12 @@ body.is-preload #banner > .inner {
 .sectionTitle .noBackground {
   background: blue;
 }
+.sectionTitle.twoLineTitle {
+  font-size: 0.8em;
+}
+.sectionTitle.threeLineTitle {
+  font-size: 0.75em;
+}
 .sectionTitle > h2 {
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -3470,6 +3604,7 @@ body.is-preload #banner > .inner {
 }
 
 .description {
+  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
   padding: 1em 1em 1.5em 1em;
   background-color: #2e3450;
 }
@@ -3650,6 +3785,10 @@ body.is-preload #banner > .inner {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
 }
 #footer .inner {
   display: -moz-flex;
@@ -3661,10 +3800,12 @@ body.is-preload #banner > .inner {
   -ms-align-items: center;
   align-items: center;
   margin: 0 auto;
-  background-color: #131521;
+  opacity: 0;
+  animation: fadeInAnimation ease-out both 0.5s;
+  animation-delay: 0.25s;
 }
 #footer .copyright {
-  margin: 0 auto;
+  margin: 0.5em auto 0;
   font-size: 0.8em;
   list-style: none;
   padding-left: 0;
@@ -3694,7 +3835,18 @@ body.is-preload #banner > .inner {
 
 /* Wrapper */
 #wrapper {
-  padding-top: 3.25em;
+  padding-top: 2.75em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#wrapper .first {
+  height: 50px;
+  border: 2px solid green;
+}
+#wrapper .second {
+  flex-grow: 1;
+  border: 2px solid magenta;
 }
 #wrapper.is-transitioning {
   opacity: 0;
@@ -3749,10 +3901,10 @@ body.is-preload #banner > .inner {
 
 /* Menu */
 #menu {
-  -moz-transition: -moz-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-  -webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-  -ms-transition: -ms-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
-  transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
+  -moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  -webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  -ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
   -moz-align-items: center;
   -webkit-align-items: center;
   -ms-align-items: center;
@@ -3780,10 +3932,10 @@ body.is-preload #banner > .inner {
   z-index: 10002;
 }
 #menu .inner {
-  -moz-transition: -moz-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
-  -webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
-  -ms-transition: -ms-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
-  transition: transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
+  -moz-transition: -moz-transform 0.25s ease-out, opacity 0.25s ease, visibility 0.25s;
+  -webkit-transition: -webkit-transform 0.25s ease-out, opacity 0.25s ease, visibility 0.25s;
+  -ms-transition: -ms-transform 0.25s ease-out, opacity 0.25s ease, visibility 0.25s;
+  transition: transform 0.25s ease-out, opacity 0.25s ease, visibility 0.25s;
   -moz-transform: rotateX(20deg);
   -webkit-transform: rotateX(20deg);
   -ms-transform: rotateX(20deg);

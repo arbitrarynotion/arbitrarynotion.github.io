@@ -13,14 +13,22 @@
 		//@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
 
-
+		flex-grow: 1;
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-end;
 
 		.inner {
 			@include vendor('display', 'flex');
 			@include vendor('align-items', 'center');
+
 			margin: 0 auto;
 
-			background-color: #131521;
+			//background-color: #131521;
+
+			opacity: 0;
+			animation: fadeInAnimation ease-out both _duration(fade-In-Time);
+			animation-delay: _duration(main-fade-in-delay);
 
 		}
 
@@ -28,7 +36,7 @@
 			@include debug-outline(yellowgreen);
 			//@include vendor('display', 'flex');
 			//@include vendor('align-items', 'center');
-			margin: 0 auto;
+			margin: 0.5em auto 0;
 
 			//flex: 1;
 
