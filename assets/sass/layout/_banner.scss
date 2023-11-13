@@ -20,7 +20,7 @@
 		height: max-content;
 
 		h1 {
-			font-size: 3.25em;
+			font-size: _size(banner-title-font);
 			text-align: center;
 			line-height: 1.0;
 			padding-bottom: 0.25em;
@@ -199,6 +199,10 @@
 			//height: auto;
 			//@include padding(4em, 0, (2em, 0, 0, 0));
 
+			h1 {
+				font-size: 2em;
+			}
+
 			> .inner {
 				.contentBox {
 					//display: block;
@@ -214,7 +218,7 @@
 			//height: auto;
 			//margin-bottom: -2.75em;
 			max-height: none;
-			min-height: 0;
+			min-height: max-content;
 			//top: -2.75em;
 
 			h1 {
@@ -228,6 +232,16 @@
 					margin-top: _size(banner-project-top-margin) / 4;
 					margin-bottom: _size(banner-project-bottom-margin) / 4;
 				}
+
+				.introBox {
+					margin-top: _size(banner-project-top-margin) / 4;
+					margin-bottom: _size(banner-project-bottom-margin) / 6;
+
+					.introTextBox {
+						margin-top: 1em;
+					}
+				}
+
 				.content {
 					display: block;
 
@@ -255,6 +269,16 @@
 					margin-top: _size(banner-project-top-margin) / 4;
 					margin-bottom: _size(banner-project-bottom-margin) / 4;
 				}
+
+				.introBox {
+					margin-top: _size(banner-project-top-margin) / 4;
+					margin-bottom: _size(banner-project-bottom-margin) / 6;
+
+					.introTextBox {
+						margin-top: 1em;
+					}
+				}
+
 				.content {
 					p {
 						br {

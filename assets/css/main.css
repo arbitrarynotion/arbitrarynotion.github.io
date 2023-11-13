@@ -1854,7 +1854,6 @@ ol li {
 
 ul {
   list-style: disc;
-  margin: 0 0 2em 0;
   padding-left: 1em;
 }
 ul.noBottomMargin {
@@ -3328,7 +3327,7 @@ body.is-preload #header.alt {
   height: max-content;
 }
 #banner h1 {
-  font-size: 3.25em;
+  font-size: 2.5em;
   text-align: center;
   line-height: 1;
   padding-bottom: 0.25em;
@@ -3459,6 +3458,9 @@ body.is-preload #banner > .inner {
   opacity: 0;
 }
 @media screen and (max-width: 980px) {
+  #banner h1 {
+    font-size: 2em;
+  }
   #banner > .inner .contentBox {
     margin-top: 4vh;
     margin-bottom: 10vh;
@@ -3467,7 +3469,7 @@ body.is-preload #banner > .inner {
 @media screen and (max-width: 736px) {
   #banner {
     max-height: none;
-    min-height: 0;
+    min-height: max-content;
   }
   #banner h1 {
     font-size: 2em;
@@ -3475,6 +3477,13 @@ body.is-preload #banner > .inner {
   #banner > .inner .contentBox {
     margin-top: 2vh;
     margin-bottom: 5vh;
+  }
+  #banner > .inner .introBox {
+    margin-top: 2vh;
+    margin-bottom: 3.3333333333vh;
+  }
+  #banner > .inner .introBox .introTextBox {
+    margin-top: 1em;
   }
   #banner > .inner .content {
     display: block;
@@ -3492,6 +3501,13 @@ body.is-preload #banner > .inner {
   #banner > .inner .contentBox {
     margin-top: 2vh;
     margin-bottom: 5vh;
+  }
+  #banner > .inner .introBox {
+    margin-top: 2vh;
+    margin-bottom: 3.3333333333vh;
+  }
+  #banner > .inner .introBox .introTextBox {
+    margin-top: 1em;
   }
   #banner > .inner .content p br {
     display: none;
