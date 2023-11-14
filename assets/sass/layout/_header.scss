@@ -56,6 +56,10 @@
 		//	border: 4px red;
 		//}
 
+		a {
+			border: 0;
+		}
+
 		.links {
 			list-style: none;
 			//padding: 0;
@@ -126,6 +130,18 @@
 			height: inherit;
 			line-height: inherit;
 
+			.selected {
+				//color: _palette(fg-light);
+				//background: linear-gradient(to bottom, _palette(bg) 0%, _palette(fg) 100%);
+				border-bottom: 2px solid _palette(fg);
+				//text-decoration: underline;
+				//outline: 4px solid teal !important;
+
+				//&:after {
+				//
+				//}
+			}
+
 			.hamburgerMenu {
 				@include vendor('display', 'none');
 			}
@@ -141,6 +157,9 @@
 
 			.dropButton {
 				@include debug-outline(white);
+
+				//@include vendor('display', 'inline-block');
+				//height: auto;
 				//background-color: #04AA6D;
 				//color: green;
 				//padding: 16px;
@@ -304,9 +323,17 @@
 				//	padding-right: 1.5em;
 				//}
 
-				&.selected {
-					color: _palette(fg-light);
-				}
+				//&.selected {
+				//	//color: _palette(fg-light);
+				//	//background: linear-gradient(to bottom, _palette(bg) 0%, _palette(fg) 100%);
+				//	//border-bottom: 3px solid _palette(fg);
+				//	//text-decoration: underline;
+				//	outline: 4px solid teal !important;
+				//
+				//	//&:after {
+				//	//
+				//	//}
+				//}
 
 				&[href="#menu"] {
 					@include debug-outline(orange);

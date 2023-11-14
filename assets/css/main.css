@@ -2996,6 +2996,9 @@ video {
   z-index: 10000;
   background: #242943;
 }
+#header a {
+  border: 0;
+}
 #header .links {
   list-style: none;
 }
@@ -3051,6 +3054,9 @@ video {
   flex-direction: row;
   height: inherit;
   line-height: inherit;
+}
+#header nav .selected {
+  border-bottom: 2px solid #ffffff;
 }
 #header nav .hamburgerMenu {
   display: none;
@@ -3133,9 +3139,6 @@ video {
 #header nav a {
   border: 0;
   text-align: left;
-}
-#header nav a.selected {
-  color: rgba(244, 244, 255, 0.2);
 }
 #header nav a[href="#menu"] {
   padding-right: 3.325em !important;
