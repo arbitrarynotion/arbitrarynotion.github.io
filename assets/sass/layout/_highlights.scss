@@ -128,7 +128,7 @@
 	filter 0.5s ease,
 	-webkit-filter 0.5s ease;
 
-	padding: 0.5*_size(element-margin) 0.5*_size(element-margin) 0.75*_size(element-margin) 0.5*_size(element-margin);
+	padding: 0.5*_size(element-margin) 0.75*_size(element-margin) 0.75*_size(element-margin) 0.75*_size(element-margin);
 	background-color: desaturate(lighten(_palette(bg-alt), 2), 1);
 
 	> * {
@@ -330,6 +330,8 @@
 			> .content {
 				@include padding(4em, 3em);
 				width: 100%;
+
+				border: 4px solid white !important;
 			}
 		}
 	}
@@ -338,6 +340,18 @@
 		> section {
 			> .content {
 				@include padding(3em, 1.5em);
+
+				@include vendor('flex-direction', 'column-reverse');
+
+				border: 4px solid white !important;
+			}
+
+			&:nth-child(2n) {
+				@include vendor('flex-direction', 'row');
+
+				//> .content {
+				//	@include vendor('align-items', 'flex-end');
+				//}
 			}
 		}
 	}

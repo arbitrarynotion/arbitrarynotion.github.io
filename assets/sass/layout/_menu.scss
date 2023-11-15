@@ -156,8 +156,9 @@
 					}
 
 					.selected{
-						color: _palette(fg-light);
+						//color: _palette(fg-light);
 						//background-color:#b51ba2;
+						border-bottom: 2px solid _palette(fg) !important;
 					}
 
 					> b {

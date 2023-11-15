@@ -60,6 +60,18 @@
 			border: 0;
 		}
 
+		.selected {
+			//color: _palette(accent1);
+			//background: linear-gradient(to bottom, _palette(bg) 0%, _palette(fg) 100%);
+			border-bottom: 2px solid _palette(fg);
+			//text-decoration: underline;
+			//outline: 4px solid teal !important;
+
+			//&:after {
+			//
+			//}
+		}
+
 		.links {
 			list-style: none;
 			//padding: 0;
@@ -130,17 +142,7 @@
 			height: inherit;
 			line-height: inherit;
 
-			.selected {
-				//color: _palette(fg-light);
-				//background: linear-gradient(to bottom, _palette(bg) 0%, _palette(fg) 100%);
-				border-bottom: 2px solid _palette(fg);
-				//text-decoration: underline;
-				//outline: 4px solid teal !important;
 
-				//&:after {
-				//
-				//}
-			}
 
 			.hamburgerMenu {
 				@include vendor('display', 'none');
@@ -339,7 +341,7 @@
 					@include debug-outline(orange);
 
 					padding-right: 3.325em !important;
-					color: _palette(accent8);
+					//color: _palette(accent8);
 
 					// This makes the 3 horizontal lines that make up the "menu" icon.
 					&:before, &:after {
@@ -378,7 +380,8 @@
 
 
 					&:last-child {
-						padding-right: 3.875em !important;
+						//padding-right: 3.875em !important;
+						padding-right: 3.75em !important;
 
 						&:before, &:after {
 							right: 2em;
@@ -448,10 +451,10 @@
 
 					&[href="#menu"] {
 						//display: none;
-						padding-right: 3.75em !important;
+						//padding-right: 3.75em !important;
 
 						&:last-child {
-							padding-right: 4.25em !important;
+							//padding-right: 4.25em !important;
 						}
 					}
 				}
@@ -470,10 +473,10 @@
 
 				a {
 					&[href="#menu"] {
-						padding-right: 4em !important;
+						//padding-right: 4em !important;
 
 						&:last-child {
-							padding-right: 4.5em !important;
+							//padding-right: 4.5em !important;
 						}
 					}
 				}
@@ -509,14 +512,16 @@
 					}
 
 					&[href="#menu"] {
-						padding-right: 3.25em !important;
+						//padding-right: 3.25em !important;
+						//padding-right: 2.25em !important;
 
 						&:before, &:after {
 							right: 0.75em;
 						}
 
 						&:last-child {
-							padding-right: 4em !important;
+							//padding-right: 4em !important;
+							//padding-right: 3.5em !important;
 
 							&:before, &:after {
 								right: 1.5em;
@@ -549,6 +554,8 @@
 						}
 
 						&:last-child {
+
+							padding-right: 3.5em !important;
 							&:before, &:after {
 								width: 4em;
 								right: 0;
