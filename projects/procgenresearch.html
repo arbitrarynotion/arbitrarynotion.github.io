@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
@@ -66,7 +67,7 @@
 
 		<!-- Background Video -->
 			<video class="video-bg" autoplay muted loop>
-				<source src="../videos/SpaceSimBannerGasMining01.mp4" type="video/mp4">
+				<source src="../assets/videos/SpaceSimBannerGasMining01.mp4" type="video/mp4">
 			</video>
 
 		<!-- Hamburger Menu -->
@@ -105,15 +106,16 @@
 
 						<div class="content">
 							<div class="projectStats">
+<!--								<h3>Project Details</h3>-->
 								<div class="table-wrapper">
 									<table class="alt2">
 										<tbody>
-											<tr><td>Project Type</td> <td><b>Group project</b></td></tr>
-											<tr><td>Project Duration</td> <td><b>9 Months</b></td></tr>
-											<tr><td>Project Status</td> <td><b>On Hold Pending Next Team</b></td></tr>
-											<tr><td>Software Used</td> <td><b>Unity Game Engine</b></td></tr>
-											<tr><td>Languages Used</td> <td><b>C#</b></td></tr>
-											<tr><td>Primary Role(s)</td> <td><b>Lead Programmer / Lead Designer</b></td></tr>
+											<tr><td>Type</td> <td><b>Group project</b></td></tr>
+											<tr><td>Duration</td> <td><b>9 Months</b></td></tr>
+											<tr><td>Status</td> <td><b>Completed</b></td></tr>
+											<tr><td>Software</td> <td><b>Unity Game Engine</b></td></tr>
+											<tr><td>Languages</td> <td><b>C#</b></td></tr>
+											<tr><td>Role(s)</td> <td><b>Lead Designer / Lead Programmer</b></td></tr>
 										</tbody>
 									</table>
 								</div>
@@ -239,75 +241,106 @@
 						<div class="description">
 
 							<div class="content">
-								<!--								<p>-->
-								<!--									Detail the system used to generate a patient to show how implementing causality-->
-								<!--									results in scenarios that require considering patient history to effectively diagnose.-->
-								<!--								</p>-->
+<!--								<p>-->
+<!--									Detail the system used to generate a patient to show how implementing causality-->
+<!--									results in scenarios that require considering patient history to effectively diagnose.-->
+<!--								</p>-->
 
-								<!--								- patient model-->
-								<!--								- life event deck-->
-								<!--								- dynamic probability system-->
-								<!--								- patient event processor-->
-								<!--								- patient generator-->
-								<!--								- planner-->
-								<!--								- procedural generation manager-->
+<!--								- patient model-->
+<!--								- life event deck-->
+<!--								- dynamic probability system-->
+<!--								- patient event processor-->
+<!--								- patient generator-->
+<!--								- planner-->
+<!--								- procedural generation manager-->
 
-								<div class="image right">
-									<a href="../images/PGR_Life_Event_Processing_01.png" target="_blank">
-										<img src="../images/PGR_Life_Event_Processing_01.png" alt="" />
-									</a>
-								</div>
-
-								<p>
-									To simulate a patient, I first worked with my team to develop a sufficiently detailed
-									patient model.
-
-									As the central goal to this project was to <b>generate a patient that
-									meaningfully influenced the quality of diagnosis training</b>, I designed a system which
-									<b>produced the patient's history as a collection of life events applied chronologically</b>.
-									By determining the probability of event occurrences based on existing conditions,
-									this Life Event system <b>simulated cause and effect</b>, giving each event context.
-									As a result, the medical event that brought the patient to the doctor's office <b>could
-									have many factors influencing its inception, the expression and severity of its
-									symptoms, and its overall duration</b>.
-
-<!--									As the central goal to this project was to generate a patient with a history that-->
-<!--									meaningfully effected diagnosis, I designed the Life Event system.-->
-<!--									This system produced the intended impact on diagnosis by building a patient's-->
-<!--									history chronologically as a series of life events applied conditionally. That is,-->
-<!--									each event applied would affect the probability of future events simulating cause-->
-<!--									and effect. As a result, the medical event that brought the patient to the doctor's-->
-<!--									office may have many factors influencing its inception, the expression and severity-->
-<!--									of its symptoms, and its overall duration.-->
-
-<!--									The Life Event system pulls from a collection of events split into categories-->
-<!--									including medical, relations, education, career, and habits. To ensure that the-->
-<!--									system could be easily extended and modified, I designed it to pull its events from-->
-<!--									a pool of Scriptable Objects.-->
-
-
-<!--									I further augmented causality by including hereditary and contagious events. By-->
-<!--									generating the patient's parents, spouse, and children first, the patient's probability-->
-<!--									to experience various life events could be affected by the past events of their-->
-<!--									parents and/or the contemporary events-->
-
-								</p>
-
-								<div class="image left">
-<!--									<div class="reduced">-->
-										<a href="../images/PGR_Family_Generation_Workflow_01.png" target="_blank">
-											<img src="../images/PGR_Family_Generation_Workflow_01.png" alt="" />
+								<div class="imageContainer imageRight">
+									<div class="image">
+										<a href="../assets/images/PGR_Life_Event_Processing_01.png" target="_blank">
+											<b class="note"></b>
+											<img src="../assets/images/PGR_Life_Event_Processing_01.png" alt="" />
 										</a>
-<!--									</div>-->
+									</div>
 
+									<div class="text">
+										<p>
+											To simulate a patient, I first worked with my team to develop a sufficiently detailed
+											patient model.
+
+											As the central goal to this project was to <b>generate a patient that
+											meaningfully influenced the quality of diagnosis training</b>, I designed a system which
+											<b>produced the patient's history as a collection of life events applied chronologically</b>.
+										</p>
+
+										<p>
+											By determining the probability of event occurrences based on existing conditions,
+											this Life Event system <b>simulated cause and effect</b>, giving each event context.
+											As a result, the medical event that brought the patient to the doctor's office <b>could
+											have many factors influencing its inception, the expression and severity of its
+											symptoms, and its overall duration</b>.
+										</p>
+									</div>
 								</div>
 
-								<p>
-									To further deepen the aspect of causality, I also designed the system to take
-									hereditary events into consideration. By generating the patient's
-									parents first, then taking their histories into consideration when processing
-									the patient's history, life events with a hereditary aspect can become more likely.
-								</p>
+								<div class="imageContainer imageLeft">
+									<div class="image">
+
+										<a href="../assets/images/PGR_Family_Generation_Workflow_01.png" target="_blank">
+											<b class="note"></b>
+											<img src="../assets/images/PGR_Family_Generation_Workflow_01.png" alt="" />
+										</a>
+									</div>
+
+									<div class="text">
+										<p>
+											To further deepen the aspect of causality, I also designed the system to take
+											hereditary events into consideration. By generating the patient's
+											parents first, then taking their histories into consideration when processing
+											the patient's history, life events with a hereditary aspect can become more likely.
+										</p>
+									</div>
+								</div>
+
+
+<!--								<div class="image right">-->
+<!--									<b class="note"></b>-->
+<!--									<a href="../assets/images/PGR_Life_Event_Processing_01.png" target="_blank">-->
+<!--										<img src="../assets/images/PGR_Life_Event_Processing_01.png" alt="" />-->
+<!--									</a>-->
+<!--								</div>-->
+
+<!--								<p>-->
+<!--									To simulate a patient, I first worked with my team to develop a sufficiently detailed-->
+<!--									patient model.-->
+
+<!--									As the central goal to this project was to <b>generate a patient that-->
+<!--									meaningfully influenced the quality of diagnosis training</b>, I designed a system which-->
+<!--									<b>produced the patient's history as a collection of life events applied chronologically</b>.-->
+<!--								</p>-->
+
+<!--								<p>-->
+<!--									By determining the probability of event occurrences based on existing conditions,-->
+<!--									this Life Event system <b>simulated cause and effect</b>, giving each event context.-->
+<!--									As a result, the medical event that brought the patient to the doctor's office <b>could-->
+<!--									have many factors influencing its inception, the expression and severity of its-->
+<!--									symptoms, and its overall duration</b>.-->
+<!--								</p>-->
+
+
+
+<!--								<div class="image left">-->
+<!--									<b class="note"></b>-->
+<!--									<a href="../assets/images/PGR_Family_Generation_Workflow_01.png" target="_blank">-->
+<!--										<img src="../assets/images/PGR_Family_Generation_Workflow_01.png" alt="" />-->
+<!--									</a>-->
+<!--								</div>-->
+
+<!--								<p>-->
+<!--									To further deepen the aspect of causality, I also designed the system to take-->
+<!--									hereditary events into consideration. By generating the patient's-->
+<!--									parents first, then taking their histories into consideration when processing-->
+<!--									the patient's history, life events with a hereditary aspect can become more likely.-->
+<!--								</p>-->
 
 								<!--								<p>-->
 								<!--									The following image shows the Planner class diagram where the Life Event system is-->
@@ -315,13 +348,17 @@
 								<!--									the Patient.-->
 								<!--								</p>-->
 								<div class="image">
-									The following patient output reports show the detailed results produced by this
-									system.<br>
+									<p>
+										<br />
+										The following patient output reports show the detailed results produced by this
+										system.
+									</p>
+
 
 									<div class="reduced">
-										<b class="note">*Click the image to see a higher resolution version.</b>
-										<a href="../images/PGR_Patient_Output_Receipt_Format_01.png" target="_blank">
-											<img src="../images/PGR_Patient_Output_Receipt_Format_01.png" alt="" />
+										<a href="../assets/images/PGR_Patient_Output_Receipt_Format_01.png" target="_blank">
+											<b class="note"></b>
+											<img src="../assets/images/PGR_Patient_Output_Receipt_Format_01.png" alt="" />
 										</a>
 									</div>
 
@@ -336,9 +373,9 @@
 									the aforementioned results.<br>
 <!--									how the PatientGenerator utilizes the-->
 <!--									PatientEventProcessor, applying the Life Event system, to generate the Patient.<br>-->
-									<b class="note">*Click the image to see a higher resolution version.</b>
-									<a href="../images/PGR_Planner_Class_Diagram_01.png" target="_blank">
-										<img src="../images/PGR_Planner_Class_Diagram_01.png" alt="" />
+									<a href="../assets/images/PGR_Planner_Class_Diagram_01.png" target="_blank">
+										<b class="note"></b>
+										<img src="../assets/images/PGR_Planner_Class_Diagram_01.png" alt="" />
 									</a>
 								</span>
 
@@ -352,28 +389,23 @@
 						<div class="description">
 
 							<div class="content">
-								<!--								<p>-->
-								<!--									Detail system and results of statistical analysis and how it helped balance event-->
-								<!--									probabilities to create reasonable/realistic distributions.-->
-								<!--								</p>-->
-
 								<p>
-									An key challenge <b>when developing a system based heavily on probability</b> is <b>ensuring
+									A key challenge when developing a <b>system based heavily on probability</b> is <b>ensuring
 									that the results it produces make sense</b>. To this end, I developed a <b>testing program
 									to produce a large batch of patients</b> to be fed into a system that my team
 									developed to <b>export the results to an Excel spreadsheet for analysis</b>. We then set up the
 									spreadsheet to do automatic calculations and display the relevant data including
 									the average and standard deviation for ranged values, the counts and occurrence
 									rates for events, and a combined number to give the batch of patients an overall
-									diversity a rating. This analysis <b>helped us identify behavior that didn't make sense</b>,
+									diversity rating. This analysis helped us <b>identify behavior that didn't make sense</b>,
 									like rare diseases occurring too frequently, and <b>adjust event probabilities to
 									get more realistic results</b>.
 								</p>
 
 								<span class="image fit">
-									<b class="note">*Click the image to see a higher resolution version.</b>
-									<a href="../images/PGR_Statistical_Analysis_01.png" target="_blank">
-										<img src="../images/PGR_Statistical_Analysis_01.png" alt="" />
+									<a href="../assets/images/PGR_Statistical_Analysis_01.png" target="_blank">
+										<b class="note"></b>
+										<img src="../assets/images/PGR_Statistical_Analysis_01.png" alt="" />
 									</a>
 								</span>
 
@@ -381,23 +413,23 @@
 							</div>
 						</div>
 
-						<!--						<div class="sectionTitle">-->
-						<!--							<h3>Optimization</h3>-->
-						<!--						</div>-->
+<!--						<div class="sectionTitle">-->
+<!--							<h3>Optimization</h3>-->
+<!--						</div>-->
 
-						<!--						<div class="description">-->
+<!--						<div class="description">-->
 
-						<!--							<div class="content">-->
-						<!--								<p>-->
-						<!--									Describe how initial planner design was effective but inefficient and how I implemented-->
-						<!--									object pooling to significantly increase the speed of patient generation.-->
-						<!--								</p>-->
+<!--							<div class="content">-->
+<!--								<p>-->
+<!--									Describe how initial planner design was effective but inefficient and how I implemented-->
+<!--									object pooling to significantly increase the speed of patient generation.-->
+<!--								</p>-->
 
-						<!--								<p>-->
-						<!--									<b class="note">(Images of profiler before and after results)</b>-->
-						<!--								</p>-->
-						<!--							</div>-->
-						<!--						</div>-->
+<!--								<p>-->
+<!--									<b class="note">(Images of profiler before and after results)</b>-->
+<!--								</p>-->
+<!--							</div>-->
+<!--						</div>-->
 
 					</section>
 
@@ -414,11 +446,6 @@
 						<div class="description">
 
 							<div class="content">
-								<!--								<p>-->
-								<!--									Focus on the results of the work that I did, then include the overall results and show a-->
-								<!--									short demo.-->
-								<!--								</p>-->
-								<!--								<h4>The Application</h4>-->
 								<p>
 									As a Computer Science research project, <b>our goal with this project was to develop a
 									hypothesis and then build an application to test it</b>. While
@@ -437,10 +464,9 @@
 									possibilities and a message is displayed evaluating their choice.
 								</p>
 
-								<!--Result video-->
 								<div class="videoBox">
 									<video autoplay muted loop>
-										<source src="../videos/ProgenIcon01_x264.mp4" type=video/mp4>
+										<source src="../assets/videos/ProgenIcon01_x264.mp4" type=video/mp4>
 									</video>
 								</div>
 
@@ -457,39 +483,18 @@
 							<h2>Final Thoughts</h2>
 						</div>
 
-<!--						<div class="sectionTitle">-->
-<!--							<h3>So Much More Potential</h3>-->
-<!--						</div>-->
-
-<!--						<div class="description">-->
-
-<!--							<div class="content">-->
-<!--								<p>-->
-<!--									As this was an intriguing and ambitious project, keeping the scope realistic was-->
-<!--									definitely a challenge. As a team, we deliberated our options and decided on a few-->
-<!--									sensible limitations like restricting the malady collection to only respiratory-->
-<!--									diseases. -->
-<!--								</p>-->
-<!--							</div>-->
-
-<!--						</div>-->
-
-<!--						<div class="sectionTitle">-->
-<!--							<h3>Satisfying Contribution</h3>-->
-<!--						</div>-->
-
 						<div class="description">
 
 							<div class="content">
 								<p>
 									University research projects are often developed over time as they get passed from
 									one team to the next, each further developing and innovating on the previous work. As
-									this project started a novel approach to diagnosis, <b>we laid the groundwork by building
+									this project started a novel approach to diagnosis, <b>we laid the groundwork for future development by building
 									a proof of concept that demonstrates the project's potential</b>. While I would have
-									loved to continue development, refining the procedural generation system, adding features
+									loved to continue development, refine the procedural generation system, add features
 									that I had to cut to keep the scope in reach, and get to see how medical students reviewed our work,
-									<b>it's satisfying to know that I made a meaningful contribution to a project
-									that will live on</b>.
+									<b>it's satisfying to know that I made a meaningful contribution to a project that
+									will continue to grow and realize its potential through future research</b>.
 								</p>
 							</div>
 

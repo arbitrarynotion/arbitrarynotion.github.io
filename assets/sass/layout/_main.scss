@@ -41,7 +41,7 @@
 		}
 
 		// Ensure that the first inner element doesn't get the top margin so it aligns with the banner's bottom.
-		> .inner :first-child {
+		> .inner :first-child :not(.image){
 			margin-top: 0;
 
 			margin-left: auto;

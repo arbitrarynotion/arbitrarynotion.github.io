@@ -50,11 +50,29 @@
 		&:hover {
 			border-bottom-color: transparent;
 			color: _palette(highlight) !important;
+
+			> strong {
+				color: _palette(highlight) !important;
+			}
+
+			> b {
+				color: _palette(highlight) !important;
+			}
 		}
 
 		&:active {
 			color: desaturate(darken(_palette(highlight), 15), 5) !important;
+
+			> strong {
+				color: desaturate(darken(_palette(highlight), 15), 5) !important;
+			}
+
+			> b {
+				color: desaturate(darken(_palette(highlight), 15), 5) !important;
+			}
 		}
+
+
 	}
 
 	strong, b {

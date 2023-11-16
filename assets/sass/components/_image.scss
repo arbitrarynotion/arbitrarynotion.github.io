@@ -13,6 +13,9 @@
 		display: inline-block;
 		position: relative;
 
+
+		width: 100%;
+
 		//margin: 0 !important;
 		//padding: 0 !important;
 		//overflow: hidden;
@@ -41,6 +44,9 @@
 			float: right;
 			margin: 0 0 1.25em 1.5em;
 			top: 0.25em;
+
+			//display: flex;
+			//align-items: center;
 		}
 
 		&.fit {
@@ -60,7 +66,8 @@
 			display: block;
 			// Reduction must be applied to the container, not the image itself otherwise the width of the container
 			// will remain at 100% of the image width.
-			width: 55%;
+			//width: 55%;
+			max-width: 60ch;
 			margin: 0 auto;
 			//margin: 0;
 			//padding: 0;

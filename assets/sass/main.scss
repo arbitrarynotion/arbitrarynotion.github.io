@@ -4,7 +4,8 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@import 'fontawesome-all.min.css';
+@import '../css/fontawesome-all.min.css';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');
 /*
 	Forty by HTML5 UP
@@ -123,6 +124,7 @@
 	@import 'components/video';
 	@import 'components/intro';
 	@import 'components/mosaic';
+	@import "components/sectionblock";
 
 
 // Layout.

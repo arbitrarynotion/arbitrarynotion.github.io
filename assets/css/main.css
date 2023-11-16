@@ -1,4 +1,5 @@
-@import 'fontawesome-all.min.css';
+@import '../css/fontawesome-all.min.css';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 /*
 	Forty by HTML5 UP
@@ -197,7 +198,19 @@ a:hover {
   border-bottom-color: transparent;
   color: #fcb703 !important;
 }
+a:hover > strong {
+  color: #fcb703 !important;
+}
+a:hover > b {
+  color: #fcb703 !important;
+}
 a:active {
+  color: #ac7e07 !important;
+}
+a:active > strong {
+  color: #ac7e07 !important;
+}
+a:active > b {
   color: #ac7e07 !important;
 }
 
@@ -1790,6 +1803,7 @@ a.icon.alt:active:before {
   border: 0;
   display: inline-block;
   position: relative;
+  width: 100%;
 }
 .image img {
   display: block;
@@ -1819,7 +1833,7 @@ a.icon.alt:active:before {
 }
 .image .reduced {
   display: block;
-  width: 55%;
+  max-width: 60ch;
   margin: 0 auto;
 }
 .image .reduced img {
@@ -2971,6 +2985,136 @@ video {
   border-radius: 19px;
 }
 
+.sectionBlock {
+  margin-top: 2.5em;
+  background-color: #131521;
+  border-radius: 10pt 10pt 0 0;
+  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+}
+.sectionBlock:last-child {
+  border-radius: 10pt;
+}
+.sectionBlock .twoLineTitle h1 {
+  font-size: 1.8em;
+}
+.sectionBlock .threeLineTitle h1 {
+  font-size: 1.75em;
+}
+.sectionBlock .sectionTitle {
+  background-color: #23263d;
+  background: transparent;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "Orbitron", Helvetica, sans-serif;
+  font-variant: small-caps;
+  letter-spacing: 0.125em;
+}
+.sectionBlock .sectionTitle .noBackground {
+  background: blue;
+}
+.sectionBlock .sectionTitle > h2 {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.sectionBlock .sectionTitle > h3, .sectionBlock .sectionTitle h4, .sectionBlock .sectionTitle h5, .sectionBlock .sectionTitle h6 {
+  background-color: rgba(233, 233, 255, 0.1);
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.sectionBlock .description {
+  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
+  padding: 1em 1.5em 1.5em 1.5em;
+  background-color: #2e3450;
+}
+.sectionBlock .description > * {
+  padding-bottom: 1em;
+  margin: 0 auto;
+}
+.sectionBlock .description .content {
+  max-width: 85ch;
+}
+.sectionBlock .description .buttonBox {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 100%;
+  min-height: 12%;
+  justify-content: flex-end;
+}
+.sectionBlock .description .buttonBox.centered {
+  justify-content: center;
+}
+.sectionBlock .description .imageContainer {
+  display: flex;
+}
+.sectionBlock .description .imageContainer .text {
+  max-width: 60%;
+  align-self: center;
+}
+.sectionBlock .description .imageContainer .image {
+  align-self: center;
+  margin-bottom: 1.25em;
+}
+.sectionBlock .description .imageContainer .image img {
+  width: 100%;
+}
+.sectionBlock .description .imageContainer.imageRight {
+  flex-direction: row-reverse;
+}
+.sectionBlock .description .imageContainer.imageRight .image {
+  margin-left: 1.5em;
+}
+.sectionBlock .description .imageContainer.imageLeft {
+  flex-direction: row;
+}
+.sectionBlock .description .imageContainer.imageLeft .image {
+  margin-right: 1.5em;
+}
+.sectionBlock .description a {
+  border-bottom: 0;
+}
+.sectionBlock .description b.note {
+  font-size: 0.65em;
+}
+.sectionBlock .description b.note::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f08e";
+  padding-left: 0.25em;
+  padding-right: 0.5em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.sectionBlock .description b.note::after {
+  content: "View larger image";
+}
+@media screen and (max-width: 736px) {
+  .sectionBlock > * .imageContainer {
+    flex-direction: column-reverse !important;
+  }
+  .sectionBlock > * .imageContainer.text {
+    max-width: 90% !important;
+  }
+  .sectionBlock > * .imageContainer.imageRight .image {
+    margin-left: 1.5em !important;
+    margin-right: 1.5em !important;
+    max-width: 45ch;
+  }
+  .sectionBlock > * .imageContainer.imageRight .text {
+    max-width: 90% !important;
+  }
+  .sectionBlock > * .imageContainer.imageLeft .image {
+    margin-left: 1.5em !important;
+    margin-right: 1.5em !important;
+    max-width: 45ch;
+  }
+  .sectionBlock > * .imageContainer.imageLeft .text {
+    max-width: 90% !important;
+  }
+}
 /* Header */
 @-moz-keyframes reveal-header {
   0% {
@@ -3354,6 +3498,12 @@ body.is-preload #header.alt {
   line-height: 1;
   padding-bottom: 0.25em;
 }
+#banner .twoLineTitle h1 {
+  font-size: 1.8em;
+}
+#banner .threeLineTitle h1 {
+  font-size: 1.75em;
+}
 #banner > .inner {
   height: max-content;
   animation: fadeInAnimation ease-out both 0.5s;
@@ -3564,7 +3714,7 @@ body.is-preload #banner > .inner {
   margin-left: auto;
   margin-right: auto;
 }
-#main > .inner :first-child {
+#main > .inner :first-child :not(.image) {
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
@@ -3596,83 +3746,6 @@ body.is-preload #banner > .inner {
 }
 
 /* Highlight */
-.sectionBlock {
-  margin-top: 2.5em;
-  background-color: #131521;
-  border-radius: 10pt 10pt 0 0;
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
-}
-.sectionBlock:last-child {
-  border-radius: 10pt;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 1;
-  }
-}
-.sectionTitle {
-  background-color: #23263d;
-  background: transparent;
-  margin-bottom: 0;
-  text-align: center;
-  font-family: "Orbitron", Helvetica, sans-serif;
-  font-variant: small-caps;
-  letter-spacing: 0.125em;
-}
-.sectionTitle .noBackground {
-  background: blue;
-}
-.sectionTitle.twoLineTitle {
-  font-size: 0.8em;
-}
-.sectionTitle.threeLineTitle {
-  font-size: 0.75em;
-}
-.sectionTitle > h2 {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-.sectionTitle > h3, .sectionTitle h4, .sectionTitle h5, .sectionTitle h6 {
-  background-color: rgba(233, 233, 255, 0.1);
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-
-.description {
-  transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease, -webkit-filter 0.5s ease;
-  padding: 1em 1.5em 1.5em 1.5em;
-  background-color: #2e3450;
-}
-.description > * {
-  padding-bottom: 1em;
-  margin: 0 auto;
-}
-.description .content {
-  max-width: 85ch;
-}
-.description .buttonBox {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  width: 100%;
-  min-height: 12%;
-  justify-content: flex-end;
-}
-.description .buttonBox.centered {
-  justify-content: center;
-}
-.description b.note {
-  font-size: 0.75em;
-}
-
 .highlights {
   align-items: center;
   border-top: 0 !important;
@@ -3770,6 +3843,7 @@ body.is-preload #banner > .inner {
 @media screen and (max-width: 980px) {
   .highlights > section {
     display: block;
+    border: 4px solid yellow !important;
   }
   .highlights > section > .image {
     width: 100%;
@@ -3777,6 +3851,9 @@ body.is-preload #banner > .inner {
   .highlights > section > .content {
     padding: 4em 3em 2em 3em;
     width: 100%;
+    border: 4px solid white !important;
+  }
+  .highlights > section.sectionBlock {
     border: 4px solid white !important;
   }
 }

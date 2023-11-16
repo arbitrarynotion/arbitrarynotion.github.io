@@ -26,6 +26,16 @@
 			padding-bottom: 0.25em;
 		}
 
+		.twoLineTitle h1 {
+			font-size: _size(two-line-title);
+		}
+
+		.threeLineTitle h1 {
+			font-size: _size(three-line-title);
+		}
+
+
+
 		> .inner {
 			@include debug-outline(purple);
 
