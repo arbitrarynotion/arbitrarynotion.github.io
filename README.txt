@@ -1,5 +1,5 @@
 Ian Ritter
-ianritter.dev
+www.ianritter.dev
 ian.ritter.cs@gmail.com
 
 This is my professional portfolio website which presents several of my game and tools
